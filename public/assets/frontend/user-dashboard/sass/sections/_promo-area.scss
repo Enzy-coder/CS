@@ -1,0 +1,176 @@
+/* Promo area */
+
+.promo-area {
+    overflow: hidden;
+}
+
+.promo-child {
+    &:not(:last-child) {
+        .single-promo {
+            &::after {
+                content: "";
+                position: absolute;
+                height: 70px;
+                width: 2px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: #ddd;
+                right: 0;
+                @include responsive(xs) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.single-promo {
+    padding: 30px;
+    box-shadow: 0 0 10px #f7f7f7;
+    margin: 0 15px;
+    @include responsive(xxl) {
+        margin: 0;
+        padding: 30px 10px;
+    }
+    @include responsive(xl) {
+        margin: 0;
+        padding: 30px 10px;
+    }
+    @include responsive(xs) {
+        margin: 0;
+    }
+    .icon {
+        font-size: 45px;
+    }
+    .contents {
+        .common-title {}
+        .common-para {
+            margin-top: 10px;
+        }
+    }
+}
+
+
+/* Promo Collection Area */
+
+.responsive-child {
+    .single-promo-collection {
+        .promo-collection-image-contents {
+            .promo-collection-flex {
+                &.different-img {
+                    @include responsive(vxxs) {
+                        flex-direction: row;
+                        text-align: left;
+                        gap: 5px;
+                    }
+                    .promo-collection-img {
+                        @include responsive(vxxs) {
+                            max-width: 120px;
+                            margin: unset;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.single-promo-collection {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    .promo-collection-image-contents {
+        position: relative;
+        z-index: 1;
+        .promo-collection-flex {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            @include responsive(xxl) {
+                gap: 10px;
+            }
+            @include responsive(xl) {
+                gap: 10px;
+            }
+            @include responsive(lg) {
+                gap: 10px;
+            }
+            @include responsive(allPhone) {
+                gap: 10px;
+            }
+            @include responsive(vxxs) {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+        }
+        .promo-collection-contents {
+            .promo-collection-title {
+                font-size: 36px;
+                line-height: 42px;
+                @include responsive(xxl) {
+                    font-size: 33px;
+                    line-height: 36px;
+                }
+                @include responsive(xl) {
+                    font-size: 30px;
+                    line-height: 36px;
+                }
+                @include responsive(lg) {
+                    font-size: 30px;
+                    line-height: 36px;
+                }
+                @include responsive(allPhone) {
+                    font-size: 28px;
+                    line-height: 32px;
+                }
+                @include responsive(xxs) {
+                    font-size: 28px;
+                    line-height: 32px;
+                }
+                @include responsive(vxxs) {
+                    font-size: 26px;
+                }
+            }
+            .shop-btn {
+                display: inline-block;
+                font-size: 17px;
+                font-weight: 500;
+                text-decoration: underline;
+                transition: all .2s;
+                &:hover {
+                    color: var(--main-color-three);
+                    letter-spacing: 1px;
+                }
+            }
+        }
+        .promo-collection-img {
+            max-width: 250px;
+            @include responsive(xxl) {
+                max-width: 220px;
+            }
+            @include responsive(xl) {
+                max-width: 150px;
+            }
+            @include responsive(lg) {
+                max-width: 200px;
+            }
+            @include responsive(allPhone) {
+                max-width: 150px;
+            }
+            @include responsive(sm) {
+                max-width: 220px;
+            }
+            @include responsive(xs) {
+                max-width: 220px;
+            }
+            @include responsive(xxs) {
+                max-width: 170px;
+            }
+            @include responsive(vxxs) {
+                margin: 0 auto;
+                max-width: 200px;
+            }
+        }
+    }
+}

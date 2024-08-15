@@ -1,0 +1,149 @@
+/* Faq */
+
+.faq-contents {
+    .faq-item {
+        &.open {
+            .faq-title {
+                background: $bg-item-four;
+                border-color: $bg-item-four;
+                font-weight: 500;
+                color: var(--heading-color);
+                &::after {
+                    content: "\f107";
+                }
+            }
+            .faq-panel {
+                background: $bg-item-four;
+            }
+        }
+        &.active {
+            .faq-title {
+                color: var(--heading-color);
+            }
+            .faq-panel {
+                display: block;
+                background: $bg-item-four;
+            }
+        }
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
+        .faq-title {
+            font-size: 24px;
+            color: var(--light-color);
+            font-family: var(--heading-font);
+            line-height: 24px;
+            line-height: 36px;
+            border: 1px solid rgba($black, .1);
+            padding: 20px 40px;
+            background: $white;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            -webkit-transition: all .3s;
+            -o-transition: all .3s;
+            transition: all .3s;
+            @include responsive(xxxl) {
+                font-size: 22px;
+                padding: 20px 30px;
+            }
+            @include responsive(xxl) {
+                font-size: 20px;
+                padding: 20px 20px;
+            }
+            @include responsive(xl) {
+                font-size: 20px;
+                padding: 20px 20px;
+            }
+            @include responsive(lg) {
+                font-size: 20px;
+                padding: 20px 20px;
+            }
+            @include responsive(allPhone) {
+                font-size: 18px;
+                line-height: 20px;
+                padding: 20px 20px;
+            }
+            @include responsive(xxs) {
+                font-size: 16px;
+                padding: 15px 10px;
+            }
+            &::after {
+                font-family: 'Line Awesome Free';
+                font-weight: 900;
+                content: "\f106";
+                color: var(--light-color);
+                position: absolute;
+                right: 40px;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+                font-size: 18px;
+                -webkit-transition: all .3s;
+                -o-transition: all .3s;
+                transition: all .3s;
+                @include responsive(xxxl) {
+                    right: 30px;
+                }
+                @include responsive(xxl) {
+                    right: 20px;
+                }
+                @include responsive(xl) {
+                    right: 20px;
+                }
+                @include responsive(lg) {
+                    right: 20px;
+                }
+                @include responsive(allPhone) {
+                    right: 20px;
+                }
+                @include responsive(xxs) {
+                    right: 10px;
+                }
+            }
+        }
+        .faq-panel {
+            display: none;
+            padding: 30px 40px;
+            @include responsive(xxxl) {
+                padding: 20px 30px;
+            }
+            @include responsive(xxl) {
+                padding: 20px 20px;
+            }
+            @include responsive(xl) {
+                padding: 20px 20px;
+            }
+            @include responsive(lg) {
+                padding: 20px 20px;
+            }
+            @include responsive(allPhone) {
+                padding: 20px 20px;
+            }
+            .faq-para {
+                font-size: 20px;
+                line-height: 40px;
+                color: var(--light-color);
+                @include responsive(xxxl) {
+                    font-size: 19px;
+                }
+                @include responsive(xxl) {
+                    font-size: 18px;
+                }
+                @include responsive(xl) {
+                    font-size: 18px;
+                }
+                @include responsive(lg) {
+                    font-size: 18px;
+                }
+                @include responsive(allPhone) {
+                    font-size: 17px;
+                }
+                @include responsive(xs) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

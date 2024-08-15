@@ -1,0 +1,182 @@
+/* Checkout */
+
+.checkout-area {}
+
+.checkout-wrapper {}
+
+.checkout-title {
+    i {
+        color: var(--main-color-one);
+    }
+}
+
+.checkout-inner {
+    .common-title {}
+}
+
+.click-open-form {
+    &:hover {
+        color: var(--main-color-one);
+        font-weight: 500;
+    }
+}
+
+.checkout-form-open {
+    max-width: 500px;
+    background: $white;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: (all 500ms linear);
+    &.active {
+        height: auto;
+        visibility: visible;
+        opacity: 1;
+        margin-top: 30px;
+    }
+}
+
+.checkout-signup-form-wrapper {
+    max-width: 700px;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s linear;
+    &.active {
+        height: auto;
+        visibility: visible;
+        opacity: 1;
+        margin-top: 30px;
+        background: $white;
+    }
+}
+
+.checkout-address-form-wrapper {
+    max-width: 700px;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s linear;
+    &.active {
+        height: auto;
+        visibility: visible;
+        opacity: 1;
+        margin-top: 30px;
+        background: $white;
+    }
+}
+
+.create-accounts {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    color: var(--heading-color) !important;
+    &:hover {
+        color: var(--heading-color);
+    }
+    &::before {
+        display: flex;
+        height: 20px;
+        width: 20px;
+        border: 1px solid $STEAM;
+        content: '';
+        transition: all .2s;
+    }
+    &.active {
+        &::before {
+            content: "\f00c";
+            @include linefont;
+            background: var(--main-color-one);
+            color: $white;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            border-color: var(--main-color-one);
+        }
+    }
+}
+
+.checkout-contents {}
+
+.checkout-form {
+    .input-flex-item {
+        .single-input {
+            .label-title {}
+            .form--control {}
+            .form--message {
+                height: 120px;
+            }
+        }
+    }
+    .checkbox-inlines {
+        .check-input {}
+        .checkbox-label {
+            color: var(--heading-color);
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+}
+
+.checkout-order-summery {
+    padding: 50px;
+    @include responsive(xxl) {
+        padding: 40px;
+    }
+    @include responsive(xl) {
+        padding: 30px;
+    }
+    @include responsive(lg) {
+        padding: 30px;
+    }
+    @include responsive(xxs) {
+        padding: 30px;
+    }
+    @include responsive(vxxs) {
+        padding: 20px 10px;
+    }
+}
+
+.checkout-flex-list {
+    .list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0;
+        color: var(--light-color);
+        font-size: 18px;
+        @include responsive(allPhone) {
+            font-size: 16px;
+            padding: 10px 0;
+        }
+        @include responsive(vxxs) {
+            font-size: 15px;
+            padding: 10px 0;
+        }
+        span {
+            &.product-qnt {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+            .product-cross {
+                margin-bottom: 0;
+                position: relative;
+                z-index: 2;
+                &::after {
+                    @include linefont;
+                    content: "\f00d";
+                    position: absolute;
+                    right: -20px;
+                }
+            }
+        }
+        .input-values {
+            width: 40px;
+            background: none;
+            border: none;
+            outline: none;
+        }
+    }
+}

@@ -1,0 +1,177 @@
+/* Search Popup */
+
+.search-open {
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 0px;
+    position: relative;
+    z-index: 9;
+    transition: all .3s;
+    &.hover-color-three {
+        &:hover {
+            color: var(--main-color-two);
+        }
+    }
+}
+
+.searchbar-area {
+    position: relative;
+    z-index: 9;
+}
+
+.search-bar {
+    position: absolute;
+    top: -60%;
+    right: 0;
+    left: 0;
+    height: auto;
+    z-index: 9;
+    width: 95%;
+    margin: 0 auto;
+    background: $white;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .6s;
+    z-index: 9999;
+    &.active {
+        visibility: visible;
+        opacity: 1;
+        top: 5px;
+    }
+    &.color-style-02 {
+        .menu-search-form {
+            .search-close {
+                color: var(--main-color-two);
+                border: 1px solid var(--main-color-two);
+                &:hover {
+                    background: var(--main-color-two);
+                }
+            }
+            .item-search {
+                &:focus {
+                    border-color: rgba($main-color-two, .2);
+                    box-shadow: 0 0 10px rgba($main-color-two, .1);
+                }
+            }
+            button {
+                background: var(--main-color-two);
+            }
+        }
+    }
+    &.color-style-03 {
+        .menu-search-form {
+            .search-close {
+                color: var(--main-color-three);
+                border: 1px solid var(--main-color-three);
+                &:hover {
+                    background: var(--main-color-three);
+                }
+            }
+            .item-search {
+                &:focus {
+                    border-color: rgba($main-color-three, .2);
+                    box-shadow: 0 0 10px rgba($main-color-three, .1);
+                }
+            }
+            button {
+                background: var(--main-color-three);
+            }
+        }
+    }
+    &.color-style-04 {
+        .menu-search-form {
+            .search-close {
+                color: var(--main-color-four);
+                border: 1px solid var(--main-color-four);
+                &:hover {
+                    background: var(--main-color-four);
+                }
+            }
+            .item-search {
+                &:focus {
+                    border-color: rgba($main-color-four, .2);
+                    box-shadow: 0 0 10px rgba($main-color-four, .1);
+                }
+            }
+            button {
+                background: var(--main-color-four);
+            }
+        }
+    }
+    .menu-search-form {
+        position: relative;
+        z-index: 9;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 0px;
+        .search-close {
+            position: absolute;
+            right: 0px;
+            bottom: -50px;
+            font-size: 30px;
+            cursor: pointer;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+            background: $Gray;
+            padding: 2px 10px;
+            color: var(--main-color-one);
+            border: 1px solid var(--main-color-one);
+            &:hover {
+                color: $white;
+                background: var(--main-color-one);
+            }
+        }
+        .item-search {
+            width: 100%;
+            height: 80px;
+            background: none;
+            border: 1px solid rgba($black, .2);
+            outline: none;
+            text-transform: capitalize;
+            padding: 10px 30px;
+            padding-right: 70px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 0px;
+            color: var(--light-color);
+            &:focus {
+                border-color: rgba($main-color-one, .2);
+                box-shadow: 0 0 10px rgba($main-color-one, .1);
+            }
+            &::placeholder {
+                color: var(--light-color);
+                font-size: 14px;
+            }
+        }
+        button {
+            position: absolute;
+            right: 0;
+            height: 100%;
+            padding: 0 30px;
+            background: var(--main-color-one);
+            border: 0;
+            outline: none;
+            font-size: 16px;
+            font-weight: 500;
+            color: $white;
+            cursor: pointer;
+        }
+    }
+}
+
+
+/* .close-toggle-body {
+    height: 100%;
+    width: 100%;
+    left: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 99;
+    cursor: zoom-out;
+    transition: all .8s;
+    &.open {
+        background: rgba($black, .01);
+        left: 0;
+        border-radius: 0;
+    }
+} */

@@ -1,0 +1,15 @@
+/* Common Review List */
+
+.common-review-list {
+    display: flex;
+    align-items: center;
+    li {
+        font-size: 18px;
+        color: var(--main-color-one);
+        margin: 1px;
+        .review-count {
+            color: var(--extra-light-color);
+            margin-left: 5px;
+        }
+    }
+}

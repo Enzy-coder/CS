@@ -1,0 +1,72 @@
+/* Release Area */
+
+.release-area {}
+
+.release-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.release-contents {
+    padding: 90px 0;
+    max-width: 530px;
+    margin-left: auto;
+    position: relative;
+    z-index: 2;
+    @include responsive(allPhone) {
+        margin-left: 30px;
+        padding: 70px 0 80px;
+    }
+    .release-title {
+        font-size: 100px;
+        line-height: 120px;
+        font-weight: 300;
+        .release-top {
+            display: block;
+            font-weight: 500;
+        }
+        @include responsive(allPhone) {
+            font-size: 60px;
+            line-height: 70px;
+        }
+        @include responsive(xxs) {
+            font-size: 40px;
+            line-height: 50px;
+        }
+    }
+    .release-price {
+        font-size: 60px;
+        font-weight: 500;
+        line-height: 100px;
+        @include responsive(allPhone) {
+            font-size: 40px;
+            line-height: 50px;
+        }
+        @include responsive(xxs) {
+            font-size: 30px;
+            line-height: 36px;
+            margin-top: 20px;
+        }
+    }
+    .btn-wrapper {
+        @include responsive(xxs) {
+            margin-top: 30px;
+        }
+    }
+}
+
+.release-image {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    img {}
+}
+
+.release-shapes {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -2;
+    width: 100%;
+    img {}
+}

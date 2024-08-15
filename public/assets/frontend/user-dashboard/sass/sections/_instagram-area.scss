@@ -1,0 +1,130 @@
+/* Instagram area */
+
+.instagram-area {}
+
+.instagram-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.instagram-contents {
+    text-align: center;
+    display: inline-block;
+    padding: 20px 30px 30px;
+    position: absolute;
+    z-index: 9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include responsive(xxs) {
+        padding: 10px 20px 20px;
+    }
+    @include responsive(vxxs) {
+        padding: 10px 10px 20px;
+    }
+    &.style-02 {
+        background: $white;
+        color: var(--light-color);
+    }
+    .icon {
+        font-size: 30px;
+        display: block;
+        &:hover {
+            color: var(--main-color-one);
+        }
+        &.hover-color-two {
+            &:hover {
+                color: var(--main-color-two);
+            }
+        }
+        &.hover-color-three {
+            &:hover {
+                color: var(--main-color-three);
+            }
+        }
+        &.hover-color-four {
+            &:hover {
+                color: var(--main-color-four);
+            }
+        }
+    }
+    .instagram-title {
+        &.white-color {
+            color: $white;
+        }
+        &:hover {
+            color: var(--main-color-one);
+        }
+        &.hover-color-two {
+            &:hover {
+                color: var(--main-color-two);
+            }
+        }
+        &.hover-color-three {
+            &:hover {
+                color: var(--main-color-three);
+            }
+        }
+        &.hover-color-four {
+            &:hover {
+                color: var(--main-color-four);
+            }
+        }
+    }
+}
+
+.single-instagram {
+    &.style-02 {
+        .instagram-image {
+            @include responsive(allPhone) {
+                height: 220px;
+                border-radius: 20px;
+            }
+            @include responsive(xxs) {
+                height: 200px;
+            }
+            @include responsive(vxxs) {
+                height: 150px;
+                border-radius: 10px;
+            }
+        }
+    }
+    .instagram-image {
+        height: 320px;
+        width: 100%;
+        @include responsive(xxxl) {
+            height: 280px;
+        }
+        @include responsive(xxl) {
+            height: 250px;
+        }
+        @include responsive(xl) {
+            height: 240px;
+        }
+        @include responsive(lg) {
+            height: 250px;
+        }
+        @include responsive(allPhone) {
+            height: auto;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.black-themes {
+    .instagram-contents {
+        &.style-02 {
+            background: $body-bg-3;
+            .instagram-title {
+                color: $white;
+                &:hover {
+                    color: var(--main-color-two);
+                }
+            }
+        }
+    }
+}

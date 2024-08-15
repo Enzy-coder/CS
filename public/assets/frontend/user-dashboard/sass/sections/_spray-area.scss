@@ -1,0 +1,209 @@
+/* Spray Area */
+
+.spray-area {
+    position: relative;
+    z-index: 1;
+}
+
+.sparay-shape {
+    &::before {
+        content: "";
+        position: absolute;
+        height: 647px;
+        width: 647px;
+        border-radius: 50%;
+        background: $bg-item-one;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        @include responsive(xl) {
+            height: 500px;
+            width: 500px;
+        }
+        @include responsive(lg) {
+            height: 500px;
+            width: 500px;
+        }
+        @include responsive(allPhone) {
+            height: 500px;
+            width: 500px;
+        }
+        @include responsive(xs) {
+            height: 400px;
+            width: 400px;
+        }
+        @include responsive(xxs) {
+            height: 350px;
+            width: 350px;
+        }
+        @include responsive(vxxs) {
+            height: 300px;
+            width: 300px;
+        }
+    }
+}
+
+.spray-image-contents {
+    text-align: right;
+    position: relative;
+    z-index: 2;
+    .spray-image {
+        img {}
+    }
+    .sparay-image-shape {
+        img {
+            position: absolute;
+            z-index: -1;
+            &:nth-child(1) {
+                bottom: -60px;
+                right: -60px;
+                animation: 5s pulsing linear infinite;
+            }
+            &:nth-child(2) {
+                left: -25px;
+                bottom: 60px;
+                animation: 20s round-moving linear infinite;
+            }
+            &:nth-child(3) {
+                left: -60px;
+                top: -30px;
+                z-index: 9;
+                animation: 5s floating linear infinite;
+            }
+        }
+    }
+}
+
+.spray-contents {
+    padding: 160px 0 160px 100px;
+    position: relative;
+    z-index: 9;
+    @include responsive(xl) {
+        padding: 30px 0px 0px 30px;
+    }
+    @include responsive(lg) {
+        padding: 30px 0px 0px 30px;
+    }
+    @include responsive(allPhone) {
+        padding: 30px 200px 0px 30px !important;
+    }
+    @include responsive(sm) {
+        padding: 30px 80px 0px 0px !important;
+    }
+    @include responsive(xxs) {
+        padding: 30px 10px 0px 0px !important;
+    }
+    @include responsive(vxxs) {
+        padding: 30px 0px 0px 0px !important;
+    }
+    .spray-title {
+        font-size: 90px;
+        line-height: 110px;
+        @include responsive(xl) {
+            font-size: 80px;
+            line-height: 90px;
+        }
+        @include responsive(lg) {
+            font-size: 70px;
+            line-height: 90px;
+        }
+        @include responsive(allPhone) {
+            font-size: 60px;
+            line-height: 80px;
+        }
+        @include responsive(sm) {
+            font-size: 50px;
+            line-height: 60px;
+        }
+        @include responsive(xxs) {
+            font-size: 45px;
+            line-height: 55px;
+        }
+        @include responsive(vxxs) {
+            font-size: 40px;
+            line-height: 50px;
+        }
+    }
+    .spray-price {
+        font-size: 60px;
+        line-height: 110px;
+        @include responsive(xl) {
+            font-size: 55px;
+            line-height: 70px;
+        }
+        @include responsive(lg) {
+            font-size: 50px;
+            line-height: 60px;
+        }
+        @include responsive(allPhone) {
+            font-size: 36px;
+            line-height: 36px;
+        }
+        @include responsive(xs) {
+            font-size: 32px;
+            line-height: 32px;
+        }
+        @include responsive(vxxs) {
+            font-size: 28px;
+        }
+    }
+    .btn-wrapper {
+        @include responsive(allPhone) {
+            margin-top: 40px;
+        }
+        .cmn-btn {
+            @include responsive(allPhone) {
+                font-size: 16px !important;
+                padding: 7px 30px;
+            }
+            @include responsive(xxs) {
+                font-size: 15px !important;
+                padding: 7px 20px;
+            }
+            @include responsive(vxxs) {
+                font-size: 14px !important;
+                padding: 5px 15px;
+            }
+            &.btn-bg-heading {
+                &:hover {
+                    background: $white;
+                    color: var(--heading-color);
+                }
+            }
+        }
+    }
+}
+
+.collection-shapes {
+    img {
+        position: absolute;
+        z-index: -1;
+        &:nth-child(1) {
+            bottom: 0;
+            right: -150px;
+            animation: 5s floating linear infinite;
+        }
+        &:nth-child(2) {
+            bottom: 200px;
+            right: 200px;
+            animation: 20s round-moving linear infinite;
+        }
+    }
+    &.collection-five {
+        img {
+            &:nth-child(1) {
+                bottom: 0;
+                left: -150px;
+            }
+            &:nth-child(2) {
+                left: 100px;
+                top: 0;
+            }
+            &:nth-child(3) {
+                bottom: 50%;
+                right: 150px;
+                animation: 20s round-moving linear infinite;
+            }
+        }
+    }
+}

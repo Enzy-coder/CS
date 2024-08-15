@@ -1,0 +1,45 @@
+/* Price Updated Through */
+
+.price-update-through {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .flash-prices {
+        color: var(--heading-color);
+        &.color-one {
+            color: var(--main-color-one);
+        }
+        &.color-two {
+            color: var(--main-color-two);
+        }
+        &.color-three {
+            color: var(--main-color-three);
+        }
+        &.color-four {
+            color: var(--main-color-four);
+        }
+        &.hover-color-one {
+            &:hover {
+                color: var(--main-color-one);
+            }
+        }
+        &.hover-color-two {
+            &:hover {
+                color: var(--main-color-two);
+            }
+        }
+        &.hover-color-three {
+            &:hover {
+                color: var(--main-color-three);
+            }
+        }
+        &.hover-color-four {
+            &:hover {
+                color: var(--main-color-four);
+            }
+        }
+    }
+    .flash-old-prices {
+        text-decoration: line-through;
+    }
+}

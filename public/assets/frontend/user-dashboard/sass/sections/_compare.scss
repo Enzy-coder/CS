@@ -1,0 +1,62 @@
+/* Compare Area */
+
+.compare-area {}
+
+.single-compare {
+    .compare-thumbs {
+        img {}
+    }
+    .compare-contents {
+        .compare-title {}
+        .compare-review-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 5px;
+            .list {
+                margin: 2px;
+                font-size: 20px;
+            }
+        }
+        .common-price-title-two {
+            margin-top: 15px;
+        }
+        .compare-content-list {
+            @include responsive(xxs) {
+                margin-top: 20px;
+            }
+            .list {
+                border-bottom: 1px solid $STEAM;
+                padding: 20px 0;
+                font-size: 18px;
+                line-height: 32px;
+                color: var(--light-color);
+                @include responsive(allPhone) {
+                    padding: 15px 0;
+                }
+                @include responsive(xs) {
+                    font-size: 16px;
+                }
+                @include responsive(xxs) {
+                    font-size: 15px;
+                    padding: 10px 0;
+                }
+                .common-para {
+                    color: var(--light-color);
+                }
+            }
+        }
+        .btn-remove {
+            border-bottom: 2px solid var(--light-color);
+            color: var(--light-color);
+            padding-bottom: 2px;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 500;
+            @include responsive(xs) {
+                font-size: 16px;
+            }
+        }
+    }
+}

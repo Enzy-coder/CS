@@ -1,0 +1,408 @@
+/* Comingsoon Area */
+
+.comingsoon-area {}
+
+.comingsoon-left-wrapper {
+    position: relative;
+    z-index: 2;
+    .single-comingsoon {
+        margin-left: 250px;
+        color: $white;
+        @include responsive(xxl) {
+            margin-left: 140px;
+        }
+        @include responsive(lg) {
+            margin-left: 200px;
+        }
+        @include responsive(allPhone) {
+            margin-left: 0;
+        }
+    }
+}
+
+.comingsoon-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.comingsoon-right-wrapper {
+    position: relative;
+    z-index: 1;
+    @include responsive(xl) {
+        margin-top: 30px;
+        text-align: center;
+    }
+    @include responsive(lg) {
+        margin-top: 30px;
+        text-align: center;
+    }
+    @include responsive(allPhone) {
+        margin-top: 30px;
+        text-align: center;
+    }
+}
+
+.comingsoon-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: space-between;
+    @include responsive(xl) {
+        display: block;
+    }
+    @include responsive(lg) {
+        display: block;
+    }
+    @include responsive(allPhone) {
+        display: block;
+    }
+}
+
+.comingsoon-same {}
+
+.comingsoon-image {
+    text-align: right;
+    img {}
+}
+
+.comingsoon-contents {
+    background: $black;
+    padding: 70px 90px;
+    max-width: 490px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    @include responsive(xxl) {
+        padding: 50px 40px;
+        max-width: 360px;
+    }
+    @include responsive(lg) {
+        padding: 30px 30px;
+        max-width: 400px;
+    }
+    @include responsive(allPhone) {
+        padding: 30px 20px;
+        position: unset;
+        top: 0;
+        transform: translateY(0px);
+        max-width: 100%;
+        margin-top: 30px;
+    }
+    .winter-products {
+        @include responsive(allPhone) {
+            font-size: 18px;
+        }
+        @include responsive(xxs) {
+            font-size: 17px;
+        }
+        @include responsive(vxxs) {
+            font-size: 16px;
+        }
+    }
+    .comingsoon-title {
+        font-size: 85px;
+        line-height: 80px;
+        font-weight: 500;
+        color: $white;
+        margin-top: 20px;
+        @include responsive(xxl) {
+            font-size: 60px;
+            line-height: 60px;
+        }
+        @include responsive(lg) {
+            font-size: 65px;
+            line-height: 65px;
+        }
+        @include responsive(allPhone) {
+            font-size: 40px;
+            line-height: 40px;
+            margin-top: 15px;
+        }
+        @include responsive(xxs) {
+            font-size: 36px;
+        }
+        @include responsive(vxxs) {
+            font-size: 33px;
+        }
+    }
+}
+
+
+/* single Coming soon Ad */
+
+.single-coming-soon-ad {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    &.column-four {
+        &::before,
+        &::after {
+            height: 250px;
+            width: 250px;
+        }
+        .updated-image-contents {
+            .updated-contents {
+                .updated-title {
+                    font-size: 28px;
+                }
+            }
+        }
+        .updated-flex-contents {
+            padding: 50px 0;
+            .updated-img {
+                height: 160px;
+                width: 160px;
+                @include responsive(xxxl) {
+                    height: 140px;
+                    width: 140px;
+                }
+                @include responsive(xxl) {
+                    height: 110px;
+                    width: 100px;
+                }
+            }
+            .updated-contents {}
+        }
+    }
+    &.style-02 {
+        .updated-flex-contents {
+            flex-direction: row-reverse;
+            @include responsive(allPhone) {
+                flex-direction: column-reverse;
+            }
+            .updated-img {
+                margin-right: 20px;
+                @include responsive(xxl) {
+                    margin-right: 10px;
+                }
+                @include responsive(allPhone) {
+                    margin: 0 auto 20px;
+                }
+            }
+            .updated-contents {
+                margin-right: 0;
+            }
+        }
+    }
+    &.bg-item-four {
+        &::before,
+        &::after {
+            background: #FFF1E8;
+        }
+        &::after {
+            border-color: #FFF1E8;
+            background: transparent;
+        }
+    }
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: -70px;
+        bottom: -100px;
+        height: 300px;
+        width: 300px;
+        z-index: -1;
+        border-radius: 50%;
+        background: #D8EFFF;
+        @include responsive(xl) {
+            height: 280px;
+            width: 280px;
+        }
+        @include responsive(lg) {
+            height: 250px;
+            width: 250px;
+        }
+        @include responsive(allPhone) {
+            height: 250px;
+            width: 250px;
+        }
+    }
+    &::after {
+        left: auto;
+        right: -20px;
+        bottom: auto;
+        top: -70px;
+        border: 50px solid #D8EFFF;
+        background: transparent;
+        @include responsive(allPhone) {
+            right: -100px;
+        }
+    }
+    .coming-soon-image-contents {
+        position: relative;
+        z-index: 1;
+        padding: 0 20px;
+        .coming-soon-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            @include responsive(xxl) {
+                gap: 10px;
+            }
+            @include responsive(xl) {
+                gap: 10px;
+            }
+            @include responsive(lg) {
+                gap: 10px;
+            }
+            @include responsive(allPhone) {
+                gap: 10px;
+            }
+            @include responsive(xs) {
+                display: block;
+                text-align: center;
+            }
+        }
+        .coming-soon-contents {
+            padding: 0 0 0 30px;
+            @include responsive(xxl) {
+                padding: 0 0 0 20px;
+            }
+            @include responsive(xl) {
+                padding: 0 0 0 10px;
+            }
+            @include responsive(lg) {
+                padding: 0 0 0 10px;
+            }
+            @include responsive(allPhone) {
+                padding: 0 0 0 30px;
+            }
+            @include responsive(xs) {
+                padding: 20px 0;
+            }
+            .coming-soon-top {
+                font-size: 24px;
+                line-height: 28px;
+                margin-bottom: 20px;
+                display: block;
+                @include responsive(xl) {
+                    font-size: 22px;
+                    margin-bottom: 15px;
+                }
+                @include responsive(lg) {
+                    font-size: 20px;
+                    margin-bottom: 15px;
+                }
+                @include responsive(allPhone) {
+                    font-size: 20px;
+                    margin-bottom: 15px;
+                }
+                @include responsive(xs) {
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                }
+                @include responsive(vxxs) {
+                    font-size: 16px;
+                }
+            }
+            .coming-soon-title {
+                font-size: 85px;
+                line-height: 70px;
+                @include responsive(xxxl) {
+                    font-size: 70px;
+                    line-height: 65px;
+                }
+                @include responsive(xxl) {
+                    font-size: 55px;
+                    line-height: 50px;
+                }
+                @include responsive(xl) {
+                    font-size: 50px;
+                    line-height: 50px;
+                }
+                @include responsive(lg) {
+                    font-size: 42px;
+                    line-height: 42px;
+                }
+                @include responsive(allPhone) {
+                    font-size: 40px;
+                    line-height: 42px;
+                }
+                @include responsive(xxs) {
+                    font-size: 36px;
+                    line-height: 36px;
+                }
+                @include responsive(vxxs) {
+                    font-size: 32px;
+                }
+                .title-small {
+                    display: block;
+                    font-size: 42px;
+                    color: #333;
+                    @include responsive(xl) {
+                        font-size: 36px;
+                    }
+                    @include responsive(lg) {
+                        font-size: 32px;
+                    }
+                    @include responsive(allPhone) {
+                        font-size: 32px;
+                    }
+                }
+            }
+            .preorder-btn {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                color: var(--heading-color);
+                font-size: 17px;
+                font-weight: 500;
+                @include responsive(xl) {
+                    gap: 10px;
+                }
+                @include responsive(lg) {
+                    gap: 10px;
+                }
+                @include responsive(allPhone) {
+                    font-size: 16px;
+                }
+                @include responsive(xs) {
+                    justify-content: center;
+                }
+                .icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 50px;
+                    width: 50px;
+                    font-size: 24px;
+                    background-color: var(--main-color-three);
+                    color: $white;
+                    border-radius: 50%;
+                    @include responsive(lg) {
+                        height: 40px;
+                        width: 40px;
+                    }
+                    @include responsive(allPhone) {
+                        height: 40px;
+                        width: 40px;
+                    }
+                }
+            }
+        }
+        .coming-soon-img {
+            max-width: 340px;
+            @include responsive(xxl) {
+                max-width: 300px;
+            }
+            @include responsive(xl) {
+                max-width: 240px;
+            }
+            @include responsive(lg) {
+                max-width: 200px;
+            }
+            @include responsive(allPhone) {
+                max-width: 250px;
+            }
+            @include responsive(xs) {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+        }
+    }
+}

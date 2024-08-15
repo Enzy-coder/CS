@@ -1,0 +1,20 @@
+# Ignore Laravel specific directories
+/vendor/
+.env
+/node_modules/
+/storage/logs/
+/storage/app/
+/storage/framework/
+/public/storage/
+/public/hot
+/public/storage
+/public/mix-manifest.json
+/public/js/app.js
+/public/css/app.css
+Homestead.yaml
+Homestead.json
+.env.backup
+
+# Ignore IDE files
+/.vscode/
+/.idea/

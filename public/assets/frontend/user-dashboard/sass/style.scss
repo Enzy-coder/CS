@@ -1,0 +1,131 @@
+/*
+Theme Name: Newspaper Magazine Bussiness
+Theme URI: 
+Author: 
+Author URI: 
+Description: Newspaper Magazine is a business website template
+Version: 1.0.0
+*/
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+# Typography
+# Normalize
+# Accessibility
+# Globals
+# Alignments
+# Clearings
+# Posts and pages
+# Captions
+# Galleries
+# Unit test
+# Block Color Palette Colors
+# Sections
+    ## navbar
+    ## top_bar
+    ## header_bottom
+    ## banner
+    ## banner_ads
+    ## news
+    ## video
+    ## sports
+    ## right_side_item
+    ## topics
+    ## widgets
+    ## popular_stories
+    ## recent-stories
+    ## highlights
+    ## trendy
+    ## photogallery
+    ## blog-details
+    ## details_tag_area
+    ## details_comments
+    ## details_replay
+    ## author
+    ## about
+    ## contact
+    ## 404
+    ## search_area
+
+# Elements
+    ## section_title
+    ## button
+    ## back_top
+    ## preloader
+    ## search_popup
+    ## sidebars
+    ## social-connects
+    ## tags-area
+    ## categories
+    ## whats_new
+    ## inner-page-menu
+    ## common-socials
+    ## faq
+
+--------------------------------------------------------------*/
+
+//== Global Design
+@import "global/_mixins";
+@import "global/_variables";
+@import "global/_global";
+//== Section Pages
+@import "sections/navbar";
+@import "sections/banner";
+@import "sections/topbar";
+@import "sections/topbar-bottom-area";
+@import "sections/top-menu-category";
+@import "sections/promo-area";
+@import "sections/about";
+@import "sections/featured-area";
+@import "sections/featured_item";
+@import "sections/client-area";
+@import "sections/updated";
+@import "sections/popular-products";
+@import "sections/comingsoon";
+@import "sections/store-flash";
+@import "sections/category";
+@import "sections/collection";
+@import "sections/store";
+@import "sections/flash-sale";
+@import "sections/spray-area";
+@import "sections/arrivals-area";
+@import "sections/release-area";
+@import "sections/buy&get";
+@import "sections/instagram-area";
+@import "sections/badge";
+@import "sections/shop-area";
+@import "sections/shop-list";
+@import "sections/shop_details";
+@import "sections/blog";
+@import "sections/blog-details";
+@import "sections/details_tag";
+@import "sections/contact";
+@import "sections/cart";
+@import "sections/error";
+@import "sections/order-tracking";
+@import "sections/signin_signup";
+@import "sections/discount_popup";
+@import "sections/shop-details-popup";
+@import "sections/checkout";
+@import "sections/compare";
+@import "sections/seller_profile_all";
+@import "sections/widgets";
+//== Elements
+@import "elements/section_title";
+@import "elements/button";
+@import "elements/back_top";
+@import "elements/nice_selects";
+@import "elements/isootope-list";
+@import "elements/tab-list";
+@import "elements/countdown";
+@import "elements/price-updated-through";
+@import "elements/common-review-list";
+@import "elements/search_popup";
+@import "elements/pagination";
+@import "elements/checkbox";
+@import "elements/faq";
+@import "elements/table";
+@import "elements/range-slider";
