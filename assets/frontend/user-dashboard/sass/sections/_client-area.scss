@@ -1,0 +1,24 @@
+/* Client Logo Area */
+
+.clent-logo-area {}
+
+.client-logo-single {}
+
+.slingle-client {
+    box-shadow: 0 0 10px $Gray;
+    padding: 20px 10px;
+    height: 100%;
+    &.style-02 {
+        box-shadow: 0 0 10px rgba($black, .2);
+    }
+    &.style-03 {
+        box-shadow: none;
+    }
+    &.clients-bg {
+        background: $body-bg-3;
+    }
+    img {
+        text-align: center;
+        margin: 0 auto;
+    }
+}

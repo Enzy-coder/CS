@@ -1,0 +1,245 @@
+/* Store Area */
+
+.store-area {}
+
+.flash-contents-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    flex: 1;
+    @include responsive(xxxl) {
+        display: block;
+    }
+    @include responsive(xxl) {
+        display: block;
+    }
+    @include responsive(xl) {
+        display: block;
+    }
+    @include responsive(lg) {
+        display: block;
+    }
+    @include responsive(allPhone) {
+        display: block;
+    }
+}
+
+.flash-wrapper-single {
+    max-width: 600px;
+    height: 100%;
+    flex: none;
+    @include responsive(allPhone) {
+        max-width: 100%;
+    }
+}
+
+.single-store-main {
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    &.store-border {
+        border: 1px solid #f2f3f5;
+    }
+    &:hover {
+        .store-image {
+            img {
+                transform: scale(1.2);
+            }
+            .store-icon-list {
+                visibility: visible;
+                opacity: 1;
+                right: 50px;
+            }
+        }
+    }
+    .store-image {
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+        display: block;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: all .3s;
+        }
+        .store-icon-list {
+            position: absolute;
+            top: 50px;
+            right: -150px;
+            z-index: 9;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .4s;
+            .lists {
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+                .icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: $white;
+                    height: 50px;
+                    width: 50px;
+                    font-size: 24px;
+                    border-radius: 5px;
+                    transition: all .3s;
+                    &:hover {
+                        background: var(--main-color-one);
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    .contents {
+        padding: 30px 40px 40px;
+        @include responsive(xxs) {
+            padding: 20px 10px 30px;
+        }
+        .flash-reviews {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 15px;
+            .flash-title {
+                font-size: 28px;
+                @include responsive(allPhone) {
+                    font-size: 26px;
+                }
+                @include responsive(xxs) {
+                    font-size: 24px;
+                }
+                @include responsive(vxxs) {
+                    font-size: 22px;
+                }
+                &:hover {
+                    color: var(--main-color-one);
+                }
+            }
+        }
+        .flash-bottom-contents {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            .stock-btn {
+                color: #30BB6F;
+                &:hover {
+                    color: var(--main-color-one);
+                }
+            }
+        }
+    }
+}
+
+.flash-right-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 0 20px;
+    .flash-col-items {
+        width: calc((100% / 3) - 18px);
+        margin-top: 30px;
+        @include responsive(xxxl) {
+            width: calc((100% / 4) - 23px);
+        }
+        @include responsive(xxl) {
+            width: calc((100% / 3) - 18px);
+        }
+        @include responsive(xl) {
+            width: calc((100% / 3) - 18px);
+        }
+        @include responsive(lg) {
+            width: calc((100% / 2) - 15px);
+        }
+        @include responsive(allPhone) {
+            width: calc((100% / 2) - 15px);
+        }
+        @include responsive(sm) {
+            width: 100%;
+        }
+        @include responsive(vxxs) {
+            margin: 30px auto 0;
+            text-align: center;
+        }
+    }
+}
+
+.single-flash-item {
+    &:hover {
+        .flash-flex-item {
+            .flash-item-image {
+                img {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+    .flash-flex-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        flex: 1;
+        @include responsive(allPhone) {
+            gap: 15px;
+        }
+        @include responsive(sm) {
+            justify-content: center;
+        }
+        @include responsive(vxxs) {
+            display: block;
+        }
+        .flash-item-image {
+            display: block;
+            height: 170px;
+            width: 150px;
+            overflow: hidden;
+            @include responsive(xxl) {
+                height: 160px;
+            }
+            @include responsive(lg) {
+                height: 150px;
+            }
+            @include responsive(vxxs) {
+                margin: 0 auto 15px;
+                text-align: center;
+            }
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                overflow: hidden;
+                transition: $transition;
+            }
+        }
+        .flash-item-contents {
+            .title {
+                &:hover {
+                    color: var(--main-color-one);
+                }
+            }
+            .price-update-through {
+                @include responsive(vxxs) {
+                    justify-content: center;
+                }
+            }
+            .common-review-list {
+                @include responsive(vxxs) {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

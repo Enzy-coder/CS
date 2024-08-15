@@ -1,0 +1,93 @@
+/* Popular Products */
+
+.popular-product-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* gap: 0 30px; */
+    &.column-two {
+        .popular-product-single {
+            width: calc((100% / 2) - 15px);
+            @include responsive(allPhone) {
+                width: calc((100% / 2) - 15px);
+            }
+            @include responsive(sm) {
+                width: 100%;
+            }
+        }
+    }
+    &.column-three {
+        .popular-product-single {
+            width: calc((100% / 3) - 20px);
+            @include responsive(allPhone) {
+                width: calc((100% / 2) - 15px);
+            }
+            @include responsive(sm) {
+                width: 100%;
+            }
+        }
+    }
+    &.column-four {
+        .popular-product-single {
+            width: calc((100% / 4) - 23px);
+            @include responsive(xl) {
+                width: calc((100% / 3) - 20px);
+            }
+            @include responsive(lg) {
+                width: calc((100% / 3) - 20px);
+            }
+            @include responsive(allPhone) {
+                width: calc((100% / 2) - 15px);
+            }
+            @include responsive(sm) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.popular-product-single {
+    width: calc((100% / 5) - 26px);
+    margin-top: 30px;
+    @include responsive(xl) {
+        width: calc((100% / 3) - 20px);
+    }
+    @include responsive(lg) {
+        width: calc((100% / 3) - 20px);
+    }
+    @include responsive(allPhone) {
+        width: calc((100% / 2) - 15px);
+    }
+    @include responsive(sm) {
+        width: 100%;
+    }
+    /* display: inline-block;
+    width: 20%;
+    padding: 0 10px; */
+    /* &:nth-child(5n+1) {
+        margin-left: -10px;
+    }
+    &:nth-child(5n+5) {
+        margin-right: -10px;
+    }
+    @include responsive(allPhone) {
+        width: 50%;
+        &:nth-child(2n+1) {
+            margin-left: -10px;
+        }
+        &:nth-child(2n+2) {
+            margin-right: -10px;
+        }
+    }
+    @include responsive(sm) {
+        width: 100%;
+        padding: 0;
+        &:nth-child(2n+1) {
+            margin-left: 0px;
+        }
+        &:nth-child(2n+2) {
+            margin-right: 0px;
+        }
+    } */
+}

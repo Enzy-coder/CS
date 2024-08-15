@@ -1,0 +1,936 @@
+/* Shop Details Area */
+
+.shop-details-area {}
+
+.shop-details-thumb-wrapper {}
+
+.shop-details-thums {
+    img {}
+}
+
+.single-shop-details-wrapper {
+    overflow-y: auto;
+    height: 930px;
+
+    @include responsive(xxl) {
+        max-height: 800px;
+        overflow-y: scroll;
+    }
+
+    @include responsive(xl) {
+        max-height: 700px;
+        overflow-y: scroll;
+    }
+
+    @include responsive(lg) {
+        max-height: 600px;
+        overflow-y: scroll;
+    }
+
+    @include responsive(allPhone) {
+        margin-top: 20px;
+    }
+
+    .details-title {}
+
+    .common-para {
+        margin-top: 30px;
+
+        @include responsive(xl) {
+            margin-top: 15px !important;
+        }
+
+        @include responsive(lg) {
+            margin-top: 15px !important;
+        }
+    }
+
+    .price-update-through {
+        @include responsive(xl) {
+            margin-top: 15px !important;
+        }
+
+        @include responsive(lg) {
+            margin-top: 15px !important;
+        }
+
+        .flash-prices {
+            @include responsive(sm) {
+                font-size: 28px !important;
+            }
+        }
+
+        .flash-old-prices {
+            @include responsive(allPhone) {
+                font-size: 20px !important;
+            }
+        }
+    }
+}
+
+.value-input-area {
+    @include responsive(lg) {
+        margin-top: 20px;
+    }
+
+    .input-list {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        strong {}
+
+        .form--input {
+            width: auto;
+            border: 0;
+            outline: none;
+            color: var(--extra-light-color);
+        }
+    }
+
+    .size-lists {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: flex-start;
+        margin-top: 20px;
+
+        @include responsive(xl) {
+            margin-top: 15px;
+        }
+
+        @include responsive(lg) {
+            margin-top: 15px;
+        }
+
+        @include responsive(allPhone) {
+            margin-top: 15px;
+        }
+
+        li {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            height: 45px;
+            width: 45px;
+            border: 1px solid $color-extra-light;
+
+            &.active {
+                border-color: var(--main-color-one);
+            }
+
+            @include responsive(xxs) {
+                font-size: 15px;
+            }
+
+            @include responsive(vxxs) {
+                font-size: 14px;
+                height: 40px;
+                width: 40px;
+            }
+        }
+    }
+
+    .color-list {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: flex-start;
+        margin-top: 20px;
+
+        @include responsive(xl) {
+            margin-top: 15px;
+        }
+
+        margin-top: 20px;
+
+        @include responsive(lg) {
+            margin-top: 15px;
+        }
+
+        li {
+            cursor: pointer;
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            border: 1px solid transparent;
+            position: relative;
+            z-index: 1;
+
+            &.active {
+                height: 16px;
+                width: 16px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: calc(100% + 8px);
+                    width: calc(100% + 8px);
+                    left: -4px;
+                    top: -4px;
+                    border: 1px solid $shop-color-1;
+                    border-radius: 50%;
+                }
+            }
+
+            &.shop-color-2 {
+                border-color: $shop-color-2;
+
+                &.active {
+                    &::before {
+                        border: 1px solid $shop-color-2;
+                    }
+                }
+            }
+
+            &.shop-color-3 {
+                border-color: $shop-color-3;
+
+                &.active {
+                    &::before {
+                        border: 1px solid $shop-color-3;
+                    }
+                }
+            }
+
+            &.shop-color-4 {
+                border-color: $shop-color-4;
+
+                &.active {
+                    &::before {
+                        border: 1px solid $shop-color-4;
+                    }
+                }
+            }
+
+            &.shop-color-5 {
+                border-color: $shop-color-5;
+
+                &.active {
+                    &::before {
+                        border: 1px solid $shop-color-5;
+                    }
+                }
+            }
+
+            &.shop-color-6 {
+                border: 1px solid $shop-color-6;
+
+                &.active {
+                    &::before {
+                        border: 1px solid $shop-color-6;
+                    }
+                }
+            }
+
+            &.shop-color-7 {
+                border: 1px solid $shop-color-7;
+
+                &.active {
+                    &::before {
+                        border: 1px solid $shop-color-7;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.customer-review {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include responsive(xl) {
+        margin-top: 20px;
+    }
+
+    @include responsive(lg) {
+        margin-top: 20px;
+    }
+
+    .star-review {
+        a {
+            color: $color-yellow;
+            font-size: 20px;
+            line-height: 26px;
+        }
+    }
+}
+
+.quantity-area {
+    @include responsive(xl) {
+        margin-top: 20px;
+    }
+
+    @include responsive(lg) {
+        margin-top: 20px;
+    }
+
+    .quantity-flex {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .quantity-title {}
+    }
+}
+
+.product-quantity {
+    position: relative;
+    z-index: 3;
+
+    .quantity-input {
+        width: 130px;
+        height: 45px;
+        border: 1px solid $color-extra-light;
+        color: var(--light-color);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 18px;
+        text-align: center;
+    }
+
+    .substract,
+    .plus {
+        color: var(--light-color);
+        z-index: 9;
+        cursor: pointer;
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: $white;
+        transition: all .3s;
+
+        &:hover {
+            color: var(--main-color-one);
+        }
+    }
+
+    .plus {
+        left: auto;
+        right: 5px;
+    }
+}
+
+.quantity-btn {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include responsive(xl) {
+        margin-top: 25px;
+    }
+
+    @include responsive(lg) {
+        margin-top: 25px;
+    }
+
+    .heart-btn {
+        height: 55px;
+        width: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $main-color-one;
+        transition: all .3s;
+
+        &:hover {
+            background: var(--main-color-one);
+            color: $white;
+        }
+
+        @include responsive(vxxs) {
+            height: 45px;
+            width: 45px;
+            font-size: 24px !important;
+        }
+    }
+}
+
+.shop-details-stock {
+    .stock-available {
+        color: $shop-color-2;
+        font-weight: 500;
+        line-height: 26px;
+        font-size: 16px;
+
+        .count-stock {
+            color: var(--extra-light-color);
+        }
+    }
+
+    .stock-category {
+        @include responsive(xl) {
+            margin-top: 20px;
+        }
+
+        @include responsive(lg) {
+            margin-top: 20px;
+        }
+
+        li {
+            font-size: 16px;
+            line-height: 26px;
+
+            @include responsive(xxs) {
+                font-size: 15px;
+            }
+
+            @include responsive(vxxs) {
+                font-size: 14px;
+            }
+
+            &:not(:last-child) {
+                padding-bottom: 25px;
+
+                @include responsive(xl) {
+                    margin-top: 15px;
+                }
+
+                @include responsive(lg) {
+                    margin-top: 15px;
+                }
+            }
+
+            span {}
+
+            a {
+                &:hover {
+                    color: var(--main-color-one);
+                }
+            }
+        }
+    }
+
+    .size-chart-list {
+        display: flex;
+        align-items: center;
+        gap: 10px 30px;
+
+        @include responsive(xl) {
+            margin-top: 25px;
+        }
+
+        @include responsive(lg) {
+            margin-top: 25px;
+        }
+
+        li {
+            a {
+                font-size: 16px;
+                line-height: 26px;
+                display: inline-block;
+                border-bottom: 1px solid $color-extra-light;
+                transition: all .3s;
+
+                @include responsive(xxs) {
+                    font-size: 15px;
+                }
+
+                @include responsive(vxxs) {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+
+                &:hover {
+                    color: var(--main-color-one);
+                    border-color: var(--main-color-one);
+                }
+            }
+        }
+    }
+}
+
+.shop-details-top-slider {
+    .shop-details-thumb-wrapper {
+        height: auto;
+
+        .shop-details-thums {
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.shop-details-click-img {
+    .shop-small-thumb-wrapper {
+        cursor: pointer;
+    }
+}
+
+.single-shop-details-wrapper {
+    max-width: 585px;
+}
+
+.details-tab-wrapper {
+    .details-tab {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        @include responsive(allPhone) {
+            gap: 15px;
+        }
+
+        @include responsive(xxs) {
+            gap: 10px;
+        }
+
+        li {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 30px;
+            background: none;
+            border: 1px solid $color-extra-light;
+            color: var(--heading-color);
+            padding: 10px 35px;
+            transition: (all 300ms);
+
+            @include responsive(allPhone) {
+                font-size: 16px;
+                font-weight: 400;
+                padding: 7px 20px;
+            }
+
+            @include responsive(xs) {
+                font-size: 15px;
+                padding: 6px 20px;
+                line-height: 26px;
+            }
+
+            @include responsive(vxxs) {
+                font-size: 14px;
+                padding: 5px 15px;
+            }
+
+            &.active {
+                background: var(--main-color-one);
+                color: $white;
+                border-color: var(--main-color-one);
+            }
+
+            &:hover {
+                background: var(--main-color-one);
+                color: $white;
+                border-color: var(--main-color-one);
+            }
+        }
+
+        &.hover-color-two {
+            li {
+                &.active {
+                    background: var(--main-color-two);
+                    color: $white;
+                    border-color: var(--main-color-two);
+                }
+
+                &:hover {
+                    background: var(--main-color-two);
+                    color: $white;
+                    border-color: var(--main-color-two);
+                }
+            }
+        }
+
+        &.hover-color-three {
+            li {
+                &.active {
+                    background: var(--main-color-three);
+                    color: $white;
+                    border-color: var(--main-color-three);
+                }
+
+                &:hover {
+                    background: var(--main-color-three);
+                    color: $white;
+                    border-color: var(--main-color-three);
+                }
+            }
+        }
+
+        &.hover-color-four {
+            li {
+                &.active {
+                    background: var(--main-color-four);
+                    color: $white;
+                    border-color: var(--main-color-four);
+                }
+
+                &:hover {
+                    background: var(--main-color-four);
+                    color: $white;
+                    border-color: var(--main-color-four);
+                }
+            }
+        }
+    }
+}
+
+.single-details-tab {
+    .tab-description {
+        .description-para {
+            font-size: 18px;
+            line-height: 30px;
+            color: var(--light-color);
+            padding-top: 30px;
+
+            @include responsive(allPhone) {
+                font-size: 16px;
+            }
+
+            @include responsive(xxs) {
+                font-size: 15px;
+            }
+
+            @include responsive(vxxs) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .tab-review {}
+}
+
+.about-seller-flex-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding: 40px 0;
+    gap: 30px;
+
+    @include responsive(xxs) {
+        display: block;
+    }
+
+    @include responsive(xs) {
+        padding: 30px 0;
+    }
+
+    &:not(:first-child) {
+        border-top: 2px solid rgba($STEAM, .5);
+    }
+
+    .about-seller-thumb {
+        height: 80px;
+        min-width: 80px;
+        border-radius: 10px;
+        display: block;
+
+        @include responsive(xxs) {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+    }
+
+    .about-seller-content {
+        .title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 20px;
+        }
+
+        .about-seller-list {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-top: 10px;
+
+            .icon {
+                color: var(--main-color-one);
+                font-size: 12px;
+            }
+
+            .reviews {
+                margin-left: 10px;
+            }
+        }
+
+        .about-review-para {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--light-color);
+            margin-top: 20px;
+            line-height: 26px;
+        }
+
+        .review-date {
+            margin-top: 20px;
+            display: block;
+        }
+    }
+}
+
+.seller-details-box {
+    border: 1px solid rgba(#ddd, .5);
+    padding: 30px;
+    border-radius: 10px;
+
+    @include responsive(xxs) {
+        padding: 20px 10px;
+    }
+
+    .seller-box-list {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+
+        @include responsive(xxs) {
+            -webkit-column-count: 1;
+            -moz-column-count: 1;
+            column-count: 1;
+        }
+
+        .box-list {
+            font-size: 16px;
+            line-height: 26px;
+            font-weight: 400;
+            margin-bottom: 20px;
+
+            strong {
+                display: block;
+                font-size: 20px;
+                font-weight: 500;
+                color: var(--heading-color);
+                font-family: var(--heading-font);
+                line-height: 28px;
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .seller-details-para {
+        font-size: 18px;
+        line-height: 30px;
+        color: var(--light-color);
+
+        @include responsive(xs) {
+            font-size: 16px;
+        }
+
+        @include responsive(vxxs) {
+            font-size: 14px;
+        }
+    }
+}
+
+.shop-details-faq-contents {
+    height: 650px;
+    overflow-y: auto;
+
+    .faq-contents {
+        .faq-item {
+            margin-top: 0;
+
+            &:last-child {
+                border-bottom: 2px solid $STEAM;
+            }
+
+            &.open {
+                .faq-title {
+                    background: none;
+                    color: var(--heading-color);
+
+                    &::after {
+                        content: "\f107";
+                        color: var(--light-color);
+                    }
+                }
+            }
+
+            &.active {
+                .faq-panel {
+                    display: block;
+                    background: none;
+                    padding: 0;
+                }
+            }
+
+            &:not(:first-child) {
+                margin-top: 0;
+            }
+
+            .faq-title {
+                font-size: 24px;
+                font-weight: 500;
+                border: none;
+                padding: 50px 0 30px;
+                border-top: 2px solid $STEAM !important;
+                font-family: var(--heading-font);
+                color: var(--heading-color);
+
+                &::after {
+                    content: "\f106";
+                    color: var(--light-color);
+                    font-size: 24px;
+                    right: 0;
+                    margin-top: 15px;
+
+                    @include responsive(xl) {
+                        margin-top: 0;
+                        font-size: 22px;
+                    }
+
+                    @include responsive(xxl) {
+                        margin-top: 0;
+                        font-size: 22px;
+                    }
+
+                    @include responsive(lg) {
+                        margin-top: 0;
+                        font-size: 20px;
+                    }
+
+                    @include responsive(allPhone) {
+                        margin-top: 0;
+                        font-size: 18px;
+                    }
+
+                    @include responsive(xxs) {
+                        font-size: 16px;
+                    }
+                }
+
+                @include responsive(xxxl) {
+                    padding: 30px 0;
+                }
+
+                @include responsive(xxl) {
+                    padding: 20px 0;
+                    font-size: 22px;
+                }
+
+                @include responsive(xl) {
+                    padding: 20px 0;
+                    font-size: 22px;
+                }
+
+                @include responsive(lg) {
+                    padding: 20px 0;
+                    font-size: 20px;
+                }
+
+                @include responsive(allPhone) {
+                    padding: 20px 0;
+                    font-size: 18px;
+                }
+
+                @include responsive(xxs) {
+                    font-size: 17px;
+                }
+
+                @include responsive(vxxs) {
+                    font-size: 16px;
+                }
+            }
+
+            .faq-panel {
+                padding: 0;
+                background: none !important;
+
+                .faq-para {
+                    font-size: 18px;
+                    line-height: 30px;
+                    padding-bottom: 30px;
+
+                    @include responsive(xxl) {
+                        font-size: 16px;
+                        line-height: 28px;
+                        padding-bottom: 20px;
+                    }
+
+                    @include responsive(xl) {
+                        font-size: 16px;
+                        line-height: 28px;
+                        padding-bottom: 20px;
+                    }
+
+                    @include responsive(lg) {
+                        font-size: 16px;
+                        line-height: 28px;
+                        padding-bottom: 20px;
+                    }
+
+                    @include responsive(allPhone) {
+                        font-size: 16px;
+                        line-height: 28px;
+                        padding-bottom: 20px;
+                    }
+
+                    @include responsive(xxs) {
+                        font-size: 15px;
+                    }
+
+                    @include responsive(vxxs) {
+                        font-size: 14px;
+                        line-height: 26px;
+                    }
+                }
+
+                .tab-information {
+                    .about-seller-flex-content {
+                        padding: 0 0 10px;
+                    }
+
+                    .seller-details-box {
+                        border: 0;
+                        padding: 10px 0 30px;
+
+                        .seller-details-para {
+                            font-size: 16px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                        }
+                    }
+                }
+
+                .tab-review {
+                    padding-bottom: 30px;
+
+                    .about-seller-flex-content {
+                        padding: 20px 0;
+
+                        &:first-child {
+                            padding-top: 0;
+                        }
+
+                        .about-seller-content {
+                            .about-review-para {
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 2;
+                                line-clamp: 2;
+                                -webkit-box-orient: vertical;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

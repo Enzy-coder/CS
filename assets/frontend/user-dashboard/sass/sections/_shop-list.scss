@@ -1,0 +1,251 @@
+/* Shop List */
+
+.shop-list-wrapper {
+    padding: 20px;
+    .shop-wrapper-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include responsive(allPhone) {
+            display: block;
+        }
+    }
+    &.style-02 {
+        .shop-wrapper-flex {
+            @include responsive(xxl) {
+                display: block;
+            }
+            @include responsive(xl) {
+                display: block;
+            }
+            @include responsive(lg) {
+                display: block;
+            }
+        }
+        .signle-shop-list {
+            .shop-list-flex {
+                @include responsive(lg) {
+                    display: block;
+                }
+                .shop-thumbs {
+                    @include responsive(lg) {
+                        width: 100%;
+                    }
+                    img {
+                        @include responsive(lg) {
+                            width: 100%;
+                        }
+                    }
+                }
+                .shop-list-contents {
+                    @include responsive(lg) {
+                        margin-top: 30px;
+                    }
+                }
+            }
+        }
+        .single-shop-cart {
+            @include responsive(xxl) {
+                margin-top: 30px;
+                text-align: left;
+            }
+            @include responsive(xl) {
+                margin-top: 30px;
+                text-align: left;
+            }
+            @include responsive(lg) {
+                margin-top: 30px;
+                text-align: left;
+            }
+            &::before {
+                @include responsive(xxl) {
+                    display: none;
+                }
+                @include responsive(xl) {
+                    display: none;
+                }
+            }
+            .shop-cart-flex {
+                justify-content: flex-start;
+            }
+        }
+    }
+}
+
+.single-shop-cart {
+    text-align: center;
+    position: relative;
+    @include responsive(allPhone) {
+        text-align: left;
+        padding-top: 20px;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        height: 150%;
+        left: -60px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        background: $STEAM;
+        @include responsive(lg) {
+            display: none;
+        }
+        @include responsive(allPhone) {
+            display: none;
+        }
+    }
+    .price-title {}
+    .shop-cart-flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 30px;
+        @include responsive(xl) {
+            gap: 10px;
+        }
+        @include responsive(lg) {
+            gap: 10px;
+        }
+        @include responsive(allPhone) {
+            justify-content: flex-start;
+            margin-top: 15px;
+        }
+        @include responsive(xxs) {
+            gap: 20px;
+        }
+        @include responsive(vxxs) {
+            gap: 20px;
+        }
+        .btn-wrapper {}
+        .btn-shop-botttom {
+            font-size: 24px;
+            display: flex;
+            gap: 20px;
+            @include responsive(xxs) {
+                gap: 10px;
+            }
+            @include responsive(vxxs) {
+                font-size: 20px;
+                gap: 10px;
+            }
+            .icons {
+                transition: all .2s;
+                &:hover {
+                    color: var(--main-color-one);
+                }
+            }
+            &.hover-color-two {
+                .icons {
+                    &:hover {
+                        color: var(--main-color-two);
+                    }
+                }
+            }
+            &.hover-color-three {
+                .icons {
+                    &:hover {
+                        color: var(--main-color-three);
+                    }
+                }
+            }
+            &.hover-color-four {
+                .icons {
+                    &:hover {
+                        color: var(--main-color-four);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.signle-shop-list {
+    .shop-list-flex {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        @include responsive(xl) {
+            gap: 30px;
+        }
+        @include responsive(lg) {
+            gap: 20px;
+        }
+        @include responsive(allPhone) {
+            gap: 30px;
+        }
+        @include responsive(sm) {
+            display: block;
+        }
+    }
+    .shop-thumbs {
+        height: 375px;
+        width: 375px;
+        position: relative;
+        z-index: 2;
+        @include responsive(sm) {
+            height: 100%;
+            width: 100%;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .shop-list-contents {
+        @include responsive(sm) {
+            padding-top: 20px;
+        }
+        .shop-list-title {}
+        .global-shop-list {
+            display: flex;
+            align-items: center;
+            margin-top: 25px;
+            @include responsive(sm) {
+                margin-top: 15px;
+            }
+            .list {
+                .list-strong {}
+                a {}
+                .star {
+                    color: $color-yellow;
+                }
+                .shop-size {
+                    position: relative;
+                }
+                &:not(:last-child) {
+                    .shop-size {
+                        padding-right: 10px;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            background: $color-extra-light;
+                            z-index: -1;
+                            height: 12px;
+                            width: 2px;
+                        }
+                    }
+                }
+                &:not(:first-child) {
+                    .shop-size {
+                        padding-left: 10px;
+                    }
+                }
+                .color-list {
+                    display: inline-block;
+                    height: 15px;
+                    width: 15px;
+                    margin-left: 10px;
+                }
+                .artificial {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}

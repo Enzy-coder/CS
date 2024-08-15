@@ -1,0 +1,92 @@
+/* Pagination */
+
+.shop-pagination {
+    @include responsive(allPhone) {
+        margin-top: 30px;
+    }
+}
+
+.pagination-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    &::before {
+        content: "\f060";
+    }
+    &::after {
+        content: "\f061";
+    }
+    &::before,
+    &::after {
+        cursor: pointer;
+        background: none;
+        font-size: 16px;
+        -webkit-box-shadow: 0 0 10px rgba($black, .05);
+        box-shadow: 0 0 10px rgba($black, .05);
+        padding: 10px 20px;
+        border: 1px solid var(--extra-light-color);
+        display: inline-block;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+        &:hover {
+            border-color: var(--main-color-one);
+            color: var(--main-color-one)
+        }
+        @include linefont;
+        @include responsive(allPhone) {
+            font-size: 15px;
+            padding: 7px 15px;
+        }
+        @include responsive(xxs) {
+            font-size: 14px;
+            padding: 5px 10px;
+        }
+    }
+    li {
+        margin: 5px 10px;
+        @include responsive(allPhone) {
+            margin: 5px 5px;
+        }
+        &.active {
+            a {
+                background: var(--main-color-one);
+                color: $white;
+            }
+        }
+        a {
+            background: $white;
+            color: var(--extra-light-color);
+            font-size: 16px;
+            -webkit-box-shadow: 0 0 10px rgba($black, .05);
+            box-shadow: 0 0 10px rgba($black, .05);
+            padding: 10px 20px;
+            display: inline-block;
+            border-radius: 5px;
+            -webkit-transition: all .3s;
+            -o-transition: all .3s;
+            transition: all .3s;
+            &:hover {
+                background: var(--main-color-one);
+                color: $white;
+            }
+            @include responsive(allPhone) {
+                font-size: 15px;
+                padding: 7px 15px;
+            }
+            @include responsive(xxs) {
+                font-size: 14px;
+                padding: 5px 10px;
+            }
+        }
+    }
+}

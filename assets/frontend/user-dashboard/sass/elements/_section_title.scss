@@ -1,0 +1,281 @@
+/*-------------------------
+    Section Title
+-------------------------*/
+
+.section-title {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    &.text-left {
+        text-align: left;
+    }
+    &.white-color {
+        color: $white;
+        .title {
+            color: $white;
+        }
+    }
+    &.section-border-bottom {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 30px;
+        @include responsive(allPhone) {
+            padding-bottom: 20px;
+        }
+    }
+    &.section-title-two {
+        .title {
+            font-family: var(--jost-font);
+            font-size: 40px;
+            line-height: 65px;
+            text-transform: uppercase;
+            margin: -10px 0 0;
+            @include responsive(allPhone) {
+                font-size: 32px;
+                line-height: 36px;
+            }
+            @include responsive(xs) {
+                font-size: 27px;
+                line-height: 32px;
+            }
+            @include responsive(vxxs) {
+                font-size: 24px;
+                line-height: 28px;
+            }
+        }
+        .see-all {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            @include responsive(allPhone) {
+                gap: 10px;
+            }
+            &.arrow-two {
+                &::after {
+                    content: "\f105";
+                }
+            }
+            &.color-two {
+                &:hover {
+                    color: var(--main-color-two);
+                }
+                &::after {
+                    background: var(--main-color-two);
+                }
+            }
+            &.color-three {
+                &:hover {
+                    color: var(--main-color-three);
+                }
+                &::after {
+                    background: var(--main-color-three);
+                }
+            }
+            &.color-four {
+                &:hover {
+                    color: var(--main-color-four);
+                }
+                &::after {
+                    background: var(--main-color-four);
+                }
+            }
+            &::after {
+                content: "\f30b";
+                font-family: 'Line Awesome Free';
+                font-weight: 900;
+                background: var(--main-color-one);
+                color: $white;
+                height: 45px;
+                width: 45px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                border-radius: 5px;
+                @include responsive(allPhone) {
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+        }
+    }
+    .title {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 43px;
+        color: var(--heading-color);
+        margin: -7px 0 0 0;
+        @include responsive(allPhone) {
+            font-size: 30px;
+            line-height: 36px;
+        }
+        @include responsive(xs) {
+            font-size: 25px;
+            line-height: 32px;
+        }
+        @include responsive(vxxs) {
+            font-size: 22px;
+            line-height: 28px;
+        }
+        .title-image {
+            position: relative;
+            z-index: 2;
+            padding: 16px 0;
+            img {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+                left: 0;
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.see-all {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--heading-color);
+    transition: all .3s;
+    min-width: 100px;
+    text-align: right;
+    &:hover {
+        color: var(--main-color-one);
+    }
+    &::after {
+        content: "\f30b";
+        font-family: 'Line Awesome Free';
+        font-weight: 900;
+        color: var(--main-color-one);
+    }
+    &.arrow-two {
+        &::after {
+            content: "\f105";
+        }
+    }
+    &.color-two {
+        &:hover {
+            color: var(--main-color-two);
+        }
+        &::after {
+            color: var(--main-color-two);
+        }
+    }
+    &.color-three {
+        &:hover {
+            color: var(--main-color-three);
+        }
+        &::after {
+            color: var(--main-color-three);
+        }
+    }
+    &.color-four {
+        &:hover {
+            color: var(--main-color-four);
+        }
+        &::after {
+            color: var(--main-color-four);
+        }
+    }
+    @include responsive(xs) {
+        font-size: 19px;
+    }
+    @include responsive(vxxs) {
+        font-size: 17px;
+    }
+}
+
+.section-title-three {
+    text-align: center;
+    .title {
+        font-size: 55px;
+        line-height: 65px;
+        font-weight: 400;
+        font-family: var(--playfair-font);
+        display: inline-block;
+        margin: -11px 0 0;
+        @include responsive(allPhone) {
+            font-size: 45px;
+            line-height: 55px;
+            margin: -9px 0 0;
+        }
+        @include responsive(xs) {
+            font-size: 36px;
+            line-height: 42px;
+        }
+        @include responsive(xxs) {
+            font-size: 32px;
+            line-height: 33px;
+        }
+        @include responsive(vxxs) {
+            font-size: 30px;
+            line-height: 30px;
+        }
+        .line-round {
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .title-right {
+            position: relative;
+            z-index: 2;
+            padding-bottom: 10px;
+            img {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.section-title-four {
+    .title {
+        font-family: var(--montserrat-font);
+        font-size: 50px;
+        font-weight: 700;
+        line-height: 65px;
+        margin: -12px 0 0;
+        @include responsive(allPhone) {
+            font-size: 36px;
+            line-height: 45px;
+            margin: -9px 0 0;
+        }
+        @include responsive(xs) {
+            font-size: 30px;
+            line-height: 36px;
+        }
+        @include responsive(xxs) {
+            font-size: 28px;
+            line-height: 32px;
+        }
+        @include responsive(vxxs) {
+            font-size: 26px;
+            line-height: 30px;
+        }
+        .center-title-img {
+            position: absolute;
+            left: 0;
+            right: 0;
+            text-align: center;
+            bottom: -20px;
+            margin: 0 auto;
+        }
+    }
+}
+
+.black-themes {
+    .section-title {
+        .title {
+            color: $white;
+        }
+    }
+}

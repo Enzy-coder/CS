@@ -1,0 +1,1224 @@
+/* Banner  */
+
+.banner-area {
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    overflow: hidden;
+}
+
+.banner-middle-content {
+    position: relative;
+    z-index: 2;
+    @include responsive(allPhone) {
+        margin-top: 20px;
+    }
+    .banner-middle-image {
+        position: relative;
+        z-index: 2;
+        margin-bottom: -5px;
+        img {}
+        .middle-content {
+            max-width: 290px;
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            @include responsive(lg) {
+                bottom: 20px;
+                left: 20px;
+            }
+            @include responsive(allPhone) {
+                bottom: 20px;
+                left: 20px;
+            }
+            .banner-middle-title {
+                @include responsive(allPhone) {
+                    font-size: 32px !important;
+                    line-height: 1.2;
+                }
+                @include responsive(xs) {
+                    font-size: 28px !important;
+                }
+                &:hover {
+                    color: var(--main-color-one);
+                }
+            }
+            .btn-buy {
+                @include responsive(allPhone) {
+                    margin-top: 20px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+.banner-right-image-content {
+    @include responsive(allPhone) {
+        margin-top: 30px;
+    }
+}
+
+.single-right-image {
+    display: block;
+    position: relative;
+    z-index: 2;
+    padding: 6px 0;
+    &:not(:last-child) {
+        margin-bottom: 35px;
+    }
+    img {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .banner-right-title {
+        position: absolute;
+        bottom: 30px;
+        left: 0px;
+        right: 0;
+        text-align: center;
+        @include responsive(lg) {
+            bottom: 20px;
+            left: 20px;
+        }
+        @include responsive(allPhone) {
+            bottom: 20px;
+            left: 20px;
+            font-size: 22px !important;
+        }
+        @include responsive(xs) {
+            font-size: 20px !important;
+        }
+        text-transform: uppercase;
+        z-index: 9;
+        &:hover {
+            color: var(--main-color-one);
+        }
+    }
+}
+
+.banner-contents-wrappers {
+    position: relative;
+    z-index: 1;
+}
+
+.banner-two {
+    .banner-contents {
+        padding: 105px 0 105px 115px;
+        max-width: 700px;
+        @include responsive(xxl) {
+            padding: 105px 0 105px 70px;
+        }
+        @include responsive(xl) {
+            padding: 105px 0 105px 40px;
+            max-width: 550px;
+        }
+        @include responsive(lg) {
+            padding: 105px 0 105px 40px;
+            max-width: 550px;
+        }
+        @include responsive(allPhone) {
+            padding: 60px 0 60px 40px;
+            max-width: 520px;
+        }
+        @include responsive(xs) {
+            padding: 60px 0 60px 20px;
+            max-width: 100%;
+        }
+    }
+}
+
+.banner-three {
+    .banner-contents {
+        padding: 180px 0 200px 0px;
+        max-width: 680px;
+        @include responsive(xxl) {
+            padding: 180px 0 200px 0px;
+        }
+        @include responsive(xl) {
+            padding: 180px 0 200px 0px;
+            max-width: 550px;
+        }
+        @include responsive(allPhone) {
+            padding: 130px 0 160px 0px;
+            max-width: 520px;
+        }
+        @include responsive(xs) {
+            padding: 100px 0 120px 0px;
+            max-width: 100%;
+        }
+    }
+}
+
+.banner-four {
+    padding: 150px 0 150px;
+    @include responsive(allPhone) {
+        padding: 100px 0 0px;
+    }
+    @include responsive(xxs) {
+        padding: 80px 0 0px;
+    }
+    .banner-right-contents-all {
+        display: block;
+    }
+    .banner-shapes {
+        @include responsive(allPhone) {
+            display: none;
+        }
+    }
+    .banner-contents {
+        padding: 0px 0 0px 0px;
+        max-width: 620px;
+        @include responsive(xl) {
+            max-width: 550px;
+        }
+        @include responsive(lg) {
+            padding: 50px 0 0px 0px;
+            max-width: 550px;
+        }
+        @include responsive(allPhone) {
+            padding: 50px 0 0px 0px;
+            max-width: 520px;
+        }
+        .btn-wrapper {
+            .cmn-btn {
+                &:hover {
+                    background: $white;
+                    color: var(--main-color-three);
+                }
+            }
+        }
+    }
+}
+
+.banner-five {
+    padding: 160px 0 0px;
+    @include responsive(allxl) {
+        padding: 150px 0 0;
+    }
+    @include responsive(lg) {
+        padding: 150px 0 0;
+    }
+    @include responsive(allPhone) {
+        padding: 100px 0 0px;
+    }
+    @include responsive(xxs) {
+        padding: 80px 0 0px;
+    }
+    .banner-five-shapes {
+        &::before {
+            content: "";
+            height: 364px;
+            width: 364px;
+            border-radius: 50%;
+            background: var(--main-color-one);
+            position: absolute;
+            left: 30px;
+            top: 100px;
+            z-index: -1;
+            @include responsive(allPhone) {
+                left: 70px;
+                top: 50px;
+                height: 300px;
+                width: 300px;
+            }
+            @include responsive(xs) {
+                left: 80px;
+                top: 50px;
+                height: 200px;
+                width: 200px;
+            }
+            @include responsive(xxs) {
+                left: 50px;
+            }
+            @include responsive(vxxs) {
+                left: 30px;
+            }
+        }
+        &.bg-color-2 {
+            &::before {
+                background: var(--main-color-two);
+            }
+        }
+        &.bg-color-3 {
+            &::before {
+                background: var(--main-color-three);
+            }
+        }
+        &.bg-color-4 {
+            &::before {
+                background: var(--main-color-four);
+            }
+        }
+    }
+    .banner-right-contents-all {
+        display: block;
+    }
+    .banner-contents {
+        padding: 0;
+        max-width: 720px;
+        z-index: 2;
+        position: relative;
+        @include responsive(xxxl) {
+            padding: 150px 0 0px 0px;
+        }
+        @include responsive(xxl) {
+            padding: 100px 0 0px 0px;
+        }
+        @include responsive(xl) {
+            padding: 150px 0 0px 0px;
+            max-width: 550px;
+        }
+        @include responsive(lg) {
+            padding: 100px 0 0px 0px;
+            max-width: 550px;
+        }
+        @include responsive(allPhone) {
+            padding: 10px 0 0px 0px;
+            max-width: 520px;
+        }
+        .title {
+            font-size: 100px;
+            -webkit-line-clamp: 3;
+            @include responsive(xxl) {
+                font-size: 85px;
+                line-height: 100px;
+            }
+            @include responsive(xl) {
+                font-size: 75px;
+                line-height: 90px;
+            }
+            @include responsive(lg) {
+                font-size: 65px;
+                line-height: 90px;
+            }
+            @include responsive(allPhone) {
+                font-size: 60px;
+                line-height: 70px;
+            }
+            @include responsive(sm) {
+                font-size: 50px;
+                line-height: 60px;
+            }
+            @include responsive(xxs) {
+                font-size: 50px;
+                line-height: 60px;
+            }
+            @include responsive(vxxs) {
+                font-size: 35px;
+                line-height: 45px;
+            }
+        }
+        .btn-wrapper {
+            .cmn-btn {
+                &:hover {
+                    background: $white;
+                    color: var(--main-color-one);
+                }
+            }
+        }
+    }
+}
+
+.banner-six {
+    .slider-shapes {
+        animation: 5s floating linear infinite;
+        @include responsive(allPhone) {
+            display: none;
+        }
+    }
+    .banner-contents {
+        padding: 280px 0 250px;
+        max-width: 630px;
+        @include responsive(allPhone) {
+            padding: 150px 0 250px;
+        }
+        @include responsive(xxs) {
+            padding: 150px 0 200px;
+        }
+        .title {
+            font-size: 120px;
+            line-height: 140px;
+            @include responsive(xxl) {
+                font-size: 85px;
+                line-height: 100px;
+            }
+            @include responsive(xl) {
+                font-size: 75px;
+                line-height: 90px;
+            }
+            @include responsive(lg) {
+                font-size: 65px;
+                line-height: 90px;
+            }
+            @include responsive(allPhone) {
+                font-size: 60px;
+                line-height: 70px;
+            }
+            @include responsive(xxs) {
+                font-size: 50px;
+                line-height: 60px;
+            }
+            @include responsive(vxxs) {
+                font-size: 35px;
+                line-height: 45px;
+            }
+        }
+        .btn-wrapper {
+            .cmn-btn {
+                &:hover {
+                    background: $white;
+                    color: var(--main-color-one);
+                }
+            }
+        }
+    }
+}
+
+.banner-seven {
+    .banner-contents {
+        padding: 130px 0;
+        max-width: 630px;
+        margin-left: auto;
+        @include responsive(xxl) {
+            padding: 130px 0;
+            max-width: 620px;
+        }
+        @include responsive(xl) {
+            padding: 100px 0;
+            max-width: 530px;
+        }
+        @include responsive(lg) {
+            padding: 100px 0;
+            max-width: 500px;
+        }
+        @include responsive(allPhone) {
+            padding: 90px 0;
+        }
+        @include responsive(xs) {
+            padding: 70px 0;
+        }
+        .banner-store {
+            @include responsive(xxl) {
+                margin-bottom: 10px;
+            }
+            @include responsive(xl) {
+                margin-bottom: 10px;
+            }
+            @include responsive(lg) {
+                margin-bottom: 10px;
+            }
+            @include responsive(allPhone) {
+                margin-bottom: 10px;
+            }
+        }
+        .title {
+            font-size: 110px;
+            line-height: 130px;
+            @include responsive(xxl) {
+                font-size: 85px;
+                line-height: 80px;
+            }
+            @include responsive(xl) {
+                font-size: 75px;
+                line-height: 75px;
+            }
+            @include responsive(lg) {
+                font-size: 65px;
+                line-height: 65px;
+            }
+            @include responsive(allPhone) {
+                font-size: 60px;
+                line-height: 70px;
+            }
+            @include responsive(xxs) {
+                font-size: 50px;
+                line-height: 60px;
+            }
+            @include responsive(vxxs) {
+                font-size: 35px;
+                line-height: 45px;
+            }
+        }
+        .banner-para {
+            @include responsive(xxl) {
+                margin-top: 25px;
+            }
+            @include responsive(xl) {
+                margin-top: 25px;
+            }
+            @include responsive(lg) {
+                margin-top: 20px;
+            }
+            @include responsive(allPhone) {
+                margin-top: 20px;
+            }
+        }
+        .btn-wrapper {
+            @include responsive(xxl) {
+                margin-top: 35px;
+            }
+            @include responsive(xl) {
+                margin-top: 35px;
+            }
+            @include responsive(lg) {
+                margin-top: 25px;
+            }
+            @include responsive(allPhone) {
+                margin-top: 25px;
+            }
+            @include responsive(xxs) {
+                margin-top: 30px;
+            }
+            .cmn-btn {
+                &:hover {
+                    background: $white;
+                    color: var(--main-color-four);
+                }
+            }
+        }
+    }
+    .banner-images-right {
+        position: absolute;
+        left: 50px;
+        bottom: 0;
+        z-index: 0;
+        @include responsive(xxl) {
+            max-width: 600px;
+        }
+        @include responsive(xl) {
+            max-width: 500px;
+            left: 0 !important;
+        }
+        @include responsive(lg) {
+            max-width: 460px;
+            left: 0 !important;
+        }
+    }
+}
+
+.banner-eight {
+    overflow: visible;
+    padding-top: 150px;
+    @include responsive(allPhone) {
+        padding-top: 60px;
+    }
+    .banner-contents {
+        padding: 240px 0 200px;
+        @include responsive(xxxl) {
+            padding: 210px 0 250px;
+        }
+        @include responsive(xxl) {
+            padding: 190px 0 250px;
+        }
+        @include responsive(xl) {
+            padding: 150px 0 220px;
+        }
+        @include responsive(lg) {
+            padding: 140px 0 180px;
+        }
+        @include responsive(allPhone) {
+            padding: 100px 0 0;
+            max-width: 400px;
+        }
+        @include responsive(xs) {
+            padding: 80px 0 0;
+        }
+        @include responsive(vxxs) {
+            padding: 80px 0 0;
+            max-width: 270px;
+        }
+        .title {
+            font-size: 110px;
+            line-height: 130px;
+            color: var(--heading-color);
+            @include responsive(xxxl) {
+                font-size: 110px;
+                line-height: 130px;
+            }
+            @include responsive(xxl) {
+                font-size: 90px;
+                line-height: 105px;
+            }
+            @include responsive(xl) {
+                font-size: 75px;
+                line-height: 90px;
+            }
+            @include responsive(lg) {
+                font-size: 65px;
+                line-height: 75px;
+            }
+            @include responsive(allPhone) {
+                font-size: 60px;
+                line-height: 70px;
+            }
+            @include responsive(xxs) {
+                font-size: 50px;
+                line-height: 60px;
+            }
+            @include responsive(vxxs) {
+                font-size: 35px;
+                line-height: 45px;
+            }
+        }
+        .btn-wrapper {
+            @include responsive(xxs) {
+                margin-top: 30px;
+            }
+            .cmn-btn {
+                &:hover {
+                    background: var(--heading-color);
+                    color: var(--main-color-two);
+                }
+            }
+        }
+    }
+    .banner-images-rights {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        @include responsive(allPhone) {
+            display: none;
+        }
+        .single-banner-img {
+            img {
+                border-radius: 0 0 0 170px;
+                margin-left: auto;
+                max-height: 885px;
+                @include responsive(xxxl) {
+                    max-height: 8570px;
+                }
+                @include responsive(xxl) {
+                    max-height: 850px;
+                }
+                @include responsive(xl) {
+                    max-height: 700px;
+                }
+                @include responsive(lg) {
+                    max-height: 620px;
+                }
+            }
+        }
+    }
+    .banner-img-shapes {
+        img {
+            position: absolute;
+            z-index: 9;
+            &:nth-child(1) {
+                top: -50px;
+                left: -50px;
+                animation: 5s floating linear infinite;
+            }
+            &:nth-child(2) {
+                bottom: -100px;
+                right: -100px;
+                z-index: -1;
+                animation: 6s floating linear infinite;
+            }
+        }
+    }
+    .banner-shape-eight {
+        img {
+            position: absolute;
+            z-index: -1;
+            &:nth-child(1) {
+                top: 25%;
+                left: 42%;
+            }
+            &:nth-child(2) {
+                left: 5%;
+                bottom: 5%;
+            }
+            &:nth-child(3) {
+                left: 45%;
+                bottom: 10%;
+            }
+            &:nth-child(4) {
+                right: 4%;
+                bottom: 30%;
+            }
+        }
+    }
+}
+
+.black-themes {
+    background: $body-bg-3;
+    .banner-contents {
+        .title {
+            color: $white;
+        }
+        .btn-wrapper {
+            .cmn-btn {
+                &:hover {
+                    background: $white;
+                    color: var(--main-color-two);
+                }
+            }
+        }
+    }
+}
+
+.banner-bg-image {
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.slider-shapes {
+    position: absolute;
+    bottom: 50px;
+    right: -150px;
+    z-index: 1;
+}
+
+.banner-contents {
+    padding: 105px 0;
+    position: relative;
+    z-index: 2;
+    .banner-store {
+        margin-bottom: 20px;
+        @include responsive(xl) {
+            margin-bottom: 15px;
+            font-size: 24px !important;
+        }
+        @include responsive(lg) {
+            margin-bottom: 15px;
+            font-size: 24px !important;
+        }
+        @include responsive(allPhone) {
+            margin-bottom: 15px;
+            font-size: 24px !important;
+        }
+        @include responsive(xxs) {
+            font-size: 21px !important;
+        }
+        @include responsive(vxxs) {
+            font-size: 16px !important;
+        }
+    }
+    .title {
+        font-size: 90px;
+        line-height: 110px;
+        @include responsive(xl) {
+            font-size: 80px;
+            line-height: 90px;
+        }
+        @include responsive(lg) {
+            font-size: 80px;
+            line-height: 90px;
+        }
+        @include responsive(allPhone) {
+            font-size: 60px;
+            line-height: 70px;
+        }
+        @include responsive(xxs) {
+            font-size: 50px;
+            line-height: 60px;
+        }
+        @include responsive(vxxs) {
+            font-size: 35px;
+            line-height: 45px;
+        }
+    }
+    .banner-para {
+        line-height: 30px;
+        margin-top: 35px;
+        @include responsive(xxs) {
+            font-size: 16px !important;
+            margin-top: 20px;
+        }
+        @include responsive(vxxs) {
+            font-size: 15px !important;
+        }
+    }
+    .cominsoon-btn {
+        @include responsive(xl) {
+            margin-top: 20px;
+        }
+        @include responsive(lg) {
+            margin-top: 20px;
+        }
+    }
+    .banner-left-products {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-top: 20px;
+        @include responsive(xl) {
+            margin-top: 0px;
+        }
+        @include responsive(lg) {
+            margin-top: 0px;
+        }
+        @include responsive(xs) {
+            display: inline-block;
+        }
+        .banner-single-products {
+            padding: 15px 15px 10px;
+            max-width: 250px;
+            @include responsive(lg) {
+                max-width: 220px;
+            }
+            .banner-product-thumb {
+                height: 170px;
+                min-width: 170px;
+                display: block;
+                img {
+                    border-radius: 10px;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .banner-product-flex {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 20px;
+                .single-flex-banner {
+                    margin-top: 15px;
+                    .banner_title {
+                        &:hover {
+                            color: var(--main-color-one);
+                        }
+                    }
+                    .common-price-title {}
+                }
+                .banner-iconlist {
+                    display: inherit;
+                    gap: 2px;
+                    .banner-icon {
+                        background-color: var(--main-color-one);
+                        color: $white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 30px;
+                        width: 30px;
+                        border-radius: 3px;
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.banner-right-contents-all {
+    @include responsive(allPhone) {
+        display: none;
+    }
+    .banner-image-shapes {
+        display: inline-block;
+        height: 655px;
+        width: 655px;
+        background: 0;
+        border: 80px solid #FBEAD9;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 100px;
+        right: 170px;
+        z-index: -2;
+        @include responsive(xxxl) {
+            height: 580px;
+            width: 580px;
+            border: 70px solid #FBEAD9;
+            right: 150px;
+        }
+        @include responsive(xxl) {
+            height: 500px;
+            width: 500px;
+            border: 60px solid #FBEAD9;
+            right: 130px;
+        }
+        @include responsive(xl) {
+            height: 400px;
+            width: 400px;
+            border: 50px solid #FBEAD9;
+            right: 120px;
+        }
+        @include responsive(lg) {
+            height: 360px;
+            width: 360px;
+            border: 50px solid #FBEAD9;
+            right: 90px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            border: 10px solid #FBEAD9;
+            height: calc(100% + 240px);
+            width: calc(100% + 240px);
+            border-radius: 50%;
+            top: -120px;
+            left: -120px;
+            @include responsive(xxxl) {
+                height: calc(100% + 220px);
+                width: calc(100% + 220px);
+                top: -110px;
+                left: -110px;
+            }
+            @include responsive(xxl) {
+                height: calc(100% + 180px);
+                width: calc(100% + 180px);
+                top: -90px;
+                left: -90px;
+                border: 7px solid #FBEAD9;
+            }
+            @include responsive(xl) {
+                height: calc(100% + 160px);
+                width: calc(100% + 160px);
+                top: -80px;
+                left: -80px;
+                border: 7px solid #FBEAD9;
+            }
+            @include responsive(lg) {
+                height: calc(100% + 160px);
+                width: calc(100% + 160px);
+                top: -80px;
+                left: -80px;
+                border: 7px solid #FBEAD9;
+            }
+        }
+    }
+}
+
+.banner-images-right {
+    position: absolute;
+    right: 0px;
+    bottom: 0;
+    z-index: 0;
+    img {}
+    .banner-shapes-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -2;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.banner-img-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+    .single-banner-img {
+        transform: rotate(5deg);
+        height: 600px;
+        width: 440px;
+        &:nth-child(2n+1) {
+            margin-top: 50px;
+        }
+        @include responsive(xxxl) {
+            height: 500px;
+            width: 400px;
+        }
+        @include responsive(xxl) {
+            height: 450px;
+            width: 350px;
+        }
+        @include responsive(xl) {
+            height: 450px;
+            width: 300px;
+        }
+        @include responsive(lg) {
+            height: 300px;
+            width: 240px;
+        }
+        @include responsive(allPhone) {
+            height: 400px;
+            width: 320px;
+        }
+        @include responsive(sm) {
+            height: 280px;
+            width: 235px;
+        }
+        @include responsive(xs) {
+            height: 250px;
+            width: 200px;
+        }
+        @include responsive(xxs) {
+            height: 200px;
+            width: 150px;
+        }
+        @include responsive(vxxs) {
+            height: 180px;
+            width: 130px;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.banner-socials {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    z-index: 99;
+    @include responsive(xl) {
+        right: -120px;
+    }
+    @include responsive(sm) {
+        top: 30%;
+    }
+    @include responsive(vxxs) {
+        top: 30%;
+        right: -70px;
+    }
+    .social-lists {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        flex-wrap: wrap;
+        @include responsive(sm) {
+            gap: 30px;
+        }
+        @include responsive(vxxs) {
+            gap: 20px;
+        }
+        @include responsive(vxxs) {
+            gap: 15px;
+        }
+        li {
+            a {
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 30px;
+                color: var(--light-color);
+                &:hover {
+                    color: var(--main-color-one);
+                }
+                @include responsive(xxs) {
+                    font-size: 16px;
+                }
+                @include responsive(vxxs) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+.banner-five {
+    .single-banner-five {
+        @include responsive(allPhone) {
+            height: 500px;
+            text-align: center;
+        }
+        @include responsive(xs) {
+            height: 400px;
+        }
+        @include responsive(xxs) {
+            height: 350px;
+        }
+        @include responsive(vxxs) {
+            height: 300px;
+            text-align: right;
+        }
+        img {
+            @include responsive(allPhone) {
+                height: 100%;
+                object-fit: cover;
+                width: auto;
+            }
+        }
+    }
+}
+
+.banner-shapes {
+    img {
+        position: absolute;
+        z-index: -1;
+        &:nth-child(1) {
+            top: 15%;
+            left: 30%;
+            animation: 20s round-moving linear infinite;
+        }
+        &:nth-child(2) {
+            top: 10%;
+            right: 12%;
+            animation: 20s round-moving linear infinite;
+        }
+        &:nth-child(3) {
+            left: 45%;
+            bottom: 25%;
+            animation: 20s round-moving linear infinite;
+        }
+        &:nth-child(4) {
+            right: 10%;
+            bottom: 12%;
+            animation: 20s round-moving linear infinite;
+        }
+    }
+    &.shapes-four {
+        img {
+            &:nth-child(1) {
+                top: 30%;
+                left: 50px;
+            }
+            &:nth-child(2) {
+                top: auto;
+                bottom: 50px;
+                right: 30%;
+            }
+            &:nth-child(3) {
+                top: 130px;
+                left: 42%;
+            }
+            &:nth-child(4) {
+                right: 11%;
+                bottom: 30%;
+                @include responsive(allxl) {
+                    right: 10px;
+                }
+                @include responsive(lg) {
+                    right: 10px;
+                }
+            }
+        }
+    }
+    &.shapes-five {
+        img {
+            &:nth-child(1) {
+                top: auto;
+                bottom: 100px;
+                left: 20%;
+            }
+            &:nth-child(2) {
+                top: 20%;
+                left: 45%;
+            }
+            &:nth-child(3) {
+                top: auto;
+                left: auto;
+                right: 50px;
+                bottom: 30%;
+            }
+            &:nth-child(4) {
+                left: 47%;
+                bottom: 10%;
+            }
+            &:nth-child(5) {
+                top: 30%;
+                left: 50px;
+                animation: 20s round-moving linear infinite;
+            }
+            &:nth-child(6) {
+                bottom: 0;
+                right: -330px;
+                animation: 20s round-moving linear infinite;
+            }
+        }
+    }
+}
+
+.banner-big-shape {
+    img {
+        position: absolute;
+        z-index: -3;
+        &:nth-child(1) {
+            top: -150px;
+            left: -150px;
+            animation: 5s floating linear infinite;
+        }
+        &:nth-child(2) {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: 5s pulsing linear infinite;
+        }
+    }
+}
+
+.banner-bottom-slider {
+    position: absolute;
+    bottom: 150px;
+    right: 0;
+    z-index: 9;
+    @include responsive(xxl) {
+        bottom: 100px;
+    }
+    @include responsive(xl) {
+        bottom: 100px;
+    }
+    @include responsive(lg) {
+        bottom: 50px;
+    }
+    @include responsive(allPhone) {
+        bottom: 50px;
+    }
+    @include responsive(sm) {
+        bottom: 30px;
+    }
+    @include responsive(xxs) {
+        bottom: 20px;
+    }
+    .banner-slider-item-small {
+        .banner-small-image {
+            height: 290px;
+            width: 230px;
+            cursor: pointer;
+            @include responsive(xl) {
+                height: 230px;
+                width: 200px;
+            }
+            @include responsive(lg) {
+                height: 230px;
+                width: 200px;
+            }
+            @include responsive(allPhone) {
+                height: 230px;
+                width: 200px;
+            }
+            @include responsive(sm) {
+                height: 200px;
+                width: 170px;
+            }
+            @include responsive(xxs) {
+                height: 160px;
+                width: 140px;
+            }
+            @include responsive(vxxs) {
+                height: 140px;
+                width: 120px;
+            }
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.banner-bottom-shape {
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    width: 100%;
+    img {
+        width: 100%;
+    }
+}
+
+.banner-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -2;
+    width: 100%;
+    img {
+        width: 100%;
+    }
+}

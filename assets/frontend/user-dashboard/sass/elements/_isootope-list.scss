@@ -1,0 +1,259 @@
+/* Isootope List */
+
+.isootope-list {
+    position: absolute;
+    top: -75px;
+    right: 15px;
+    @include responsive(allPhone) {
+        top: -60px;
+    }
+    @include responsive(sm) {
+        position: unset;
+    }
+    &.list-two {
+        top: -60px;
+        @include responsive(allPhone) {
+            position: initial;
+            margin-top: 35px;
+        }
+    }
+}
+
+.isootope-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    @include responsive(sm) {
+        justify-content: flex-start;
+        margin-top: 35px;
+    }
+    &.style-02 {
+        &.color-one {
+            .list {
+                &::before {
+                    background: var(--main-color-one);
+                }
+                &.active {
+                    background: var(--main-color-one);
+                    color: $white;
+                    border-color: var(--main-color-one);
+                }
+            }
+        }
+        &.color-two {
+            .list {
+                &::before {
+                    background: var(--main-color-two);
+                }
+                &.active {
+                    background: var(--main-color-two);
+                    color: $white;
+                    border-color: var(--main-color-two);
+                }
+            }
+        }
+        &.color-four {
+            .list {
+                &::before {
+                    background: var(--main-color-four);
+                }
+                &.active {
+                    background: var(--main-color-four);
+                    color: $white;
+                    border-color: var(--main-color-four);
+                }
+            }
+        }
+        .list {
+            font-family: var(--roboto-font);
+            padding: 8px 35px;
+            border: 1px solid #ddd;
+            transition: all .3s;
+            @include responsive(xxl) {
+                padding: 8px 30px;
+            }
+            @include responsive(xl) {
+                padding: 7px 25px;
+            }
+            @include responsive(lg) {
+                font-size: 15px;
+                padding: 6px 20px;
+            }
+            @include responsive(allPhone) {
+                font-size: 15px;
+                padding: 5px 20px;
+            }
+            @include responsive(vxxs) {
+                font-size: 14px;
+                padding: 3px 18px;
+            }
+            &:not(:last-child) {
+                margin-right: 20px;
+                @include responsive(xl) {
+                    margin-right: 10px;
+                }
+                @include responsive(lg) {
+                    margin-right: 10px;
+                }
+                @include responsive(allPhone) {
+                    margin-right: 10px;
+                }
+            }
+            &::before {
+                background: var(--main-color-three);
+                height: 100%;
+                z-index: -1;
+            }
+            &.active {
+                background: var(--main-color-three);
+                color: $white;
+                border-color: var(--main-color-three);
+            }
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+    &.colors-heading {
+        .list {
+            &::before {
+                background: var(--heading-color);
+            }
+            &.active {
+                color: var(--heading-color);
+            }
+            &:hover {
+                color: var(--heading-color);
+            }
+        }
+    }
+    &.style-03 {
+        .list {
+            font-family: var(--roboto-font);
+            padding: 8px 35px;
+            border: 1px solid $STEAM;
+            background: $STEAM;
+            color: var(--heading-color);
+            transition: all .3s;
+            border-radius: 5px;
+            @include responsive(xxl) {
+                padding: 8px 30px;
+            }
+            @include responsive(xl) {
+                padding: 7px 25px;
+            }
+            @include responsive(lg) {
+                font-size: 15px;
+                padding: 6px 20px;
+            }
+            @include responsive(allPhone) {
+                font-size: 15px;
+                padding: 5px 20px;
+            }
+            @include responsive(vxxs) {
+                font-size: 14px;
+                padding: 3px 18px;
+            }
+            &:not(:last-child) {
+                margin-right: 20px;
+                @include responsive(allPhone) {
+                    margin-right: 10px;
+                }
+            }
+            &::before {
+                background: var(--main-color-two);
+                height: 100%;
+                z-index: -1;
+            }
+            &.active {
+                background: var(--main-color-two);
+                color: var(--heading-color);
+                border-color: var(--main-color-two);
+            }
+            &:hover {
+                color: var(--heading-color);
+                background: var(--main-color-two);
+            }
+        }
+    }
+    .list {
+        font-size: 18px;
+        font-family: var(--rubik-font);
+        cursor: pointer;
+        line-height: 30px;
+        margin-top: 5px;
+        display: inline-block;
+        position: relative;
+        transition: all .2s;
+        @include responsive(allPhone) {
+            font-size: 16px;
+        }
+        @include responsive(xxs) {
+            font-size: 15px;
+        }
+        @include responsive(vxxs) {
+            font-size: 15px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background: var(--main-color-one);
+            bottom: 0;
+            left: 0;
+            visibility: hidden;
+            opacity: 0;
+            transition: $transition;
+        }
+        &.active {
+            color: var(--main-color-one);
+            &::before {
+                visibility: visible;
+                opacity: 1;
+                width: 100%;
+            }
+        }
+        &:not(:last-child) {
+            margin-right: 60px;
+            @include responsive(allPhone) {
+                margin-right: 30px;
+            }
+            @include responsive(xs) {
+                margin-right: 20px;
+            }
+            @include responsive(vxxs) {
+                margin-right: 15px;
+            }
+        }
+        &:hover {
+            color: var(--main-color-one);
+            &::before {
+                visibility: visible;
+                opacity: 1;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.black-themes {
+    .isootope-button {
+        &.style-03 {
+            .list {
+                border: 1px solid #22232F;
+                background: #22232F;
+                color: $white;
+                &.active {
+                    background: var(--main-color-two);
+                    color: var(--heading-color);
+                }
+                &:hover {
+                    background: var(--main-color-two);
+                    color: var(--heading-color);
+                }
+            }
+        }
+    }
+}

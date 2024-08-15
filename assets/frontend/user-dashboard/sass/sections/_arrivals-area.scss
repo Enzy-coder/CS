@@ -1,0 +1,61 @@
+/* Arrivals Area */
+
+.arrivals-area {}
+
+.signle-arrivals {
+    .arrivals-thumb {
+        img {}
+    }
+    .arrivals-contents {
+        padding-top: 20px;
+        .arrivals-title {
+            transition: all .3s;
+            &:hover {
+                color: var(--main-color-one);
+            }
+            &.hover-color-two {
+                &:hover {
+                    color: var(--main-color-two);
+                }
+            }
+            &.hover-color-three {
+                &:hover {
+                    color: var(--main-color-three);
+                }
+            }
+            &.hover-color-four {
+                &:hover {
+                    color: var(--main-color-four);
+                }
+            }
+        }
+        .categories {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 30px;
+            &:not(:last-child) {
+                margin-right: 5px;
+                &::after {
+                    content: ",";
+                }
+            }
+            &:hover {
+                color: var(--main-color-four);
+            }
+        }
+    }
+}
+
+.flex-space-contents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.flex-contents {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

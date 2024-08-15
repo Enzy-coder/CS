@@ -1,0 +1,122 @@
+/* Store Area */
+
+.store-tab-area {
+    max-height: 1110px;
+    overflow-y: auto;
+    @include responsive(xxxl) {
+        max-height: 1000px;
+    }
+    @include responsive(xxl) {
+        max-height: 880px;
+    }
+    @include responsive(xl) {
+        max-height: 780px;
+    }
+    @include responsive(allPhone) {
+        max-height: 100%;
+        margin-bottom: -10px;
+        overflow-y: unset;
+    }
+    @include responsive(xxs) {
+        max-height: 200px;
+        overflow-y: auto;
+        margin-bottom: 10px;
+    }
+}
+
+.store-tabs {
+    display: block !important;
+    li {
+        font-size: 26px;
+        color: var(--light-color);
+        line-height: 34px;
+        cursor: pointer;
+        display: table;
+        transition: all .3s;
+        position: relative;
+        @include responsive(xxxl) {
+            font-size: 24px;
+        }
+        @include responsive(xxl) {
+            font-size: 24px;
+        }
+        @include responsive(xl) {
+            font-size: 22px;
+        }
+        @include responsive(lg) {
+            font-size: 20px;
+        }
+        @include responsive(allPhone) {
+            font-size: 18px;
+            display: inline-block;
+            margin-bottom: 20px !important;
+        }
+        @include responsive(xs) {
+            font-size: 17px;
+        }
+        @include responsive(xxs) {
+            font-size: 16px;
+        }
+        @include responsive(vxxs) {
+            font-size: 14px;
+            margin-bottom: 10px !important;
+            line-height: 28px;
+        }
+        &.active {
+            color: var(--main-color-one);
+            &::after {
+                background: var(--main-color-one);
+                width: 105px;
+                @include responsive(xl) {
+                    width: 80px;
+                }
+                @include responsive(lg) {
+                    width: 60px;
+                }
+            }
+        }
+        &:not(:last-child) {
+            margin-bottom: 40px;
+            @include responsive(allPhone) {
+                margin-bottom: unset;
+                margin-right: 30px;
+            }
+            @include responsive(xxs) {
+                margin-right: 20px;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 0px;
+            background: $white;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 110%;
+            z-index: -1;
+            transition: all .3s;
+            @include responsive(allPhone) {
+                top: 100%;
+                transform: unset;
+                left: 0;
+            }
+        }
+        &:hover {
+            color: var(--main-color-one);
+            &::after {
+                background: var(--main-color-one);
+                width: 105px;
+                @include responsive(xl) {
+                    width: 80px;
+                }
+                @include responsive(lg) {
+                    width: 60px;
+                }
+                @include responsive(allPhone) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

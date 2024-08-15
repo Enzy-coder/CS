@@ -1,0 +1,237 @@
+/* Topbar area */
+
+.topbar-area {
+    padding: 10px 0;
+    &.index-03 {
+        padding: 0;
+    }
+}
+
+.color-02 {
+    .topbar-social {
+        li {
+            a {
+                &:hover {
+                    color: var(--main-color-two);
+                }
+            }
+        }
+    }
+    .topbar-faq {
+        a {
+            &:hover {
+                color: var(--main-color-two);
+            }
+        }
+    }
+    .call-us {
+        a {
+            &:hover {
+                color: var(--main-color-two);
+            }
+        }
+    }
+}
+
+.color-03 {
+    .topbar-social {
+        li {
+            a {
+                &:hover {
+                    color: var(--main-color-three);
+                }
+            }
+        }
+    }
+    .topbar-faq {
+        a {
+            &:hover {
+                color: var(--main-color-three);
+            }
+        }
+    }
+    .call-us {
+        a {
+            &:hover {
+                color: var(--main-color-three);
+            }
+        }
+    }
+}
+
+.color-04 {
+    .topbar-social {
+        li {
+            a {
+                &:hover {
+                    color: var(--main-color-four);
+                }
+            }
+        }
+    }
+    .topbar-faq {
+        a {
+            &:hover {
+                color: var(--main-color-four);
+            }
+        }
+    }
+    .call-us {
+        a {
+            &:hover {
+                color: var(--main-color-four);
+            }
+        }
+    }
+}
+
+.topbar-left-contents {}
+
+.topbar-select-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.language-content {
+    z-index: 9998;
+    &.ussd-content {
+        .nice-select {
+            width: 90px;
+            @include responsive(vxxs) {
+                width: 70px;
+            }
+        }
+    }
+    .nice-select {
+        background: none;
+        border: 0;
+        display: inline-block;
+        color: $white;
+        width: 85px;
+        height: 30px;
+        line-height: 30px;
+        &.open {
+            border: 0;
+        }
+        &:focus {
+            outline: none;
+            border: 0;
+        }
+        &::after {
+            border-bottom: 2px solid $white;
+            border-right: 2px solid $white;
+            right: 15px;
+            @include responsive(vxxs) {
+                width: 7px;
+                height: 7px;
+            }
+        }
+        @include responsive(vxxs) {
+            padding: 0;
+            width: 60px;
+        }
+        .option.selected {
+            background: $topbar-bg-1;
+            color: $white;
+            font-weight: 400;
+        }
+        .option {
+            &:hover {
+                background: $white;
+                color: $topbar-bg-1;
+            }
+        }
+        .list {
+            width: 100%;
+            background: $topbar-bg-1;
+        }
+        .nice-select-search-box {
+            background: $topbar-bg-1;
+            .nice-select-search {
+                background: none;
+                color: $white;
+            }
+        }
+    }
+}
+
+.topbar-left-flex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @include responsive(sm) {
+        justify-content: center;
+    }
+}
+
+.topbar-social {
+    display: flex;
+    align-items: center;
+    li {
+        &:not(:last-child) {
+            margin-right: 5px;
+        }
+        a {
+            font-size: 20px;
+            color: $white;
+            transition: $transition;
+            &:hover {
+                color: var(--main-color-one);
+            }
+            @include responsive(allPhone) {
+                font-size: 18px;
+            }
+            @include responsive(xs) {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.topbar-right-contents {}
+
+.topbar-right-flex {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 40px;
+    @include responsive(sm) {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    @include responsive(vxxs) {
+        gap: 20px;
+    }
+}
+
+.topbar-faq {
+    a {
+        transition: $transition;
+        &:hover {
+            color: var(--main-color-one);
+        }
+        @include responsive(xs) {
+            font-size: 14px;
+        }
+    }
+}
+
+.call-us {
+    @include responsive(xs) {
+        font-size: 14px;
+    }
+    a {
+        transition: $transition;
+        &:hover {
+            color: var(--main-color-one);
+        }
+        @include responsive(xs) {
+            font-size: 14px;
+        }
+    }
+}
+
+.topbar-bg-1 {
+    background-color: $topbar-bg-1;
+}

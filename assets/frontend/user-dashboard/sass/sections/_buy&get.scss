@@ -1,0 +1,198 @@
+/* Buy & Get area */
+
+.buy-area {}
+
+.buy-contents-wrapper {
+    position: relative;
+    z-index: 2;
+    background: var(--heading-color);
+    border-radius: 0 170px;
+    @include responsive(allPhone) {
+        border-radius: 0 100px;
+    }
+    @include responsive(xs) {
+        border-radius: 0 50px;
+    }
+}
+
+.wave-shapes {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    @include responsive(xl) {
+        bottom: auto;
+        top: 0;
+    }
+    @include responsive(lg) {
+        bottom: auto;
+        top: 0;
+    }
+    img {}
+}
+
+.buy-image-wrapper {
+    position: relative;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    @include responsive(xl) {
+        position: inherit;
+    }
+    @include responsive(lg) {
+        position: inherit;
+    }
+    @include responsive(allPhone) {
+        position: inherit;
+    }
+    .buy-images {
+        height: 100%;
+        max-width: 770px;
+        position: relative;
+        z-index: 2;
+        @include responsive(xxl) {
+            max-width: 700px;
+        }
+        img {
+            border-radius: 0 170px;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            @include responsive(allPhone) {
+                border-radius: 0 100px;
+            }
+            @include responsive(xs) {
+                border-radius: 0 50px;
+            }
+        }
+    }
+    .buy-shapes {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -110px;
+        z-index: 9;
+        @include responsive(xxxl) {
+            right: -80px;
+        }
+        @include responsive(xxl) {
+            right: -70px;
+        }
+        @include responsive(xl) {
+            right: auto;
+            left: 70px;
+            transform: translateY(-50%) rotate(90deg);
+            top: auto;
+            bottom: -70px;
+        }
+        @include responsive(lg) {
+            right: auto;
+            left: 70px;
+            transform: translateY(-50%) rotate(90deg);
+            top: auto;
+            bottom: -70px;
+        }
+        @include responsive(allPhone) {
+            right: auto;
+            left: 70px;
+            transform: translateY(-50%) rotate(90deg);
+            top: auto;
+            bottom: -30px;
+        }
+        img {}
+    }
+}
+
+.buy-wrapper {
+    max-width: 630px;
+    margin-left: auto;
+    @include responsive(xxl) {
+        max-width: 500px;
+    }
+    @include responsive(xl) {
+        margin-left: 50px;
+    }
+    @include responsive(lg) {
+        margin-left: 50px;
+    }
+    @include responsive(allPhone) {
+        margin-left: 50px;
+    }
+    @include responsive(xxs) {
+        margin-left: 30px;
+    }
+    @include responsive(vxxs) {
+        margin-left: 10px;
+    }
+    .buy-contents {
+        padding: 130px 0;
+        @include responsive(xl) {
+            padding: 130px 0 0px;
+        }
+        @include responsive(lg) {
+            padding: 130px 0 0px;
+        }
+        @include responsive(allPhone) {
+            padding: 80px 0 0;
+        }
+        .buy-top-title {
+            margin-bottom: 20px;
+            @include responsive(xs) {
+                margin-bottom: 15px;
+                font-size: 26px !important;
+            }
+            @include responsive(vxxs) {
+                font-size: 22px !important;
+            }
+        }
+        .buy-title {
+            color: $white;
+            font-size: 60px;
+            line-height: 90px;
+            span {
+                font-size: 90px;
+                display: block;
+                @include responsive(sm) {
+                    font-size: 70px;
+                }
+                @include responsive(xs) {
+                    font-size: 60px;
+                }
+                @include responsive(vxxs) {
+                    font-size: 45px;
+                }
+            }
+            @include responsive(sm) {
+                font-size: 55px;
+                line-height: 75px;
+            }
+            @include responsive(xs) {
+                font-size: 45px;
+                line-height: 65px;
+            }
+            @include responsive(vxxs) {
+                font-size: 36px;
+                line-height: 50px;
+            }
+        }
+        .btn-wrapper {
+            @include responsive(xs) {
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+.black-themes {
+    .buy-contents-wrapper {
+        background: var(--heading-color);
+    }
+    .buy-contents {
+        .buy-title {
+            color: $white;
+        }
+    }
+}

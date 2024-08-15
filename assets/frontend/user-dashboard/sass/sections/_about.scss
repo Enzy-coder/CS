@@ -1,0 +1,123 @@
+/* About area */
+
+.about-area {}
+
+.about-thumb-wrapper {
+    .about-thumb {
+        img {}
+    }
+}
+
+.single-about-content {
+    padding: 50px 70px;
+    @include responsive(xxxl) {
+        padding: 50px 60px;
+    }
+    @include responsive(xxl) {
+        padding: 30px;
+    }
+    @include responsive(xl) {
+        padding: 30px;
+    }
+    @include responsive(lg) {
+        padding: 50px 60px;
+    }
+    @include responsive(allPhone) {
+        padding: 30px;
+    }
+    @include responsive(xxs) {
+        padding: 20px;
+    }
+    @include responsive(vxxs) {
+        padding: 20px 10px;
+    }
+    .about-title {
+        @include responsive(lg) {
+            font-size: 42px !important;
+        }
+        @include responsive(allPhone) {
+            font-size: 35px !important;
+            line-height: 32px;
+        }
+        @include responsive(xs) {
+            font-size: 30px !important;
+        }
+        @include responsive(vxxs) {
+            font-size: 28px !important;
+        }
+    }
+    .about-para {
+        padding-top: 30px;
+        font-size: 20px;
+        line-height: 40px;
+        color: var(--light-color);
+        @include responsive(xxl) {
+            font-size: 18px;
+        }
+        @include responsive(xl) {
+            font-size: 18px;
+        }
+        @include responsive(lg) {
+            font-size: 18px;
+        }
+        @include responsive(allPhone) {
+            font-size: 16px;
+            line-height: 32px;
+            -webkit-line-clamp: unset;
+        }
+    }
+}
+
+.single-about-address {
+    padding-left: 50px;
+    @include responsive(xxxl) {
+        padding-left: 30px;
+    }
+    @include responsive(xxl) {
+        padding-left: 0;
+    }
+    @include responsive(xl) {
+        padding-left: 0;
+    }
+    @include responsive(lg) {
+        padding-left: 0;
+    }
+    @include responsive(allPhone) {
+        padding-left: 0;
+    }
+    .about-location-list {
+        .list {
+            padding-top: 30px;
+            font-size: 20px;
+            line-height: 26px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex-wrap: wrap;
+            strong {
+                color: var(--light-color);
+            }
+            @include responsive(xxxl) {
+                font-size: 19px;
+            }
+            @include responsive(xxl) {
+                font-size: 18px;
+            }
+            @include responsive(xl) {
+                font-size: 18px;
+            }
+            @include responsive(lg) {
+                font-size: 18px;
+            }
+            @include responsive(allPhone) {
+                font-size: 16px;
+            }
+            @include responsive(xxs) {
+                font-size: 15px;
+            }
+            @include responsive(vxxs) {
+                font-size: 14px;
+            }
+        }
+    }
+}

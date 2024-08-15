@@ -1,0 +1,456 @@
+/* Topbar-bottom-area */
+
+.topbar-bottom-area {
+    padding: 30px 0 15px;
+    position: relative;
+    z-index: 9991;
+    @include responsive(allPhone) {
+        padding: 10px 0;
+    }
+}
+
+.topbar-logo {}
+
+.category-searchbar {}
+
+.single-searchbar {
+    position: relative;
+}
+
+.form--control {
+    height: 55px;
+    border: 1px solid $STEAM;
+    width: 100%;
+    padding: 0 100px 0 20px;
+}
+
+.right-position-button {
+    position: absolute;
+    right: 0;
+    height: 51px;
+    padding: 0 20px;
+    font-size: 20px;
+    background: var(--main-color-one);
+    border: 0;
+    outline: none;
+    color: $white;
+    cursor: pointer;
+    &.margin-2 {
+        margin: 2px;
+    }
+}
+
+.topbar-bottom-right-content {
+    margin-left: 100px;
+    @include responsive(xl) {
+        margin-left: 30px;
+    }
+    @include responsive(lg) {
+        margin-left: 30px;
+    }
+    @include responsive(allPhone) {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+.topbar-bottom-right-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.track-order {
+    font-size: 16px;
+    line-height: 28px;
+    color: var(--light-color);
+    &:hover {
+        color: var(--main-color-one);
+    }
+}
+
+.track-icon-list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    &.style-02 {
+        gap: 20px;
+        @include responsive(lg) {
+            gap: 10px;
+        }
+    }
+    &.white-color {
+        .single-icon {
+            .icon {
+                color: $white;
+                transition: all .3s;
+            }
+        }
+    }
+    @include responsive(vxxs) {
+        gap: 20px;
+    }
+    .single-icon {
+        position: relative;
+        .icon {
+            font-size: 26px;
+            color: var(--heading-color);
+            &:hover {
+                color: var(--main-color-one);
+            }
+            @include responsive(vxxs) {
+                font-size: 20px;
+            }
+        }
+        &.hover-color-two {
+            .icon {
+                &:hover {
+                    color: var(--main-color-two);
+                }
+            }
+        }
+        &.hover-color-three {
+            .icon {
+                &:hover {
+                    color: var(--main-color-three);
+                }
+            }
+        }
+        &.hover-color-four {
+            .icon {
+                &:hover {
+                    color: var(--main-color-four);
+                }
+            }
+        }
+        .icon-notification {
+            position: absolute;
+            top: -2px;
+            right: -10px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 22px;
+            width: 22px;
+            background: var(--main-color-one);
+            color: $white;
+            border-radius: 50%;
+            @include responsive(vxxs) {
+                height: 18px;
+                width: 18px;
+                font-size: 12px;
+            }
+            &.bg-color-one {
+                background: var(--main-color-one);
+            }
+            &.bg-color-two {
+                background: var(--main-color-two);
+            }
+            &.bg-color-three {
+                background: var(--main-color-three);
+            }
+            &.bg-color-four {
+                background: var(--main-color-four);
+            }
+        }
+    }
+}
+
+.login-account {
+    position: relative;
+    z-index: 9991;
+    transition: all .3s;
+    &:hover {
+        .account-list-item {
+            visibility: visible;
+            opacity: 1;
+            top: 100%;
+            background: $white;
+        }
+    }
+    .account-list-item {
+        position: absolute;
+        top: 130%;
+        right: 0;
+        background: $white;
+        z-index: 9998;
+        box-shadow: 0 0 10px rgba($STEAM, .2);
+        width: 120px;
+        background: $white;
+        visibility: hidden;
+        opacity: 1;
+        transition: all .2s;
+        display: block !important;
+        margin-left: 0 !important;
+        &.hover-color-two {
+            .list {
+                a {
+                    &:hover {
+                        background: var(--main-color-two);
+                    }
+                }
+            }
+        }
+        &.hover-color-three {
+            .list {
+                a {
+                    &:hover {
+                        background: var(--main-color-three);
+                    }
+                }
+            }
+        }
+        &.hover-color-four {
+            .list {
+                a {
+                    &:hover {
+                        background: var(--main-color-four);
+                    }
+                }
+            }
+        }
+        .list {
+            margin: 0 !important;
+            display: block !important;
+            a {
+                display: block;
+                font-size: 15px;
+                font-weight: 400;
+                padding: 10px 20px;
+                color: var(--heading-color);
+                border-bottom: 1px solid rgba($STEAM, .7);
+                transition: all .3s;
+                &:hover {
+                    background: var(--main-color-one);
+                    color: $white;
+                }
+            }
+        }
+    }
+    &.style-02 {
+        position: relative;
+        z-index: 9999;
+        .account-list-item {
+            .list {
+                a {
+                    &:hover {
+                        background: var(--main-color-three);
+                    }
+                }
+            }
+        }
+        .accounts {
+            color: $white;
+            background: var(--main-color-one);
+            padding: 10px 20px;
+            &:hover {
+                background: $white;
+                color: var(--main-color-one);
+                i {
+                    color: var(--main-color-one);
+                }
+            }
+            i {
+                color: $white;
+            }
+            &.bg-color-two {
+                background: var(--main-color-two);
+                &:hover {
+                    background: $white;
+                    color: var(--main-color-two);
+                    i {
+                        color: var(--main-color-two);
+                    }
+                }
+            }
+            &.bg-color-three {
+                background: var(--main-color-three);
+                &:hover {
+                    background: $white;
+                    color: var(--main-color-three);
+                    i {
+                        color: var(--main-color-three);
+                    }
+                }
+            }
+            &.bg-color-four {
+                background: var(--main-color-four);
+                &:hover {
+                    background: $white;
+                    color: var(--main-color-four);
+                    i {
+                        color: var(--main-color-four);
+                    }
+                }
+            }
+        }
+    }
+    &.white-color {
+        .accounts {
+            color: $white;
+            &:hover {
+                color: var(--main-color-one);
+                i {
+                    color: var(--main-color-one);
+                }
+            }
+            i {
+                color: $white;
+            }
+        }
+    }
+    .accounts {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--light-color);
+        transition: $transition;
+        &:hover {
+            color: var(--main-color-one);
+        }
+        &.hover-color-two {
+            i {
+                color: var(--main-color-two);
+            }
+            &:hover {
+                color: var(--main-color-two);
+                i {
+                    color: var(--main-color-two);
+                }
+            }
+        }
+        &.hover-color-three {
+            i {
+                color: var(--main-color-three);
+            }
+            &:hover {
+                color: var(--main-color-three);
+                i {
+                    color: var(--main-color-three);
+                }
+            }
+        }
+        &.hover-color-four {
+            i {
+                color: var(--main-color-four);
+            }
+            &:hover {
+                color: var(--main-color-four);
+                i {
+                    color: var(--main-color-four);
+                }
+            }
+        }
+        i {
+            font-size: 26px;
+            color: var(--main-color-one);
+            transition: $transition;
+            @include responsive(vxxs) {
+                font-size: 20px;
+            }
+        }
+        @include responsive(vxxs) {
+            gap: 5px;
+        }
+    }
+}
+
+.addto-cart-contents {
+    .nicescroll-rails {}
+    .nicescroll-cursors {
+        background-color: var(--main-color-one) !important;
+        border: 0 !important;
+        width: 4px !important;
+    }
+}
+
+.cart-shopping {
+    position: relative;
+    z-index: 2;
+    &:hover {
+        .addto-cart-contents {
+            visibility: visible;
+            opacity: 1;
+            top: 100%;
+            transform: scale(1);
+            @include responsive(allPhone) {
+                transform: translateX(50%) scale(1);
+            }
+        }
+    }
+    .addto-cart-contents {
+        position: absolute;
+        right: 0;
+        top: 130%;
+        z-index: 3;
+        width: 400px;
+        background: $white;
+        box-shadow: 0 0 10px rgba($STEAM, .5);
+        padding: 20px;
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(.5);
+        transition: all .3s;
+        @include responsive(allPhone) {
+            right: 50%;
+            transform: translateX(50%) scale(.5);
+        }
+        @include responsive(xxs) {
+            width: 320px;
+        }
+        @include responsive(vxxs) {
+            width: 270px;
+            padding: 10px;
+            right: 100%;
+        }
+        .cart-total-amount {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 20px;
+        }
+    }
+    .single-addto-cart-wrappers {
+        max-height: 240px;
+        overflow-y: auto;
+    }
+    .single-addto-carts {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        .addto-cart-flex-contents {
+            display: flex;
+            align-items: center;
+            .addto-cart-thumb {
+                height: 70px;
+                width: 70px;
+                margin-right: 10px;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .addto-cart-img-contents {
+                .price-updates {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    .price-title {}
+                    .old-price {
+                        text-decoration: line-through;
+                    }
+                }
+            }
+        }
+    }
+    .btn-wrapper {
+        .cmn-btn {
+            color: var(--heading-color);
+        }
+    }
+}

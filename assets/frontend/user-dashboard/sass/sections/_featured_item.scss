@@ -1,0 +1,164 @@
+/* Featured Item area */
+
+.featured-item-area {}
+
+.signle-featured-items {
+    &.white-color {
+        color: $white;
+        .featured-item-contents {
+            color: $white;
+        }
+    }
+    &:hover {
+        .featured-thumb {
+            .featured-icon-list {
+                top: 50px;
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+    .featured-thumb {
+        position: relative;
+        z-index: 2;
+        display: block;
+        overflow: hidden;
+        img {
+            @include responsive(xs) {
+                margin: 0 auto;
+                text-align: center;
+            }
+        }
+        .featured-icon-list {
+            position: absolute;
+            top: -150px;
+            right: 50px;
+            z-index: 9;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .4s;
+            &.hover-bg-one {
+                .lists {
+                    .icon {
+                        &:hover {
+                            background: var(--main-color-one);
+                            color: $white;
+                        }
+                    }
+                }
+            }
+            &.hover-color-one {
+                .lists {
+                    .icon {
+                        &:hover {
+                            color: var(--main-color-one);
+                        }
+                    }
+                }
+            }
+            &.hover-bg-three {
+                .lists {
+                    .icon {
+                        &:hover {
+                            background: var(--main-color-three);
+                            color: $white;
+                        }
+                    }
+                }
+            }
+            &.hover-color-three {
+                .lists {
+                    .icon {
+                        &:hover {
+                            color: var(--main-color-three);
+                        }
+                    }
+                }
+            }
+            &.hover-bg-four {
+                .lists {
+                    .icon {
+                        &:hover {
+                            background: var(--main-color-four);
+                            color: $white;
+                        }
+                    }
+                }
+            }
+            &.hover-color-four {
+                .lists {
+                    .icon {
+                        &:hover {
+                            color: var(--main-color-four);
+                        }
+                    }
+                }
+            }
+            .lists {
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+                .icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: $white;
+                    color: var(--heading-color);
+                    height: 50px;
+                    width: 50px;
+                    font-size: 24px;
+                    border-radius: 5px;
+                    transition: all .3s;
+                    &:hover {
+                        background: var(--main-color-two);
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    .featured-item-contents {
+        .reviews {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+    }
+    .cart-loading {
+        &::before {
+            background-color: var(--main-color-two);
+        }
+    }
+}
+
+.black-themes {
+    .signle-featured-items {
+        .featured-thumb {
+            .featured-icon-list {
+                .lists {
+                    .icon {
+                        &:hover {
+                            background: $body-bg-3;
+                            color: var(--main-color-two)
+                        }
+                    }
+                }
+            }
+        }
+        .featured-item-contents {
+            .star-reviews {
+                color: $white;
+            }
+            .common-title {
+                color: $white;
+                &:hover {
+                    color: var(--main-color-two);
+                }
+            }
+        }
+        .cart-loading {
+            &::before {
+                background-color: var(--heading-color);
+            }
+        }
+    }
+}
