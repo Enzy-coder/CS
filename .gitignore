@@ -14,7 +14,8 @@
 Homestead.yaml
 Homestead.json
 .env.backup
-
+.htaccess
+/public/.htaccess
 # Ignore IDE files
 /.vscode/
 /.idea/
