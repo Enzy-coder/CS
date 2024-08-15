@@ -1,1 +1,0 @@
-<script src="{{asset('assets/backend/js/jquery.nice-select.min.js')}}"></script>
