@@ -59,7 +59,8 @@
                                                         data-bs-target="#country_edit_modal"
                                                         class="btn btn-primary btn-sm btn-xs mb-2 me-1 country_edit_btn"
                                                         data-id="{{ $country->id }}" data-name="{{ $country->name }}"
-                                                        data-status="{{ $country->status }}">
+                                                        data-status="{{ $country->status }}"
+                                                        data-description="{{ $country->description }}">
                                                         <i class="ti-pencil"></i>
                                                     </a>
                                                 @endcan
@@ -97,6 +98,10 @@
                                 <option value="publish">{{ __('Publish') }}</option>
                                 <option value="draft">{{ __('Draft') }}</option>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit_description">{{ __('Description') }}</label>
+                            <textarea class="form-control" id="edit_description" name="description"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="edit_continent">{{ __('Continent') }}</label>
@@ -142,6 +147,10 @@
                                 </select>
                             </div>
                             <div class="form-group">
+                                <label for="description">{{ __('Description') }}</label>
+                                <textarea class="form-control" id="description" name="description"></textarea>
+                            </div>
+                            <div class="form-group">
                                 <label for="continent">{{ __('Continent') }}</label>
                                 <select name="continent_id" class="form-control" id="continent">
                                     @foreach($continents as $continent)
@@ -174,11 +183,13 @@
                 let id = el.data('id');
                 let name = el.data('name');
                 let status = el.data('status');
+                let description = el.data('description');
                 let modal = $('#country_edit_modal');
 
                 modal.find('#country_id').val(id);
                 modal.find('#edit_status option[value="' + status + '"]').attr('selected', true);
                 modal.find('#edit_name').val(name);
+                modal.find('#edit_description').text(description);
             });
         });
     </script>

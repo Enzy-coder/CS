@@ -821,3 +821,6 @@ Route::get('admin-home/continents', 'Admin\ContinentController@index')->name('ad
 Route::post('admin-home/update/continents', 'Admin\ContinentController@update')->name('admin.continent.update');
 Route::post('admin-home/store/continents', 'Admin\ContinentController@store')->name('admin.continent.new');
 Route::post('admin-home/delete/continents/{id}', 'Admin\ContinentController@delete')->name('admin.continent.delete');
+
+Route::get('/continents/{slug}/culture', 'Admin\ContinentController@culture')->name('continent.culture');
+Route::get('/countries/categories/{id}', 'Admin\ContinentController@countriesCategories')->name('countries.categories');

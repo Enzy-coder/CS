@@ -30,6 +30,7 @@
                                         <x-bulk-action.th />
                                     <th>{{ __('ID') }}</th>
                                     <th>{{ __('Name') }}</th>
+                                    <th>{{ __('Slug') }}</th>
                                     <th>{{ __('Description') }}</th>
                                     <th>{{ __('Status') }}</th>
                                     <th>{{ __('Header Image') }}</th>
@@ -41,6 +42,7 @@
                                                 <x-bulk-action.td :id="$continent->id" />
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $continent->name }}</td>
+                                            <td>{{ $continent->slug }}</td>
                                             <td>{{ $continent->description }}</td>
                                             <td><x-status-span :status="$continent->status" /></td>
                                             <td><img src="{{ asset('storage/' . $continent->header_image) }}" width="50" /></td>
@@ -52,6 +54,7 @@
                                                         data-id="{{ $continent->id }}" data-name="{{ $continent->name }}"
                                                         data-description="{{ $continent->description }}"
                                                         data-status="{{ $continent->status }}"
+                                                        data-slug="{{ $continent->slug }}"
                                                         data-header_image="{{ asset('storage/' . $continent->header_image) }}">
                                                         <i class="ti-pencil"></i>
                                                     </a>
@@ -82,6 +85,11 @@
                                 <label for="edit_name">{{ __('Name') }}</label>
                                 <input type="text" class="form-control" id="edit_name" name="name"
                                     placeholder="{{ __('Name') }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit_slug">{{ __('Slug') }}</label>
+                                <input type="text" class="form-control" id="edit_slug" name="slug"
+                                    placeholder="{{ __('Slug') }}">
                             </div>
                             <div class="form-group">
                                 <label for="edit_description">{{ __('Description') }}</label>
@@ -126,6 +134,11 @@
                                     placeholder="{{ __('Name') }}">
                             </div>
                             <div class="form-group">
+                                <label for="slug">{{ __('Slug') }}</label>
+                                <input type="text" class="form-control" id="slug" name="slug"
+                                    placeholder="{{ __('Slug') }}">
+                            </div>
+                            <div class="form-group">
                                 <label for="description">{{ __('Description') }}</label>
                                 <textarea class="form-control" id="description" name="description"
                                     placeholder="{{ __('Description') }}"></textarea>
@@ -162,11 +175,13 @@
                 let name = el.data('name');
                 let description = el.data('description');
                 let status = el.data('status');
+                let slug = el.data('slug');
                 let modal = $('#continent_edit_modal');
 
                 modal.find('#continent_id').val(id);
                 modal.find('#edit_status option[value="' + status + '"]').attr('selected', true);
                 modal.find('#edit_name').val(name);
+                modal.find('#edit_slug').val(slug);
                 modal.find('#edit_description').val(description);
             });
         });

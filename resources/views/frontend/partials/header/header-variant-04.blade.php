@@ -186,7 +186,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="mares_main_menu">
                     <ul class="navbar-nav">
-                        {!! render_frontend_menu($primary_menu) !!}
+                        {!! render_frontend_menu($primary_menu ?? 1) !!}
                     </ul>
                 </div>
                 <div class="navbar-right-content"  style="display:none">

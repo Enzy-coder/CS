@@ -38126,7 +38126,7 @@ h5.common-title-two svg {
   margin-right: calc(-.5* var(--bs-gutter-x));
   margin-left: calc(-.5* var(--bs-gutter-x));
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
 }
 @media (min-width: 1200px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl {
@@ -38178,4 +38178,43 @@ h5.common-title-two svg {
   color:#E14D4E !important;
   font-size:12px !important;
   font-weight: bolder;
+}
+.change-home #map {
+  width: 100%;
+  height: 100vh; /* Adjust height as needed */
+  margin: 0 auto; /* Center the map */
+  z-index: 0;
+  overflow:hidden;
+}
+.change-home .leaflet-container {
+  background: #F2EFE9; /* Set the background color of the map */
+}
+.change-home  .leaflet-control {
+  display: none; /* Hide default controls */
+}
+.change-home .continent-icon {
+  height: auto; /* Set the height of the icon */
+  cursor: pointer;
+  width: 130px; /* Width adjusts automatically */
+}
+.continent-banner{
+    width: 100%;
+    height: 280px;
+}
+.relative{
+  position:relative;
+}
+.breadcrumb-padding {
+  padding: 83px 0;
+  background: #3F0302;
+}
+.breadcrumb-padding .breadcrumb-title{
+  color:#fff;
+  text-transform: uppercase;
+  font-size: 2.5rem;;
+}
+.home-banner{
+  width:100%;
+  max-height: fit-content;
+  margin-top: 37px;
 }

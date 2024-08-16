@@ -4,7 +4,9 @@
 
 <head>
     @include('frontend.partials.google-analytics')
-
+    @php 
+        $is_home = (url()->current() === url('/') || url()->current() == '/home')  ? true : false;
+    @endphp
     @if (empty($global_static_field_data))
         @php
             $global_static_field_data = [];
@@ -38,6 +40,18 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins.cs') }}s">
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    @if($is_home)
+        <style>
+            .promo_data {
+                box-shadow: none;
+                padding: 15px 24px;
+                border-radius: 5px;
+                border: 1px solid #ebebeb;
+            }
+        </style>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    @endif
 
     @yield('style')
 
@@ -54,6 +68,7 @@
     </script>
     {!! filter_static_option_value('site_third_party_tracking_code', $global_static_field_data) !!}
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+    
 </head>
 
 @php
@@ -73,7 +88,11 @@
         @if ($navbar_type == 3 || $navbar_type == 2)
             <!-- include( 'frontend.partials.header.header-variant-03', ['containerClass' => $navbar_type == 2 ? "container_1608" : ""]) -->
             @include('frontend.partials.header.header-variant-04', ['containerClass' => $navbar_type == 2 ? "container_1608" : ""])
-            @include('frontend.partials.continents')
+            @if ($is_home)
+                <img src="{{asset('assets/home/banner.png')}}" class="home-banner">
+                @include('landing.services')
+                @include('frontend.partials.continents')
+            @endif
         @else
             @include('frontend.partials.topbar')
             @include('frontend.partials.navbar')

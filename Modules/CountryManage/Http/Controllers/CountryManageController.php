@@ -43,6 +43,7 @@ class CountryManageController extends Controller
             'name' => $request->sanitize_html('name'),
             'status' => $request->sanitize_html('status'),
             'continent_id' => $request->sanitize_html('continent_id'),
+            'description' => $request->sanitize_html('description'),
         ]);
 
         return $country->id
@@ -62,6 +63,7 @@ class CountryManageController extends Controller
             'name' => $request->sanitize_html('name'),
             'status' => $request->sanitize_html('status'),
             'continent_id' => $request->sanitize_html('continent_id'),
+            'description' => $request->sanitize_html('description'),
         ]);
 
         return $updated

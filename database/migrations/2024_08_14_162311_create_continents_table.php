@@ -12,6 +12,7 @@ class CreateContinentsTable extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->string('status')->default('draft');
+            $table->string('slug');
             $table->string('header_image')->nullable();
             $table->timestamps();
         });

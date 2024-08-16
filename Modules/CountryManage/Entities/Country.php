@@ -25,7 +25,8 @@ class Country extends Model
     protected $fillable = [
         'name',
         'status',
-        'continent_id'
+        'continent_id',
+        'description'
     ];
 
     public function continent(): hasOne
