@@ -21,9 +21,9 @@
 
         // Define the icons for each continent
         var iconOptions = {
-            iconSize: [null, null],
-            iconAnchor: [50, 100], // Anchor the icon to its bottom center
-            popupAnchor: [-20, -85], // Popup appears above the icon
+            iconSize: [32, 32], // Adjust the size of the icon as needed
+            iconAnchor: [16, 32], // Anchor the icon to its bottom center
+            popupAnchor: [0, -40], // Adjust the popup position to be above the icon
             className: 'continent-icon'
         };
 
