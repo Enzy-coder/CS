@@ -9,7 +9,7 @@
     @endphp
     @if (empty($global_static_field_data))
         @php
-            $global_static_field_data = [];
+            $global_static_field_data = [''];
         @endphp
     @endif
 

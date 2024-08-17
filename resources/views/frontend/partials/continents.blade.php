@@ -10,7 +10,7 @@
 <script>
     $(document).ready(function(){
         // Initialize the map
-        var map = L.map('map').setView([20, 0], 2.4); // Set initial view [latitude, longitude], zoom level
+        var map = L.map('map').setView([8, 12], 2.4); // Set initial view [latitude, longitude], zoom level
 
         // Load and display the map tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -23,7 +23,7 @@
         var iconOptions = {
             iconSize: [null, null],
             iconAnchor: [50, 100], // Anchor the icon to its bottom center
-            popupAnchor: [0, -100], // Popup appears above the icon
+            popupAnchor: [-20, -85], // Popup appears above the icon
             className: 'continent-icon'
         };
 
@@ -39,21 +39,35 @@
         var continents = [
             {name: 'africa', latlng: [9.0820, 21.4694], icon: africaIcon},
             {name: 'asia', latlng: [34.0479, 100.6197], icon: asiaIcon},
-            {name: 'europe', latlng: [54.5260, 15.2551], icon: europeIcon},
-            {name: 'north-america', latlng: [37.0902, -95.7129], icon: northAmericaIcon},
-            {name: 'south-america', latlng: [-14.2350, -51.9253], icon: southAmericaIcon},
+            {name: 'europe', latlng: [60.5260, 15.2551], icon: europeIcon},
+            {name: 'north-america', latlng: [60.0902, -120.7129], icon: northAmericaIcon},
+            {name: 'south-america', latlng: [-40.2350, -80.9253], icon: southAmericaIcon},
             {name: 'australia', latlng: [-25.2744, 133.7751], icon: australiaIcon},
-            {name: 'antarctica', latlng: [-82.8628, 135.0000], icon: antarcticaIcon}
+            {name: 'antarctica', latlng: [-63.8628, 40.0000], icon: antarcticaIcon}
         ];
 
         continents.forEach(function(continent) {
-            L.marker(continent.latlng, {icon: continent.icon})
+            // Create the marker
+            const marker = L.marker(continent.latlng, { icon: continent.icon })
                 .addTo(map)
-                .bindPopup(`<b>${continent.name}</b><br>Click to explore!`)
-                .on('click', function() {
-                    window.location.href = `/continents/${continent.name}/culture`;
-                });
+                .bindPopup(`<b>${continent.name}</b>`); // Bind the popup
+
+            // Show the popup when hovering over the marker
+            marker.on('mouseover', function() {
+                this.openPopup();
+            });
+
+            // Hide the popup when the mouse leaves the marker
+            marker.on('mouseout', function() {
+                this.closePopup();
+            });
+
+            // Redirect to the continent page on click
+            marker.on('click', function() {
+                window.location.href = `/continents/${continent.name}/culture`;
+            });
         });
+
     });
 </script>
 @endsection

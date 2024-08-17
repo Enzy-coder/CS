@@ -111,7 +111,7 @@ class ContinentController extends Controller
         try{
             $continent = Continent::whereSlug($continent)->first();
             $countries = DB::table('countries')->where('continent_id',$continent->id)
-            ->paginate(30);
+            ->paginate(35);
             $country_ids = DB::table('countries')
                 ->where('continent_id', $continent->id)
                 ->pluck('id')

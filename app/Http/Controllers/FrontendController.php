@@ -79,7 +79,6 @@ class FrontendController extends Controller
                     ];
                 })->toArray();
         });
-
         return view('frontend.frontend-home')->with([
             'static_field_data' => $static_field_data,
             'page_details' => $page_details,
