@@ -21,7 +21,7 @@ class MenuBuilderFrontendRender
         if (empty($id)){
             return $output;
         }
-
+ 
         if (is_null($type)){
             $menu_details_from_db = Menu::find($id);
         }else{
