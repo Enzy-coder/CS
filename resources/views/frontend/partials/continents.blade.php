@@ -21,7 +21,7 @@
 
         // Define the icons for each continent
         var iconOptions = {
-            iconSize: [32, 32], // Adjust the size of the icon as needed
+            iconSize: [null, null], // Adjust the size of the icon as needed
             iconAnchor: [16, 32], // Anchor the icon to its bottom center
             popupAnchor: [0, -40], // Adjust the popup position to be above the icon
             className: 'continent-icon'
@@ -49,18 +49,18 @@
         continents.forEach(function(continent) {
             // Create the marker
             const marker = L.marker(continent.latlng, { icon: continent.icon })
-                .addTo(map)
-                .bindPopup(`<b>${continent.name}</b>`); // Bind the popup
+                .addTo(map);
+                // .bindPopup(`<b>${continent.name}</b>`); // Bind the popup
 
-            // Show the popup when hovering over the marker
-            marker.on('mouseover', function() {
-                this.openPopup();
-            });
+            // // Show the popup when hovering over the marker
+            // marker.on('mouseover', function() {
+            //     this.openPopup();
+            // });
 
-            // Hide the popup when the mouse leaves the marker
-            marker.on('mouseout', function() {
-                this.closePopup();
-            });
+            // // Hide the popup when the mouse leaves the marker
+            // marker.on('mouseout', function() {
+            //     this.closePopup();
+            // });
 
             // Redirect to the continent page on click
             marker.on('click', function() {
@@ -69,5 +69,5 @@
         });
 
     });
-</script>
+</script>africa
 @endsection

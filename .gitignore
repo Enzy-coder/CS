@@ -1,4 +1,5 @@
 # Ignore Laravel specific directories
+/.git
 /vendor/
 .env
 /node_modules/
