@@ -21,9 +21,9 @@
 
         // Define the icons for each continent
         var iconOptions = {
-            iconSize: [null, null], // Adjust the size of the icon as needed
-            iconAnchor: [16, 32], // Anchor the icon to its bottom center
-            popupAnchor: [0, -40], // Adjust the popup position to be above the icon
+            iconSize: [null, null],
+            iconAnchor: [50, 100], // Anchor the icon to its bottom center
+            popupAnchor: [-20, -85], // Popup appears above the icon
             className: 'continent-icon'
         };
 
@@ -52,7 +52,7 @@
                 .addTo(map);
                 // .bindPopup(`<b>${continent.name}</b>`); // Bind the popup
 
-            // // Show the popup when hovering over the marker
+            // Show the popup when hovering over the marker
             // marker.on('mouseover', function() {
             //     this.openPopup();
             // });
@@ -69,5 +69,5 @@
         });
 
     });
-</script>africa
+</script>
 @endsection
