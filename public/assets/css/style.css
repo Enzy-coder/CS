@@ -38235,3 +38235,10 @@ h5.common-title-two svg {
   color: white;
   border-radius: 4px;
 }
+
+@media (min-width: 250px) and (max-width: 600.98px) {
+  .change-home .leaflet-container .leaflet-marker-pane img{
+    width: 50px !important;
+    height: auto !important;
+  }
+}
