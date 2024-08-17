@@ -67,7 +67,7 @@
                 window.location.href = `/continents/${continent.name}/culture`;
             });
         });
-
+ 
     });
 </script>
 @endsection
