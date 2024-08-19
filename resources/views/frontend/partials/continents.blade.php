@@ -167,20 +167,27 @@
         }
 
         // Function to fetch and display countries in the slider
+        let isFetchingCountries = false;
+
         function fetchCountries(continentName) {
+            if (isFetchingCountries) return; // Prevents multiple rapid calls
+            isFetchingCountries = true;
+
             if ($('#country-slider').hasClass('slick-initialized')) {
                 $('#country-slider').slick('unslick');
             }
 
             $('#country-slider').html(''); // Clear previous content
+
             setTimeout(() => {
-                 $.get(`/continents/${continentName}/culture?limit=all`, function(data) {
+                $.get(`/continents/${continentName}/culture?limit=all`, function(data) {
                     if (data) {
                         $('#continent-info').html(`<strong>${continentName}</strong>: ${data.length} countries`);
-                        var sliderContent = '';
+                        let sliderContent = '';
                         data.forEach(function(country) {
                             sliderContent += `<div class="country-item"><img src="/continents/flags/${country.slug}.svg" alt="${country.name}"><div>${country.name}</div></div>`;
                         });
+
                         $('#country-slider').html(sliderContent).slick({
                             infinite: true,
                             slidesToShow: 8, // Default number of slides to show
@@ -219,7 +226,7 @@
                             $('#country-slider .slick-prev').html('<i class="las la-angle-left"></i>');
                             $('#country-slider .slick-next').html('<i class="las la-angle-right"></i>');
                         }, 10);
-                        
+
                     } else {
                         $('#continent-info').html(`<strong>${continentName}</strong>: No countries found`);
                         $('#country-slider').html(''); // Clear the slider if no countries are found
@@ -228,10 +235,12 @@
                     console.error('AJAX request failed:', textStatus, errorThrown);
                     $('#continent-info').html(`Error fetching countries for <strong>${continentName}</strong>`);
                     $('#country-slider').html(''); // Clear the slider in case of an error
+                }).always(function() {
+                    isFetchingCountries = false; // Reset the flag after AJAX call is done
                 });
             }, 800);
-           
         }
+
     });
 </script>
 
