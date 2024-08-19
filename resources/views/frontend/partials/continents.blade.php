@@ -229,7 +229,7 @@
                     $('#continent-info').html(`Error fetching countries for <strong>${continentName}</strong>`);
                     $('#country-slider').html(''); // Clear the slider in case of an error
                 });
-            }, 100);
+            }, 800);
            
         }
     });
