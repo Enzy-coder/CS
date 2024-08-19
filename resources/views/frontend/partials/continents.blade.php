@@ -179,7 +179,6 @@
 
             $('#country-slider').html(''); // Clear previous content
 
-            setTimeout(() => {
                 $.get(`/continents/${continentName}/culture?limit=all`, function(data) {
                     if (data) {
                         $('#continent-info').html(`<strong>${continentName}</strong>: ${data.length} countries`);
@@ -238,7 +237,6 @@
                 }).always(function() {
                     isFetchingCountries = false; // Reset the flag after AJAX call is done
                 });
-            }, 800);
         }
         $(document).on('click','.country-item',function(){
             let id = $(this).attr('data-id');
