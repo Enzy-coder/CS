@@ -185,7 +185,7 @@
                         $('#continent-info').html(`<strong>${continentName}</strong>: ${data.length} countries`);
                         let sliderContent = '';
                         data.forEach(function(country) {
-                            sliderContent += `<div class="country-item"><img src="/continents/flags/${country.slug}.svg" alt="${country.name}"><div>${country.name}</div></div>`;
+                            sliderContent += `<div class="cursor-pointer country-item" data-id="${country.id}"><img src="/continents/flags/${country.slug}.svg" alt="${country.name}"><div>${country.name}</div></div>`;
                         });
 
                         $('#country-slider').html(sliderContent).slick({
@@ -240,7 +240,10 @@
                 });
             }, 800);
         }
-
+        $(document).on('click','.country-item',function(){
+            let id = $(this).attr('data-id');
+            window.location.href = "/countries/categories/" + id;
+        });
     });
 </script>
 
