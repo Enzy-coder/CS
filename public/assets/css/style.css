@@ -38187,7 +38187,7 @@ h5.common-title-two svg {
   overflow:hidden;
 }
 .change-home .leaflet-container {
-  background: #F2EFE9; /* Set the background color of the map */
+  background: #FFFFFF;
 }
 .change-home  .leaflet-control {
   display: none; /* Hide default controls */
@@ -38231,8 +38231,8 @@ h5.common-title-two svg {
   background: white;
   color: #333;
   box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
-  background: #463a3a;
-  color: white;
+  /* background: #463a3a; */
+  /* color: white; */
   border-radius: 4px;
 }
 

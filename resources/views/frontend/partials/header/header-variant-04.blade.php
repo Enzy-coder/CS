@@ -5,7 +5,7 @@
 <!-- Header area Starts -->
 <header class="header-style-01">
     <!-- Topbar area Starts -->
-    <div class="topbar-area topbar-four topbar-bg-4"  style="display:none">
+    <div class="topbar-area topbar-four topbar-bg-4" style="background: #202020;border-bottom: 1px solid;">
         <div class="container {{ $containerClass ?? "" }}">
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-4 col-sm-6">

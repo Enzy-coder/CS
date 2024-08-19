@@ -37,7 +37,7 @@
     <!-- LineAwesome -->
     <link rel="stylesheet" href="{{ asset('assets/css/line-awesome.min.css') }}">
     <!-- Plugins css -->
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins.cs') }}s">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins.css') }}">
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     @if($is_home)
@@ -49,8 +49,10 @@
                 border: 1px solid #ebebeb;
             }
         </style>
+        <!-- <link href="{{asset('continents/map.css')}}" rel="stylesheet"> -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <link rel="stylesheet" href="{{ asset('continents/map.css') }}">
     @endif
 
     @yield('style')
@@ -68,7 +70,7 @@
     </script>
     {!! filter_static_option_value('site_third_party_tracking_code', $global_static_field_data) !!}
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    
+
 </head>
 
 @php

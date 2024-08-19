@@ -1,0 +1,108 @@
+#country-slider{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+#country-slider .slick-prev,
+#country-slider .slick-next {
+    color: #086db1; /* Arrow color */
+}
+
+#country-slider .slick-prev {
+    left: 10px; /* Adjust as needed */
+    z-index: 1; /* Ensure it’s above other content */
+}
+
+#country-slider .slick-next {
+    right: 10px; /* Adjust as needed */
+    z-index: 1; /* Ensure it’s above other content */
+}
+
+#country-slider .slick-prev:before,
+#country-slider .slick-next:before {#country-slider {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative; /* Ensure arrows are positioned correctly */
+}
+
+#country-slider .slick-prev,
+#country-slider .slick-next {
+    color: #086db1; /* Arrow color */
+    font-size: 24px; /* Adjust size as needed */
+    z-index: 1; /* Ensure they’re above other content */
+}
+
+#country-slider .slick-prev {
+    left: 10px; /* Adjust as needed */
+    position: absolute; /* Position it correctly */
+}
+
+#country-slider .slick-next {
+    right: 10px; /* Adjust as needed */
+    position: absolute; /* Position it correctly */
+}
+
+#country-slider .slick-prev:before,
+#country-slider .slick-next:before {
+    font-size: 24px; /* Adjust size as needed */
+    content: ''; /* Ensure no default content is shown */
+}
+
+/* Optional: Customize arrow icons */
+
+
+#country-slider .slick-slide img {
+    display: block;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.country-item {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    /* max-width: 87px; */ /* Uncomment or adjust if needed */
+}
+
+    font-size: 24px; /* Adjust size as needed */
+}
+#country-slider .slick-slide img {
+    display: block;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border:1px solid #ebebeb;
+}
+.country-item{
+    display: flex !important;
+    flex-direction: column;
+    /* max-width: 87px; */
+    gap: 9px;
+    color: darkred;
+    font-weight: 500;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+#country-slider{
+    margin: 32px 63px;
+}
+#country-slider button.slick-arrow{
+    background: #015197;
+    border: none;
+    padding:12px;
+    border-radius: 4px;
+    color:white;
+}
+#country-slider .slick-track {
+    padding: 0 0px;
+}
+
+#continent-info{
+    text-transform: uppercase;
+    margin-top: 14px;
+}

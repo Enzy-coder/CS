@@ -107,9 +107,12 @@ class ContinentController extends Controller
         return redirect()->back()->with(['msg' =>   __('Bulk Action Completed Successfully'), 'type' => 'success']);
     }
     public function culture($continent){
+        $continent = Continent::whereSlug($continent)->first();
+        if(request('limit') == 'all'){
+            return response()->json(DB::table('countries')->where('continent_id',$continent->id)->get());
+        }
         $default_item_count = get_static_option('default_item_count');
         try{
-            $continent = Continent::whereSlug($continent)->first();
             $countries = DB::table('countries')->where('continent_id',$continent->id)
             ->paginate(35);
             $country_ids = DB::table('countries')
