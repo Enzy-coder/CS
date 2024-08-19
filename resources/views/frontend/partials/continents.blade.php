@@ -191,10 +191,10 @@
                         $('#country-slider').html(sliderContent).slick({
                             infinite: true,
                             slidesToShow: 8, // Default number of slides to show
-                            slidesToScroll: 1,
+                            slidesToScroll: 7,
                             arrows: true, // Enable arrows
                             autoplay: true, // Optional: to automatically scroll
-                            autoplaySpeed: 3000, // Optional: adjust speed if autoplay is enabled
+                            autoplaySpeed: 6000, // Optional: adjust speed if autoplay is enabled
                             responsive: [
                                 {
                                     breakpoint: 1024, // For screens smaller than 1024px
