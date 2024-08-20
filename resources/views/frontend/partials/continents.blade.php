@@ -54,7 +54,7 @@
 
 <div class="change-home">
     <div id="map"></div>
-    <h3 id="continent-name"></h3>
+    <h3 id="continent-name" class="text-center  m-4 text-uppercase"></h3>
     <h3 class="text-center" id="continent-info"></h3>
     <div id="country-slider"></div> 
 </div>
@@ -100,12 +100,13 @@
             var marker = L.marker(landmark.latlng, {icon: icon}).addTo(map)
                 .bindPopup(landmark.continentName)
                 .on('click', function() {
-                    window.location.href = '/continents/' + landmark.continent +'/culture';
+                    fetchCountries(landmark.continent);
+                    // $('#continent-info').html(`<strong style="color:orange">${landmark.continentName}</strong>`); // Update info
+                    $("#continent-name").html('<a style="color:orange" href="/continents/'+ landmark.continent +'/culture">' + landmark.continentName + ' <i class="las la-share"></i></a>')
                 })
                 .on('mouseover', function(e) {
                     // Open the popup on hover
-                    fetchCountries(landmark.continent);
-                    $('#continent-info').html(`<strong style="color:orange">${landmark.continentName}</strong>`); // Update info
+                   
                     marker.openPopup();
                 })
                 .on('mouseout', function(e) {
@@ -137,7 +138,7 @@
                                 weight: 0,
                                 color: '#2980b9' // Change border color on hover
                             });
-                            $('#continent-info').html(`<strong>${feature.properties.name}</strong>`); // Update info
+                            // $('#continent-info').html(`<strong>${feature.properties.name}</strong>`); // Update info
                         },
                         mouseout: function(e) {
                             geojson.resetStyle(e.target); // Reset style when not hovering
@@ -181,7 +182,7 @@
 
                 $.get(`/continents/${continentName}/culture?limit=all`, function(data) {
                     if (data) {
-                        $('#continent-info').html(`<strong>${continentName}</strong>: ${data.length} countries`);
+                        $('#continent-info').html(`<strong>${data.length}</strong> countries`);
                         let sliderContent = '';
                         data.forEach(function(country) {
                             sliderContent += `<div class="cursor-pointer country-item" data-id="${country.id}"><img src="/continents/flags/${country.slug}.svg" alt="${country.name}"><div>${country.name}</div></div>`;
