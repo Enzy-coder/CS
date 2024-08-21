@@ -126,3 +126,82 @@
 .zoom-default {
     transform: scale(1); /* Default scale */
 }
+.change-home #map {
+    width: 100%;
+    margin: 0 auto; /* Center the map */
+    z-index: 0;
+    overflow:hidden;
+  }
+  .change-home .leaflet-container {
+    background: #FFFFFF;
+  }
+  .change-home  .leaflet-control {
+    display: none; /* Hide default controls */
+  }
+  .change-home .continent-icon {
+    height: auto; /* Set the height of the icon */
+    cursor: pointer;
+    width: 130px; /* Width adjusts automatically */
+  }
+ 
+
+.continent-highlight {
+    fill-opacity: 0.6;
+    fill-color: #f39c12; /* Highlight color */
+    stroke: #e67e22; /* Border color */
+    stroke-width: 2;
+}
+
+#continent-info {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+#country-slider {
+    margin-top: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.country-item {
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.country-item img {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.country-item span {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+#map {
+    width: 100%;
+    height: 462px; /* Default height */
+}
+
+@media (max-width: 768px) {
+    #map {
+        height: 400px; /* Adjusted height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #map {
+        height: 380px; /* Further adjusted height for very small screens */
+    }
+}

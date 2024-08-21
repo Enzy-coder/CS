@@ -38176,24 +38176,7 @@ h5.common-title-two svg {
   font-size:12px !important;
   font-weight: bolder;
 }
-.change-home #map {
-  width: 100%;
-  height: 100vh; /* Adjust height as needed */
-  margin: 0 auto; /* Center the map */
-  z-index: 0;
-  overflow:hidden;
-}
-.change-home .leaflet-container {
-  background: #FFFFFF;
-}
-.change-home  .leaflet-control {
-  display: none; /* Hide default controls */
-}
-.change-home .continent-icon {
-  height: auto; /* Set the height of the icon */
-  cursor: pointer;
-  width: 130px; /* Width adjusts automatically */
-}
+
 .continent-banner{
     width: 100%;
     height: 280px;

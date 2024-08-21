@@ -86,7 +86,6 @@
         @endphp
 
         @include('frontend.partials.preloader')
-
         @if ($navbar_type == 3 || $navbar_type == 2)
             <!-- include( 'frontend.partials.header.header-variant-03', ['containerClass' => $navbar_type == 2 ? "container_1608" : ""]) -->
             @include('frontend.partials.header.header-variant-04', ['containerClass' => $navbar_type == 2 ? "container_1608" : ""])
