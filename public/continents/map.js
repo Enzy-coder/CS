@@ -11,8 +11,8 @@ $(document).ready(function() {
         keyboard: false
     });
     var bounds = L.latLngBounds(
-        L.latLng(0, -180),
-        L.latLng(7, 180)
+        L.latLng(25, -180),
+        L.latLng(10, 180)
     );
     map.fitBounds(bounds);
 
