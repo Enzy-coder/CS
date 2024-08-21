@@ -72,8 +72,8 @@
 }
 #country-slider .slick-slide img {
     display: block;
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     object-fit: cover;
     border:1px solid #ebebeb;
@@ -88,8 +88,8 @@
     flex-wrap: nowrap;
     align-items: center;
 }
-#country-slider{
-    margin: 32px 63px;
+#country-slider {
+    margin: 16px 63px;
 }
 #country-slider button.slick-arrow{
     background: #015197;
@@ -105,4 +105,24 @@
 #continent-info{
     text-transform: uppercase;
     margin-top: 14px;
+}
+.zoom-container {
+    overflow: hidden; /* Optional: hide overflow to prevent content spill */
+    position: relative;
+}
+
+.zoom-div {
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.zoom-in {
+    transform: scale(1.15); /* Zoom in by 1.5 times */
+}
+
+.zoom-out {
+    transform: scale(0.5); /* Zoom out by 0.5 times */
+}
+
+.zoom-default {
+    transform: scale(1); /* Default scale */
 }
