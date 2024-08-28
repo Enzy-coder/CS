@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    fetchCountries('asia');
     var timer = 800;
     var map = L.map('map', {
         center: [70, -3],
