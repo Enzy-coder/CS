@@ -70,8 +70,8 @@
 @if($country)
     <div class="row">
         <div class="col-md-12 relative">
-            <h1 class="country-name">{{$country->name}}</h1>
             <img class="country-banner" style="width:100%;" src="{{asset('storage/'.$country->header)}}">
+            <!-- <h1 class="country-name">{{$country->name}}</h1> -->
         </div>
         <h4 class="text-center description" >
             {{ $country->description }}
