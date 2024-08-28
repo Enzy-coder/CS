@@ -846,4 +846,4 @@ Route::get('/globe/countries',function(){
     return countries();
 });
 // subscribe the vendor
-Route::post('/vendor/subscription/{id}', [SubscriptionController::class, 'processSubscription'])->name('vendor.process_subscription');
+Route::post('/vendor/subscription/{id}', [SubscriptionController::class, 'processSubscription'])->name('vendor.subscription');
