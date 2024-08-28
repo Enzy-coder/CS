@@ -108,7 +108,7 @@
                         </div>
                         <div class="form-group">
                                 <label for="edit_header_image">{{ __('Header Image') }}</label>
-                                <input type="file" required class="form-control" id="edit_header_image" name="header_image">
+                                <input type="file"  class="form-control" id="edit_header_image" name="header_image">
                             </div>
                         <div class="form-group">
                             <label for="edit_continent">{{ __('Continent') }}</label>
