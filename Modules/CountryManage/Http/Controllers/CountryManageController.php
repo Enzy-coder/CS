@@ -41,9 +41,6 @@ class CountryManageController extends Controller
     {
         $country_header = null;
         if ($request->hasFile('header_image')) {
-            if ($request->header_image) {
-                \Storage::delete('public/' . $request->header_image);
-            }
             $country_header = $request->file('header_image')->store('uploads/countries', 'public');
         }
         $country = Country::create([
@@ -68,7 +65,8 @@ class CountryManageController extends Controller
     {
         $update_image = false;
         if ($request->hasFile('header_image')) {
-            $header_image = $request->file('header_image')->store('uploads/countries','public');
+            $file_name = $request->input('name') . '.' . $request->file('header_image')->getClientOriginalExtension();
+            $header_image = $request->file('header_image')->storeAs('uploads/countries', $file_name, 'public');
             $update_image = true;
         }
         $updated = Country::where('id',$request->id)->first();

@@ -9,26 +9,12 @@
             display: none;
         }
         .country-name {
-            position: absolute;
-            right: 190px;
-            top: 83px;
-            text-transform: uppercase;
-            color: #FFA31E;
-            font-size: 5rem;
+            color: #4e4d4a !important;
+            font-size: 4rem !important;
             font-family: system-ui;
             font-weight: 700;
-        }
-        @media (max-width: 782px) {
-            .country-name {
-                right: 160px;
-                top: 29px;
-            }
-        }
-        @media (max-width: 425px) {
-            .country-name {
-                right: 27px;
-                top: 29px;
-            }
+            text-align: center;
+            margin: 13px;
         }
         .country-flag{
             border-radius: 50%;
@@ -62,11 +48,6 @@
             width: 150px;
             border: 1.6px solid #f7f71d;
             height: 1px;
-        }
-        .country-name {
-            color: #fff;
-            font-size: 5rem;
-            text-transform: uppercase;
         }
         .category-name{
             color: #403434;

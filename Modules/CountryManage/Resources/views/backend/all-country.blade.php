@@ -63,6 +63,7 @@
                                                         data-id="{{ $country->id }}" data-name="{{ $country->name }}"
                                                         data-status="{{ $country->status }}"
                                                         data-description="{{ $country->description }}"
+                                                        data-continent_id="{{ $country->continent_id }}"
                                                         data-header_image="{{ asset('storage/' . $country->header) }}">
                                                         <i class="ti-pencil"></i>
                                                     </a>
@@ -107,9 +108,10 @@
                             <textarea class="form-control" id="edit_description" name="description"></textarea>
                         </div>
                         <div class="form-group">
-                                <label for="edit_header_image">{{ __('Header Image') }}</label>
-                                <input type="file"  class="form-control" id="edit_header_image" name="header_image">
-                            </div>
+                            <label for="edit_header_image">{{ __('Header Image') }}</label>
+                            <strong class="text-danger">*Recommended size: 1363 X 343 </strong>
+                            <input type="file"  class="form-control" id="edit_header_image" name="header_image">
+                        </div>
                         <div class="form-group">
                             <label for="edit_continent">{{ __('Continent') }}</label>
                             <select name="continent_id" class="form-control" id="edit_continent">
@@ -159,6 +161,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="header_image">{{ __('Header Image') }}</label>
+                                <strong class="text-danger">*Recommended size: 1363 X 343 </strong>
                                 <input type="file" required class="form-control" id="header_image" name="header_image">
                             </div>
                             <div class="form-group">
@@ -195,11 +198,13 @@
                 let name = el.data('name');
                 let status = el.data('status');
                 let description = el.data('description');
+                let continent_id = el.data('continent_id');
                 let modal = $('#country_edit_modal');
 
                 modal.find('#country_id').val(id);
                 modal.find('#edit_status option[value="' + status + '"]').attr('selected', true);
                 modal.find('#edit_name').val(name);
+                modal.fine("#edit_continent").val(continent_id);
                 modal.find('#edit_description').text(description);
             });
         });

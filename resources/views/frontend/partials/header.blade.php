@@ -48,6 +48,10 @@
                 border-radius: 5px;
                 border: 1px solid #ebebeb;
             }
+            .home-banner{
+                max-height: 392px;
+                max-width: 100%;
+            }
         </style>
         <!-- <link href="{{asset('continents/map.css')}}" rel="stylesheet"> -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -94,7 +98,20 @@
             <!-- include( 'frontend.partials.header.header-variant-03', ['containerClass' => $navbar_type == 2 ? "container_1608" : ""]) -->
             @include('frontend.partials.header.header-variant-04', ['containerClass' => $navbar_type == 2 ? "container_1608" : ""])
             @if ($is_home)
-                <img src="{{asset('assets/home/banner.png')}}" class="home-banner">
+                @php
+                    $path = 'storage/uploads/home/';
+                    $extensions = ['png', 'jpg', 'jpeg', 'gif'];
+                    $bannerFile = null;
+                    foreach ($extensions as $extension) {
+                        if (file_exists(public_path($path . 'banner.' . $extension))) {
+                            $bannerFile = 'banner.' . $extension;
+                            break;
+                        }
+                    }
+                @endphp
+                @if($bannerFile)
+                    <img src="{{ asset($path . $bannerFile) }}" class="home-banner">
+                @endif
                 @include('landing.services')
                 @include('frontend.partials.continents')
             @endif

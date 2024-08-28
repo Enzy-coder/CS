@@ -159,11 +159,12 @@
                                         <small class="info-text">{{ __('enable disable preloader') }}</small>
                                     </div>
                                 </div>
-                                <!-- <div class="form-group col-sm-12">
-                                    <label for="icons">Select Map Icons</label>
-                                    <b class="text-danger">{{__('Note: images name should be same as the list below')}}</b>
-                                    <input type="file" name="icons[]" id="icons" class="form-control" multiple>
-                                </div> -->
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="banner"><strong>{{__('Home Banner')}}</strong></label>
+                                        <input type="file" name="banner" id="banner" class="form-control" >
+                                    </div>
+                                </div>
                                 <div class="col-sm-12">
                                     <button type="submit"
                                         class="cmn_btn btn_bg_profile">{{ __('Update Changes') }}</button>

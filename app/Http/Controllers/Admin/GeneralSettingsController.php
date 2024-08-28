@@ -23,6 +23,8 @@ use Modules\Product\Entities\ProductSubCategory;
 use Spatie\Sitemap\SitemapGenerator;
 use Xgenious\XgApiClient\Facades\XgApiClient;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 class GeneralSettingsController extends Controller
 {
     private $base_path = 'backend.general-settings.';
@@ -342,6 +344,18 @@ class GeneralSettingsController extends Controller
 
     public function update_basic_settings(Request $request): RedirectResponse
     {
+        if ($request->hasFile('banner')) {
+            $fileName = 'banner.' . $request->file('banner')->getClientOriginalExtension();
+
+            // Resize the image to 1364x392
+            $image = Image::make($request->file('banner'))->resize(1364, 392, function ($constraint) {
+                // $constraint->aspectRatio();
+                // $constraint->upsize();
+            });
+    
+            // Save the resized image to the specified directory
+            Storage::put('public/uploads/home/' . $fileName, (string) $image->encode());
+        }
         $request->validate([
             'site_secondary_color' => 'nullable|string',
             'site_sticky_navbar_enabled' => 'nullable|string',
