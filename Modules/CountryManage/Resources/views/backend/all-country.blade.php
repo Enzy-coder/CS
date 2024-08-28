@@ -204,7 +204,7 @@
                 modal.find('#country_id').val(id);
                 modal.find('#edit_status option[value="' + status + '"]').attr('selected', true);
                 modal.find('#edit_name').val(name);
-                modal.fine("#edit_continent").val(continent_id);
+                modal.find("#edit_continent").val(continent_id);
                 modal.find('#edit_description').text(description);
             });
         });
