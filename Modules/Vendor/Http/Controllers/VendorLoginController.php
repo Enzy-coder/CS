@@ -76,7 +76,7 @@ class VendorLoginController extends Controller
                 'msg' => __('Your subscription has expired. Please renew your subscription.'),
                 'type' => 'danger',
                 'status' => 'not_subscribed',
-                'redirect_url' => route('vendor.subscription', ['id' => $user->id])
+                'redirect_url' => '/vendor/login',//route('vendor.subscription', ['id' => $user->id])
             ]);
         }
     }

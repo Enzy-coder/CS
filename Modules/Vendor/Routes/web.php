@@ -103,7 +103,7 @@ Route::prefix('vendor')->middleware(['guest', 'guest:vendor', 'setlang:frontend'
         Route::post('login', 'vendor_login');
         Route::get('register', 'register')->name('vendor.register');
         Route::post('vendor_registration', 'vendor_registration')->name('vendor.vendor_registration');
-Route::post('/subscription/{id}', [SubscriptionController::class, 'processSubscription'])->name('vendor.process_subscription');
+        Route::post('/subscription/{id}', [SubscriptionController::class, 'processSubscription'])->name('vendor.subscription');
     });
 });
 
