@@ -71,7 +71,7 @@
     <div class="row">
         <div class="col-md-12 relative">
             <h1 class="country-name">{{$country->name}}</h1>
-            <img class="country-banner" style="width:100%;max-height:343px;max-width:1363px" src="{{asset('storage/'.$country->header)}}">
+            <img class="country-banner" style="width:100%;" src="{{asset('storage/'.$country->header)}}">
         </div>
         <h4 class="text-center description" >
             {{ $country->description }}
