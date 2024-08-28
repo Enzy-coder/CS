@@ -458,7 +458,6 @@ class GeneralSettingsController extends Controller
             'site_google_captcha_v3_secret_key' => 'nullable|string',
             'site_google_captcha_v3_site_key' => 'nullable|string',
         ]);
-
         update_static_option('site_disqus_key', $request->site_disqus_key);
         update_static_option('site_google_analytics', $request->site_google_analytics);
         update_static_option('tawk_api_key', $request->tawk_api_key);

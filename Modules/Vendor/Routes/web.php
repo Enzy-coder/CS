@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Controllers\Admin\SubscriptionController;
 use App\Http\Controllers\VendorNotificationController;
 use Modules\Vendor\Http\Controllers\FrontendVendorController;
 use Modules\Vendor\Http\Controllers\VendorBackendController;
@@ -102,6 +103,7 @@ Route::prefix('vendor')->middleware(['guest', 'guest:vendor', 'setlang:frontend'
         Route::post('login', 'vendor_login');
         Route::get('register', 'register')->name('vendor.register');
         Route::post('vendor_registration', 'vendor_registration')->name('vendor.vendor_registration');
+Route::post('/subscription/{id}', [SubscriptionController::class, 'processSubscription'])->name('vendor.process_subscription');
     });
 });
 

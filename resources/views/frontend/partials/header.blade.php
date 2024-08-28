@@ -52,6 +52,10 @@
         <!-- <link href="{{asset('continents/map.css')}}" rel="stylesheet"> -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/paulmasson/threejs-with-controls@r121/build/three.min.js"></script>
+
+        <!-- <script src="https://unpkg.com/three-globe@2.31.1/dist/globe.gl.min.js"></script> -->
+
         <link rel="stylesheet" href="{{ asset('continents/map.css') }}">
     @endif
 

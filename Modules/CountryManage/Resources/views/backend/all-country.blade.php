@@ -38,6 +38,7 @@
                                     <th>{{ __('Name') }}</th>
                                     <th>{{ __('Continent') }}</th> <!-- Added Continent Column -->
                                     <th>{{ __('Status') }}</th>
+                                    <th>{{ __('Header') }}</th>
                                     <th>{{ __('Action') }}</th>
                                 </thead>
                                 <tbody>
@@ -50,6 +51,7 @@
                                             <td>{{ $country->name }}</td>
                                             <td>{{ $country->continent->name ?? 'N/A' }}</td> <!-- Display Continent Name -->
                                             <td>{{ $country->status }}</td>
+                                            <td><img src="{{ asset('storage/' . $country->header) }}" width="50" /></td>
                                             <td>
                                                 @can('country-delete')
                                                     <x-table.btn.swal.delete :route="route('admin.country.delete', $country->id)" />
@@ -60,7 +62,8 @@
                                                         class="btn btn-primary btn-sm btn-xs mb-2 me-1 country_edit_btn"
                                                         data-id="{{ $country->id }}" data-name="{{ $country->name }}"
                                                         data-status="{{ $country->status }}"
-                                                        data-description="{{ $country->description }}">
+                                                        data-description="{{ $country->description }}"
+                                                        data-header_image="{{ asset('storage/' . $country->header) }}">
                                                         <i class="ti-pencil"></i>
                                                     </a>
                                                 @endcan
@@ -84,7 +87,7 @@
                     <h5 class="modal-title">{{ __('Update country') }}</h5>
                     <button type="button" class="close" data-bs-dismiss="modal"><span>×</span></button>
                 </div>
-                <form action="{{ route('admin.country.update') }}" method="post">
+                <form action="{{ route('admin.country.update') }}" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id" id="country_id">
                     <div class="modal-body">
                         @csrf
@@ -103,6 +106,10 @@
                             <label for="edit_description">{{ __('Description') }}</label>
                             <textarea class="form-control" id="edit_description" name="description"></textarea>
                         </div>
+                        <div class="form-group">
+                                <label for="edit_header_image">{{ __('Header Image') }}</label>
+                                <input type="file" required class="form-control" id="edit_header_image" name="header_image">
+                            </div>
                         <div class="form-group">
                             <label for="edit_continent">{{ __('Continent') }}</label>
                             <select name="continent_id" class="form-control" id="edit_continent">
@@ -149,6 +156,10 @@
                             <div class="form-group">
                                 <label for="description">{{ __('Description') }}</label>
                                 <textarea class="form-control" id="description" name="description"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="header_image">{{ __('Header Image') }}</label>
+                                <input type="file" required class="form-control" id="header_image" name="header_image">
                             </div>
                             <div class="form-group">
                                 <label for="continent">{{ __('Continent') }}</label>

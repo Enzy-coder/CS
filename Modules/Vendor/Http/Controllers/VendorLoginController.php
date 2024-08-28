@@ -45,34 +45,50 @@ class VendorLoginController extends Controller
     }
 
     public function vendor_login(Request $request): JsonResponse
-    {
-        // First validate
-        $req = $request->validate([
-            'username' => 'nullable',
-            'password' => 'min:6',
-        ]);
+{
+    // First validate
+    $req = $request->validate([
+        'username' => 'nullable',
+        'password' => 'required|min:6',
+    ]);
 
-        // Set login type
-        $user_login_type = 'username';
-        if (filter_var($req['username'], FILTER_VALIDATE_EMAIL)) {
-            $user_login_type = 'email';
-        }
+    // Set login type
+    $user_login_type = 'username';
+    if (filter_var($req['username'], FILTER_VALIDATE_EMAIL)) {
+        $user_login_type = 'email';
+    }
 
-        if (Auth::guard('vendor')->attempt([$user_login_type => $req['username'], 'password' => $req['password']], $request->get('remember'))) {
-            Auth::guard('admin')->logout();
+    // Attempt to log in the user
+    if (Auth::guard('vendor')->attempt([$user_login_type => $req['username'], 'password' => $req['password']], $request->get('remember'))) {
+        $user = Auth::guard('vendor')->user();
+
+        // Check subscription status
+        if ($user->subscribed === 'yes') {
             return response()->json([
                 'msg' => __('Login Success Redirecting'),
                 'type' => 'success',
                 'status' => 'ok',
             ]);
+        } else {
+            // Redirect to subscription page with vendor ID
+            Auth::guard('vendor')->logout();
+            return response()->json([
+                'msg' => __('Your subscription has expired. Please renew your subscription.'),
+                'type' => 'danger',
+                'status' => 'not_subscribed',
+                'redirect_url' => route('vendor.subscription', ['id' => $user->id])
+            ]);
         }
-
-        return response()->json([
-            'msg' => sprintf(__('invalid %s or Password!!'), $user_login_type),
-            'type' => 'danger',
-            'status' => 'not_ok',
-        ]);
     }
+
+    return response()->json([
+        'msg' => sprintf(__('Invalid %s or Password!!'), $user_login_type),
+        'type' => 'danger',
+        'status' => 'not_ok',
+    ]);
+}
+
+    
 
     public function register()
     {

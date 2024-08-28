@@ -2358,3 +2358,12 @@ function frontendProductPageUrl(){
     $page_url = $page->slug ?? 'shop-page';
     return $page_url;
 }
+function countries(){
+    $flags = array_diff(scandir(public_path('continents/flags')), array('.', '..'));
+    $flagUrls = array_map(function($flag) {
+        return asset('continents/flags/' . $flag);
+    }, $flags);
+
+    // Ensure the response is a JSON array
+    return response()->json(array_values($flagUrls));
+}

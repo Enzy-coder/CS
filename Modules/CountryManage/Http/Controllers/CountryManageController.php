@@ -39,13 +39,20 @@ class CountryManageController extends Controller
      */
     public function store(StoreCountryManageRequest $request): RedirectResponse
     {
+        $country_header = null;
+        if ($request->hasFile('header_image')) {
+            if ($request->header_image) {
+                \Storage::delete('public/' . $request->header_image);
+            }
+            $country_header = $request->file('header_image')->store('uploads/countries', 'public');
+        }
         $country = Country::create([
             'name' => $request->sanitize_html('name'),
             'status' => $request->sanitize_html('status'),
             'continent_id' => $request->sanitize_html('continent_id'),
             'description' => $request->sanitize_html('description'),
+            'header' => $country_header,
         ]);
-
         return $country->id
             ? back()->with(FlashMsg::create_succeed('Country'))
             : back()->with(FlashMsg::create_failed('Country'));
@@ -59,13 +66,25 @@ class CountryManageController extends Controller
      */
     public function update(UpdateCountryManageRequest $request): RedirectResponse
     {
-        $updated = Country::findOrFail($request->id)->update([
-            'name' => $request->sanitize_html('name'),
-            'status' => $request->sanitize_html('status'),
-            'continent_id' => $request->sanitize_html('continent_id'),
-            'description' => $request->sanitize_html('description'),
-        ]);
+        $update_image = false;
+        if ($request->hasFile('header_image')) {
+            $header_image = $request->file('header_image')->store('uploads/countries','public');
+            $update_image = true;
+        }
+        $updated = Country::findOrFail($request->id)->first();
+        if(!empty($updated)){
+            $data = [
+                'name' => $request->sanitize_html('name'),
+                'status' => $request->sanitize_html('status'),
+                'continent_id' => $request->sanitize_html('continent_id'),
+                'description' => $request->sanitize_html('description'),
+            ];
+            if($update_image){
+                $data['header'] = $header_image;
+            }
+            $updated->update($data);
 
+        }
         return $updated
             ? back()->with(FlashMsg::update_succeed('Country'))
             : back()->with(FlashMsg::update_failed('Country'));

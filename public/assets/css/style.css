@@ -38193,6 +38193,9 @@ h5.common-title-two svg {
   text-transform: uppercase;
   font-size: 2.5rem;;
 }
+.breadcrumb-contents .details-title {
+  color: white;
+}
 .home-banner{
   width:100%;
   max-height: fit-content;

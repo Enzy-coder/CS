@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    var timer = 800;
     var map = L.map('map', {
         center: [70, -3],
         zoom: 3,
@@ -59,27 +60,42 @@ $(document).ready(function() {
     };
 
     var landmarks = [
-        {name: 'Europe', continent: 'europe', continentName: 'Europe', latlng: [54.5260, 15.2551], iconUrl: '/continents/landmarks/efel.png'},
-        {name: 'Africa', continent: 'africa', continentName: 'Africa', latlng: [0.0, 20.0], iconUrl: '/continents/landmarks/africa.png'},
-        {name: 'Asia', continent: 'asia', continentName: 'Asia', latlng: [34.0479, 100.6197], iconUrl: '/continents/landmarks/asia.png'},
-        {name: 'North America', continent: 'north-america', continentName: 'North America', latlng: [54.5260, -105.2551], iconUrl: '/continents/landmarks/north-america.png'},
-        {name: 'South America', continent: 'south-america', continentName: 'South America', latlng: [-14.2350, -51.9253], iconUrl: '/continents/landmarks/south-america.png'},
-        {name: 'Australia', continent: 'australia', continentName: 'Australia', latlng: [-25.2744, 133.7751], iconUrl: '/continents/landmarks/australia.png'},
-        {name: 'Antarctica', continent: 'antarctica', continentName: 'Antarctica', latlng: [-82.8628, 135.0000], iconUrl: '/continents/landmarks/antarctica.png'}
+        {name: 'Europe', continent: 'europe', continentName: 'Europe', latlng: [74.5260, 55.2551], iconUrl: '/continents/landmarks/efel.png', width: 40},
+        {name: 'Africa', continent: 'africa', continentName: 'Africa', latlng: [0.0, 20.0], iconUrl: '/continents/landmarks/africa.png', width: null},
+        {name: 'Asia', continent: 'asia', continentName: 'Asia', latlng: [40.0479, 70.6197], iconUrl: '/continents/landmarks/asia.png', width: null},
+        {name: 'North America', continent: 'north-america', continentName: 'North America', latlng: [80.5260, -105.2551], iconUrl: '/continents/landmarks/north-america.png', width: null},
+        {name: 'South America', continent: 'south-america', continentName: 'South America', latlng: [-14.2350, -51.9253], iconUrl: '/continents/landmarks/south-america.png', width: null},
+        {name: 'Australia', continent: 'australia', continentName: 'Australia', latlng: [-25.2744, 133.7751], iconUrl: '/continents/landmarks/australia.png', width: null},
+        {name: 'Antarctica', continent: 'antarctica', continentName: 'Antarctica', latlng: [-82.8628, 135.0000], iconUrl: '/continents/landmarks/antarctica.png', width: null},
+        // New landmarks
+        {name: 'Japan', continent: 'asia', continentName: 'Asia', latlng: [36.2048, 138.2529], iconUrl: '/continents/landmarks/japan.png', width: null},
+        {name: 'China', continent: 'asia', continentName: 'Asia', latlng: [60.8617, 104.1954], iconUrl: '/continents/landmarks/china.png', width: null},
+        {name: 'United Kingdom', continent: 'europe', continentName: 'Europe', latlng: [55.3781, -3.4360], iconUrl: '/continents/landmarks/uk.png', width: 100},
+        {name: 'Italy', continent: 'europe', continentName: 'Europe', latlng: [61.8719, 22.5674], iconUrl: '/continents/landmarks/italy.png', width: null}
     ];
 
     landmarks.forEach(function(landmark) {
-        var icon = L.icon({...iconOptions, iconUrl: landmark.iconUrl});
+        var iconSize = [landmark.width || 75, null]; // Set icon size based on width; default to 75 if null
         
+        var icon = L.icon({...iconOptions, iconUrl: landmark.iconUrl, iconSize: iconSize});
+        
+        var hoverTimeout;
+    
         L.marker(landmark.latlng, {icon: icon})
             .addTo(map)
             .bindPopup(landmark.continentName)
-            .on('click', function() {
-                fetchCountries(landmark.continent);
-                $("#continent-name").html('<a style="color:orange" href="/continents/'+ landmark.continent +'/culture">' + landmark.continentName + '</a>');
-                $("#continent-info").text(landmark.continentName);
+            .on('mouseover', function() {
+                hoverTimeout = setTimeout(function() {
+                    fetchCountries(landmark.continent);
+                    $("#continent-name").html('<a style="color:orange" href="/continents/'+ landmark.continent +'/culture">' + landmark.continentName + '</a>');
+                    $("#continent-info").text(landmark.continentName);
+                }, timer); // 2 seconds
+            })
+            .on('mouseout', function() {
+                clearTimeout(hoverTimeout);
             });
     });
+    
 
     var geojson;
 
@@ -97,13 +113,14 @@ $(document).ready(function() {
             },
             onEachFeature: function (feature, layer) {
                 var continentName = feature.properties.CONTINENT;
-
+                var hoverTimeout;
+    
                 layer.bindTooltip(continentName, {
-                    permanent: false, // Tooltip will be shown on hover
-                    direction: 'auto', // Automatically adjust direction
-                    className: 'continent-tooltip' // Custom class for styling
+                    permanent: false,
+                    direction: 'auto',
+                    className: 'continent-tooltip'
                 });
-
+    
                 layer.on({
                     mouseover: function(e) {
                         var layer = e.target;
@@ -113,21 +130,25 @@ $(document).ready(function() {
                             weight: 0,
                             color: '#2980b9'
                         });
+                        hoverTimeout = setTimeout(function() {
+                            const slug = convertToSlug(continentName);
+                            fetchCountries(slug);
+                            $("#continent-name").html('<a style="color:orange" href="/continents/'+ slug +'/culture">' + continentName + '</a>');
+                            $("#continent-info").text(continentName);
+                        }, timer); // 2 seconds
                     },
                     mouseout: function(e) {
                         geojson.resetStyle(e.target);
+                        clearTimeout(hoverTimeout);
                     },
                     click: function(e) {
                         zoomToFeature(e.latlng);
-                        const slug = convertToSlug(continentName);
-                        fetchCountries(slug);
-                        $("#continent-name").html('<a style="color:orange" href="/continents/'+ slug +'/culture">' + continentName + '</a>');
-                        $("#continent-info").text(continentName);
                     }
                 });
             }
         }).addTo(map);
     });
+    
 
     function zoomToFeature(latlng) {
         // map.setView(latlng, 5);

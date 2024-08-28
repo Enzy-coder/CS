@@ -1214,6 +1214,9 @@
                                 <li class="{{ active_menu('admin-home/general-settings/sitemap-settings') }}"><a
                                             href="{{ route('admin.general.sitemap.settings') }}">{{ __('Sitemap Settings') }}</a>
                                 </li>
+                                <li class="{{ active_menu('admin-home/general-settings/subscription') }}"><a
+                                            href="{{ route('admin.general.subscription') }}">{{ __('Subscription Settings') }}</a>
+                                </li>
                             @endcan
                             @can('general-settings-rss-settings')
                                 <li class="{{ active_menu('admin-home/general-settings/rss-settings') }}"><a

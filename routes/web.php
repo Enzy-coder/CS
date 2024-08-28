@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryMenuController;
 use App\Http\Controllers\Admin\LicenseController;
 use App\Http\Controllers\Admin\SiteSettingsController;
+use App\Http\Controllers\Admin\SubscriptionController;
 use App\Http\Controllers\AdminNotificationController;
 use App\Http\Controllers\AdminShopManageController;
 use App\Http\Controllers\FrontendController;
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 use Modules\CountryManage\Http\Controllers\Product\ProductCartController;
 use Modules\Order\Http\Controllers\OrderController;
 use Modules\Vendor\Http\Controllers\FrontendVendorController;
+use App\Http\Controllers\Shipping\DHLController;
+use App\Http\Controllers\Shipping\EasyshipController;
+use App\Http\Controllers\Shipping\AramexController;
+
+
 
 Route::get('update-notification', XgNotificationController::class)
     ->middleware(['setlang:frontend','setlang:backend'])->name('update-notification');
@@ -559,6 +565,9 @@ Route::prefix('admin-home')->middleware(['setlang:backend', 'adminglobalVariable
      *                          GENERAL SETTINGS MANAGE
      * ----------------------------------------------------------------------------------------------------------------------------*/
     Route::group(['prefix' => 'general-settings', 'namespace' => 'Admin'], function () {     //Upgrade Database
+        Route::get('/subscription', 'SubscriptionController@index')->name('admin.general.subscription');
+        Route::post('/subscription', 'SubscriptionController@setup');
+        //Reading
         Route::get('/database-upgrade', 'GeneralSettingsController@database_upgrade')->name('admin.general.database.upgrade')->permission('general-settings-database-upgrade');
         Route::post('/database-upgrade', 'GeneralSettingsController@database_upgrade_post')->permission('general-settings-database-upgrade');
         //Reading
@@ -824,3 +833,17 @@ Route::post('admin-home/delete/continents/{id}', 'Admin\ContinentController@dele
 
 Route::get('/continents/{slug}/culture', 'Admin\ContinentController@culture')->name('continent.culture');
 Route::get('/countries/categories/{id}', 'Admin\ContinentController@countriesCategories')->name('countries.categories');
+
+Route::get("/dhl/rates",[DHLController::class, "getRates"])->name('calculateDHLShippingRate');
+
+Route::get('/easyship/rates', [EasyshipController::class, 'getRates']);
+
+Route::get('/php/info', function(){
+    return phpinfo();
+});
+Route::get('/aramex/rates', [AramexController::class, 'getRates']);
+Route::get('/globe/countries',function(){
+    return countries();
+});
+// subscribe the vendor
+Route::post('/vendor/subscription/{id}', [SubscriptionController::class, 'processSubscription'])->name('vendor.process_subscription');

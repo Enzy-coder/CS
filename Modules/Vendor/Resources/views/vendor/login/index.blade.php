@@ -147,6 +147,13 @@
                     setTimeout(function() {
                         location.reload();
                     }, 1000);
+                }else if(data.status == 'not_subscribed'){
+                    $(".display-login-alert").text(data.msg);
+                    $(".display-login-alert").removeClass("alert-success").addClass("alert-danger");
+                    $(".display-login-alert").removeClass("bg-success").addClass("bg-danger");
+                    $(".display-login-alert").fadeIn();
+                    window.location.href = data.redirect_url;
+
                 } else {
                     $(".display-login-alert").text(data.msg);
                     $(".display-login-alert").removeClass("alert-success").addClass("alert-danger");

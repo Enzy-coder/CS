@@ -26,7 +26,8 @@ class Country extends Model
         'name',
         'status',
         'continent_id',
-        'description'
+        'description',
+        'header'
     ];
 
     public function continent(): hasOne
