@@ -71,7 +71,7 @@ class CountryManageController extends Controller
             $header_image = $request->file('header_image')->store('uploads/countries','public');
             $update_image = true;
         }
-        $updated = Country::findOrFail($request->id)->first();
+        $updated = Country::where('id',$request->id)->first();
         if(!empty($updated)){
             $data = [
                 'name' => $request->sanitize_html('name'),
