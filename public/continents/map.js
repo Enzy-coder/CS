@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    var isFetchingCountries = false;
     fetchCountries('asia');
     var timer = 800;
     var map = L.map('map', {
@@ -155,7 +156,6 @@ $(document).ready(function() {
         // map.setView(latlng, 5);
     }
 
-    let isFetchingCountries = false;
 
     function fetchCountries(continentName) {
         if (isFetchingCountries) return;
