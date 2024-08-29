@@ -152,7 +152,9 @@
                     $(".display-login-alert").removeClass("alert-success").addClass("alert-danger");
                     $(".display-login-alert").removeClass("bg-success").addClass("bg-danger");
                     $(".display-login-alert").fadeIn();
-                    window.location.href = data.redirect_url;
+                    setTimeout(() => {
+                        window.location.href = data.redirect_url;
+                    }, 1500);
 
                 } else {
                     $(".display-login-alert").text(data.msg);
