@@ -19,6 +19,9 @@ class CreateCountriesTable extends Migration
             $table->string('description');
             $table->string('status')->default('publish');
             $table->string('slug');
+            $table->string('header');
+            $table->string('continent_id');
+            $table->string('show_on_home');
             $table->timestamps();
         });
     }
