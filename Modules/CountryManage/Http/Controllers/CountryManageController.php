@@ -48,6 +48,7 @@ class CountryManageController extends Controller
             'status' => $request->sanitize_html('status'),
             'continent_id' => $request->sanitize_html('continent_id'),
             'description' => $request->sanitize_html('description'),
+            'show_on_home' => $request->sanitize_html('show_on_home') == 'on' ? 'yes' : 'no',
             'header' => $country_header,
         ]);
         return $country->id
@@ -76,6 +77,8 @@ class CountryManageController extends Controller
                 'status' => $request->sanitize_html('status'),
                 'continent_id' => $request->sanitize_html('continent_id'),
                 'description' => $request->sanitize_html('description'),
+                'show_on_home' => $request->sanitize_html('show_on_home') == 'on' ? 'yes' : 'no',
+
             ];
             if($update_image){
                 $data['header'] = $header_image;

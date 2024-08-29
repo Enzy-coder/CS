@@ -38,6 +38,7 @@
                                     <th>{{ __('Name') }}</th>
                                     <th>{{ __('Continent') }}</th> <!-- Added Continent Column -->
                                     <th>{{ __('Status') }}</th>
+                                    <th>{{ __('Added to Header') }}</th>
                                     <th>{{ __('Header') }}</th>
                                     <th>{{ __('Action') }}</th>
                                 </thead>
@@ -51,6 +52,7 @@
                                             <td>{{ $country->name }}</td>
                                             <td>{{ $country->continent->name ?? 'N/A' }}</td> <!-- Display Continent Name -->
                                             <td>{{ $country->status }}</td>
+                                            <td>{{ $country->show_on_home }}</td>
                                             <td><img src="{{ asset('storage/' . $country->header) }}" width="50" /></td>
                                             <td>
                                                 @can('country-delete')
@@ -64,6 +66,7 @@
                                                         data-status="{{ $country->status }}"
                                                         data-description="{{ $country->description }}"
                                                         data-continent_id="{{ $country->continent_id }}"
+                                                        data-show_on_home="{{ $country->show_on_home }}"
                                                         data-header_image="{{ asset('storage/' . $country->header) }}">
                                                         <i class="ti-pencil"></i>
                                                     </a>
@@ -109,8 +112,13 @@
                         </div>
                         <div class="form-group">
                             <label for="edit_header_image">{{ __('Header Image') }}</label>
-                            <strong class="text-danger">*Recommended size: 1363 X 343 </strong>
                             <input type="file"  class="form-control" id="edit_header_image" name="header_image">
+                            <p class="text-danger">{{__('Recommended size: 1363 X 343')}} </p>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit_show_on_home">{{ __('Show in Header') }}</label>
+                            <input type="checkbox"  id="edit_show_on_home" name="show_on_home">
+                            <p class="text-danger">{{__('Activate to show in cultural categories')}} </p>
                         </div>
                         <div class="form-group">
                             <label for="edit_continent">{{ __('Continent') }}</label>
@@ -161,8 +169,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="header_image">{{ __('Header Image') }}</label>
-                                <strong class="text-danger">*Recommended size: 1363 X 343 </strong>
+                                <p class="text-danger">{{__('Recommended size: 1363 X 343')}} </p>
                                 <input type="file" required class="form-control" id="header_image" name="header_image">
+                            </div>
+                            <div class="form-group">
+                                <label for="show_on_home">{{ __('Show in Header') }}</label>
+                                <input type="checkbox"  id="show_on_home" name="show_on_home">
+                                <p class="text-danger">{{__('Activate to show in cultural categories')}} </p>
                             </div>
                             <div class="form-group">
                                 <label for="continent">{{ __('Continent') }}</label>
@@ -199,6 +212,7 @@
                 let status = el.data('status');
                 let description = el.data('description');
                 let continent_id = el.data('continent_id');
+                let show_on_home = el.data('show_on_home');
                 let modal = $('#country_edit_modal');
 
                 modal.find('#country_id').val(id);
@@ -206,6 +220,8 @@
                 modal.find('#edit_name').val(name);
                 modal.find("#edit_continent").val(continent_id);
                 modal.find('#edit_description').text(description);
+                let isChecked = show_on_home == 'yes' ? true : false;
+                modal.find('#edit_show_on_home').prop('checked',isChecked);
             });
         });
     </script>

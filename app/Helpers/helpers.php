@@ -6,6 +6,7 @@ use App\Http\Services\NotificationService;
 use App\Language;
 use App\MenuBuilder\MenuBuilderAdminRender;
 use App\MenuBuilder\MenuBuilderFrontendRender;
+use App\Models\Continent;
 use App\PaymentGateway;
 use App\StaticOption;
 use App\MediaUpload;
@@ -2366,4 +2367,20 @@ function countries(){
 
     // Ensure the response is a JSON array
     return response()->json(array_values($flagUrls));
+}
+function cultures(){
+    $continents = DB::table('continents')->get();
+    $countries = DB::table('countries')
+    ->join('continents','countries.continent_id','continents.id')
+    ->selectRaw('continents.name as culture_name,
+        continents.slug as culture_slug,
+        countries.slug as country_slug,
+        countries.name as country_name,
+        continents.id as continent_id,
+        countries.id
+    ')
+    ->orderby('countries.name','asc')
+    ->where('show_on_home','yes')
+    ->get();
+    return $countries;
 }
