@@ -34,7 +34,7 @@ class CalculateTaxServices
         // first need to get all information related to static options
         // check is prices entered with tax is enable or not
         if ($init->taxSystem() == 'advance_tax_system' && $init->priceIncludeTax() == 'yes' && $for == 'product') {
-            $price = $price + calculatePercentageAmount($price, $product->tax_options_sum_rate);
+            $price = $price + calculatePercentageAmount($price, $product->tax_options_sum_rate ?? 0);
         } elseif ($init->taxSystem() == 'advance_tax_system' && $for == 'shipping') {
             $price = $price + calculatePercentageAmount($price, $product);
         } elseif (

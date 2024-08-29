@@ -22,6 +22,7 @@ use Modules\Vendor\Http\Services\DummyVendorDeleteServices;
 use DB;
 class VendorBackendController extends Controller
 {
+    
     public function index(): Factory|View|Application
     {
         $vendors = Vendor::with(["vendor_address","vendor_shop_info","business_type:id,name"])

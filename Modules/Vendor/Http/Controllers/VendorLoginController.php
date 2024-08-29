@@ -125,10 +125,13 @@ class VendorLoginController extends Controller
 
         // now make login vendor here
         if (Auth::guard('vendor')->attempt(['username' => $vendor['username'], 'password' => $rawPassword], true)) {
-            return redirect()->route('vendor.login')->with([
-                'msg' => $vendor ? __('Registration success') : __('Registration failed'),
-                'status' => (bool) $vendor,
-            ]);
+            Auth::guard('vendor')->logout();
+            return redirect()->route('vendor.subscription', ['id' => $vendor->id]);
+            //  redirect()->route('vendor.login')->with([
+            //     'msg' => $vendor ? __('Registration success') : __('Registration failed'),
+            //     'redirect_url' => route('vendor.subscription', ['id' => $vendor->id]),
+            //     'status' => (bool) $vendor,
+            // ]);
         }
 
         return $vendor ? [

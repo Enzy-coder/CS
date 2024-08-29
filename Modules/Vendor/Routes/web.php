@@ -23,6 +23,11 @@ use Modules\Vendor\Http\Controllers\VendorProfileController;
 /*======================================
     add Admin panel vendor route
 =====================================*/
+// dd(Auth::guard('vendor')->user());
+if(Auth::guard('vendor')->user() && Auth::guard('vendor')->user()->subscribed == 'no'){
+    Auth::guard('vendor')->logout();
+    return redirect()->route('vendor.subscription', ['id' => $vendor->id]);
+}
 Route::prefix('admin-home/vendor')->middleware(['setlang:backend', 'adminglobalVariable', 'auth:admin', 'userEmailVerify'])->group(callback: function () {
     Route::controller(VendorBackendController::class)->as('admin.vendor.')->group(function () {
         Route::get('index', 'index')->name('all')->permission('vendor-index');
