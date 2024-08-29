@@ -62,7 +62,7 @@ $(document).ready(function() {
     };
 
     var landmarks = [
-        {name: 'Europe', continent: 'europe', continentName: 'Europe', latlng: [74.5260, 55.2551], iconUrl: '/continents/landmarks/efel.png', width: 40},
+        {name: 'Europe', continent: 'europe', continentName: 'Europe', latlng: [74.5260, 55.2551], iconUrl: '/continents/landmarks/efel.png', width: null},
         {name: 'Africa', continent: 'africa', continentName: 'Africa', latlng: [0.0, 20.0], iconUrl: '/continents/landmarks/africa.png', width: null},
         {name: 'Asia', continent: 'asia', continentName: 'Asia', latlng: [40.0479, 70.6197], iconUrl: '/continents/landmarks/asia.png', width: null},
         {name: 'North America', continent: 'north-america', continentName: 'North America', latlng: [80.5260, -105.2551], iconUrl: '/continents/landmarks/north-america.png', width: null},
@@ -72,7 +72,7 @@ $(document).ready(function() {
         // New landmarks
         {name: 'Japan', continent: 'asia', continentName: 'Asia', latlng: [36.2048, 138.2529], iconUrl: '/continents/landmarks/japan.png', width: null},
         {name: 'China', continent: 'asia', continentName: 'Asia', latlng: [60.8617, 104.1954], iconUrl: '/continents/landmarks/china.png', width: null},
-        {name: 'United Kingdom', continent: 'europe', continentName: 'Europe', latlng: [55.3781, -3.4360], iconUrl: '/continents/landmarks/uk.png', width: 100},
+        {name: 'United Kingdom', continent: 'europe', continentName: 'Europe', latlng: [55.3781, -3.4360], iconUrl: '/continents/landmarks/uk.png', width: null},
         {name: 'Italy', continent: 'europe', continentName: 'Europe', latlng: [61.8719, 22.5674], iconUrl: '/continents/landmarks/italy.png', width: null}
     ];
 

@@ -77,7 +77,7 @@ class PaymentGatewayCredential
         $paypal->setCurrency(self::site_global_currency());
         $paypal->setEnv($test_mode);
         $paypal->setExchangeRate(self::exchange_rate_usd_to_inr());
-
+dd($paypal);
         return $paypal;
     }
 

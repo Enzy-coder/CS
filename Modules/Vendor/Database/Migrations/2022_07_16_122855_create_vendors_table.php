@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('vendors', function (Blueprint $table) {
             $table->id();
+            $table->enum("subscribed",['yes','no']);
+            $table->string("subscription_details")->nullable();
             $table->string("owner_name");
             $table->string("business_name");
             $table->tinyText("description");

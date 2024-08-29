@@ -34,6 +34,8 @@ class Vendor extends Authenticatable
 
     protected $fillable = [
         "owner_name",
+        'subscribed',
+        'subscription_details',
         "username",
         "password",
         "business_name",

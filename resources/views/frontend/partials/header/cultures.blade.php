@@ -10,7 +10,7 @@
             @endphp
             @foreach ($culture_data as $region)
                 @php 
-                    $link = "<a href='/continents/".$region->culture_slug."/countries'>See More</a>";
+                    $link = "<a href='/continents/".$region->culture_slug."/culture'>See More</a>";
                 @endphp
                 <div class="single-megamenu">
                     <div class="single-category-megamenu text-center border-1">

@@ -1,7 +1,6 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
-
+use DB;
 use Illuminate\Http\Request;
 use App\Models\Subscription;
 use Illuminate\Routing\Controller;
@@ -42,19 +41,36 @@ class SubscriptionController extends Controller
     }
 
     // Handle subscription form submission
-    public function processSubscription(Request $request, $id)
+    public function processSubscription($id)
     {
-        // Validate the request
-        $request->validate([
-            'amount' => 'required|numeric|min:0',
+        $subscription = DB::table('subscriptions')->first();
+        $amount = $subscription->amount ?? 0;
+        $user = DB::table('vendors')->whereId($id)->first();
+        $gateway = DB::Table('payment_gateways')->where('name','paypal')->first();
+        $data['client_id'] = 'testing';
+        $data['link'] = 'https://sandbox.paypal.com';
+        if($gateway){
+            $details = json_decode($gateway->credentials);
+            $data['client_id'] = $gateway->test_mode == 1 ? $details->sandbox_client_id : $details->client_id;
+            $data['link'] = $gateway->test_mode == 1 ? 'https://sandbox.paypal.com' : 'https://paypal.com';
+        }
+        if($user->subscribed == 'yes'){
+            return redirect()->route('vendor.login')->with('success', 'Vendor Already subscribed');
+        }
+        if($amount == 0){
+            return redirect()->route('vendor.login')->with('error', 'No Subscription amount found.');
+        }
+        $data['user'] = $user;
+        $data['amount'] = $amount;
+        return view('admin.subscribe_now',$data);
+    }
+    public function paypalSubscription(Request $request){
+        $data = json_encode($request->all());
+        Vendor::whereId($request->user_id)->update([
+            'subscribed' => 'yes',
+            'subscription_details' => $data
         ]);
-
-        // Update user's subscription status
-        $user = Vendor::findOrFail($id);
-        $user->subscribed = 'yes'; // Mark user as subscribed
-        $user->save();
-
-        return redirect()->route('vendor.dashboard')->with('success', 'Subscription updated successfully.');
+        return redirect()->route('vendor.login')->with('success', 'No Subscription amount found.');
     }
 
 }

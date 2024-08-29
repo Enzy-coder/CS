@@ -116,7 +116,7 @@
 }
 
 .zoom-in {
-    transform: scale(1.15); /* Zoom in by 1.5 times */
+    /* transform: scale(1.15); Zoom in by 1.5 times */
 }
 
 .zoom-out {
@@ -133,7 +133,7 @@
     overflow:hidden;
   }
   .change-home .leaflet-container {
-    background: #FFFFFF;
+    background: #fbfbfb;
   }
   .change-home  .leaflet-control {
     display: none; /* Hide default controls */
@@ -205,3 +205,4 @@
         height: 380px; /* Further adjusted height for very small screens */
     }
 }
+
