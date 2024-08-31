@@ -831,17 +831,17 @@ Route::post('admin-home/update/continents', 'Admin\ContinentController@update')-
 Route::post('admin-home/store/continents', 'Admin\ContinentController@store')->name('admin.continent.new');
 Route::post('admin-home/delete/continents/{id}', 'Admin\ContinentController@delete')->name('admin.continent.delete');
 
-Route::get('/continents/{slug}/culture', 'Admin\ContinentController@culture')->name('continent.culture');
-Route::get('/countries/categories/{id}', 'Admin\ContinentController@countriesCategories')->name('countries.categories');
+Route::get('/continents/{slug}/culture', 'Admin\ContinentController@culture')->name('continent.culture')->middleware('globalVariable');
+Route::get('/countries/categories/{id}', 'Admin\ContinentController@countriesCategories')->name('countries.categories')->middleware('globalVariable');
 
-Route::get("/dhl/rates",[DHLController::class, "getRates"])->name('calculateDHLShippingRate');
+Route::get("/dhl/rates",[DHLController::class, "getRates"]);
 
 Route::get('/easyship/rates', [EasyshipController::class, 'getRates']);
 
 Route::get('/php/info', function(){
-    return phpinfo();
-});
-Route::get('/aramex/rates', [AramexController::class, 'getRates']);
+    return phpinfo()->middleware('globalVariable');
+})->middleware('globalVariable');
+Route::get('/aramex/rates', [AramexController::class, 'getRates'])->middleware('globalVariable');
 Route::get('/globe/countries',function(){
     return countries();
 });
