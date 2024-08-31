@@ -117,7 +117,7 @@
                     </div>
                 </div>
                 <div class="col-md-{{$logged ? '2' : '1'}}">
-                    <div class="navbar-right-content">
+                    <div class="navbar-right-content show">
                         <div class="single-right-content  right-content">
                             <div class="track-icon-list header-card-area-content-wrapper">
                                 @include('frontend.partials.header.navbar.card-and-wishlist-area4')
