@@ -68,7 +68,7 @@ $(document).ready(function() {
         {name: 'North America', continent: 'north-america', continentName: 'North America', latlng: [80.5260, -105.2551], iconUrl: '/continents/landmarks/north-america.png', width: 111},
         {name: 'South America', continent: 'south-america', continentName: 'South America', latlng: [-14.2350, -51.9253], iconUrl: '/continents/landmarks/south-america.png', width: null},
         {name: 'Australia', continent: 'australia', continentName: 'Australia', latlng: [-25.2744, 133.7751], iconUrl: '/continents/landmarks/australia.png', width: 111},
-        {name: 'Antarctica', continent: 'antarctica', continentName: 'Antarctica', latlng: [-82.8628, 135.0000], iconUrl: '/continents/landmarks/antarctica.png', width: null},
+        // {name: 'Antarctica', continent: 'antarctica', continentName: 'Antarctica', latlng: [-82.8628, 135.0000], iconUrl: '/continents/landmarks/antarctica.png', width: null},
         // New landmarks
         {name: 'Japan', continent: 'asia', continentName: 'Asia', latlng: [36.2048, 138.2529], iconUrl: '/continents/landmarks/japan.png', width: null},
         {name: 'China', continent: 'asia', continentName: 'Asia', latlng: [60.8617, 104.1954], iconUrl: '/continents/landmarks/china.png', width: 111},
