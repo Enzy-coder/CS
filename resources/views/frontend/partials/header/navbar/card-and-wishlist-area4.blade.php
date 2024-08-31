@@ -129,6 +129,6 @@
     <a href="#1" class="icon-notification"> {{\Gloudemans\Shoppingcart\Facades\Cart::instance("wishlist")->content()->count()}} </a>
 </div>
 
-<div class="single-icon" style="display:none">
+<div class="single-icon">
     <a class="icon" href="{{ route('frontend.products.compare') }}"> <i class="las la-retweet"></i> </a>
 </div>

@@ -81,7 +81,7 @@
                         <option value="arabic">Arabic</option>
                     </select>
                 </div>
-                <div class=" change-search-bar col-md-{{$logged ? '7' : '8'}}">
+                <div class=" change-search-bar col-md-{{$logged ? '7' : '7'}}">
                     <div class="category-searchbar">
                         <form action="#" class="single-searchbar searchbar-suggetions">
                             <input autocomplete="off" class="form--control radius-5 header-search" id="search_form_input"

@@ -465,7 +465,7 @@
                                                     @forelse($product->reviews as $review)
                                                         <div class="about-seller-flex-content">
                                                             <div class="about-seller-thumb">
-                                                                <a href="#1"> {!! render_image($review->user->profile_image) !!} </a>
+                                <a href="#1"> {!! render_image(optional($review->user)->profile_image ?? '') !!} </a>
                                                             </div>
                                                             <div class="about-seller-content">
                                                                 <h5 class="title"> <a href="#1">

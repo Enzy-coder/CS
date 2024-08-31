@@ -1,3 +1,53 @@
+<div class="track-icon-list-item single-icon">
+    <div class="login-account">
+        @if (auth('web')->check())
+            <a class="accounts" href="#1">
+                <i class="las la-user"></i>
+                <span class="icon-title">{{ auth('web')->user()->name }}</span>
+            </a>
+
+            <ul class="account-list-item">
+                <li class="list"><a
+                            href="{{ route('user.home') }}">{{ __('Dashboard') }}</a> </li>
+                <li class="list"><a
+                            href="{{ route('user.home.edit.profile') }}">{{ __('Edit Profile') }}</a>
+                </li>
+                <li class="list"><a
+                            href="{{ route('user.home.change.password') }}">{{ __('Change Password') }}</a>
+                </li>
+                <li class="list"><a
+                            href="{{ route('user.product.order.all') }}">{{ __('My Orders') }}</a>
+                </li>
+                <li class="list"><a
+                            href="{{ route('user.shipping.address.all') }}">{{ __('Shipping Address') }}</a>
+                </li>
+                <li class="list"><a
+                            href="{{ route('user.home.support.tickets') }}">{{ __('Support Ticket') }}</a>
+                </li>
+                <li class="list">
+                    <a href="{{ route('user.logout') }}"
+                       onclick="event.preventDefault();document.getElementById('menu_logout_submit_btn').dispatchEvent(new MouseEvent('click'));">
+                        {{ __('Logout') }}
+                    </a>
+                    <form action="{{ route('user.logout') }}" method="POST"
+                          style="display: none;">
+                        @csrf
+                        <button id="menu_logout_submit_btn" type="submit"></button>
+                    </form>
+                </li>
+            </ul>
+        @else
+            <a class="accounts" href="#1"><i class="las la-user"></i> <span
+                        class="icon-title"></span></a>
+            <ul class="account-list-item">
+                <li class="list"> <a href="{{ route('user.login') }}">
+                        {{ __('Sign In') }} </a> </li>
+                <li class="list"> <a href="{{ route('user.register') }}">
+                        {{ __('Sign Up') }} </a> </li>
+            </ul>
+        @endif
+    </div>
+</div>
 <div class="single-icon">
     <a class="icon" href="{{ route("frontend.products.wishlist") }}"> <i class="lar la-heart"></i> </a>
     <a href="#1" class="icon-notification"> {{\Gloudemans\Shoppingcart\Facades\Cart::instance("wishlist")->content()->count()}} </a>
@@ -81,54 +131,4 @@
 </div>
 <div class="single-icon">
     <a class="icon" href="{{ route('frontend.products.compare') }}"> <i class="las la-retweet"></i> </a>
-</div>
-<div class="track-icon-list-item single-icon">
-    <div class="login-account">
-        @if (auth('web')->check())
-            <a class="accounts" href="#1">
-                <i class="las la-user"></i>
-                <span class="icon-title">{{ auth('web')->user()->name }}</span>
-            </a>
-
-            <ul class="account-list-item">
-                <li class="list"><a
-                            href="{{ route('user.home') }}">{{ __('Dashboard') }}</a> </li>
-                <li class="list"><a
-                            href="{{ route('user.home.edit.profile') }}">{{ __('Edit Profile') }}</a>
-                </li>
-                <li class="list"><a
-                            href="{{ route('user.home.change.password') }}">{{ __('Change Password') }}</a>
-                </li>
-                <li class="list"><a
-                            href="{{ route('user.product.order.all') }}">{{ __('My Orders') }}</a>
-                </li>
-                <li class="list"><a
-                            href="{{ route('user.shipping.address.all') }}">{{ __('Shipping Address') }}</a>
-                </li>
-                <li class="list"><a
-                            href="{{ route('user.home.support.tickets') }}">{{ __('Support Ticket') }}</a>
-                </li>
-                <li class="list">
-                    <a href="{{ route('user.logout') }}"
-                       onclick="event.preventDefault();document.getElementById('menu_logout_submit_btn').dispatchEvent(new MouseEvent('click'));">
-                        {{ __('Logout') }}
-                    </a>
-                    <form action="{{ route('user.logout') }}" method="POST"
-                          style="display: none;">
-                        @csrf
-                        <button id="menu_logout_submit_btn" type="submit"></button>
-                    </form>
-                </li>
-            </ul>
-        @else
-            <a class="accounts" href="#1"><i class="las la-user"></i> <span
-                        class="icon-title">{{ __('Login/Register') }}</span></a>
-            <ul class="account-list-item">
-                <li class="list"> <a href="{{ route('user.login') }}">
-                        {{ __('Sign In') }} </a> </li>
-                <li class="list"> <a href="{{ route('user.register') }}">
-                        {{ __('Sign Up') }} </a> </li>
-            </ul>
-        @endif
-    </div>
 </div>

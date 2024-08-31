@@ -116,7 +116,8 @@
 }
 
 .zoom-in {
-    /* transform: scale(1.15); Zoom in by 1.5 times */
+     /*transform: scale(1.15);*/
+     /*Zoom in by 1.5 times */
 }
 
 .zoom-out {
@@ -125,6 +126,9 @@
 
 .zoom-default {
     transform: scale(1); /* Default scale */
+}
+.change-home{
+   background: #fbfbfb;
 }
 .change-home #map {
     width: 100%;

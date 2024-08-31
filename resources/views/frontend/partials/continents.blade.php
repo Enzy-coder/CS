@@ -18,7 +18,7 @@
 @endsection
 
 <div class="change-home">
-    <div class="zoom-container ">
+    <div class="zoom-container zoom-div">
         <div id="map" class="zoom-in"></div>
     </div>
     <h3 id="continent-name" class="text-center  m-4 text-uppercase" style="margin-bottom: 2px !important;"></h3>
