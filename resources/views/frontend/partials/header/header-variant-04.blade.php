@@ -62,7 +62,7 @@
     <div class="topbar-bottom-area topbar-bottom-four change-header">
         <div class="container top-nav {{ $containerClass ?? "" }}"> 
             <div class="row align-items-center header-on-992">
-                <div class="col-md-2 d-none d-lg-block top-logo-block">
+                <div class="col-md-2 d-lg-block top-logo-block">
                     <div class="topbar-logo">
                         <a href="{{ route('homepage') }}">
                             @if (!empty(filter_static_option_value('site_logo', $global_static_field_data)))
