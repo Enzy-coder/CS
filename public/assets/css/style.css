@@ -38225,3 +38225,8 @@ h5.common-title-two svg {
     height: auto !important;
   }
 }
+@media (max-width: 425px) {
+    .single-right-content .topbar-bottom-four .track-icon-list {
+          gap: 20px 12px !important;
+    }
+}
