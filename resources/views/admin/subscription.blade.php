@@ -22,21 +22,18 @@
                                             <div class="input-group">
                                                 <input type="number" name="amount" id="amount" class="form-control  m-2" value="{{ $subscription->amount ?? 0 }}" min="0" step="0.01">
                                             </div>
-                                            <div class="form-group">
-                                                
-                                                    <input type="checkbox" id="subsc" name="is_subscription_active" {{(!empty($subscription) && $subscription->is_subscription_active == 'active') ? 'checked' : ''}}>
-                                                    <label for="subsc" class="m-2">{{ __('is subscription active?') }}</label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group-append  m-2">
-                                                    <button type="submit" id="update" class="cmn_btn btn_bg_profile">
-                                                        <i class="fas fa-save"></i> {{ __('Update') }}
-                                                    </button>
-                                                </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="checkbox" id="subsc" name="is_subscription_active" {{(!empty($subscription) && $subscription->is_subscription_active == 'active') ? 'checked' : ''}}>
+                                            <label for="subsc" class="m-2">{{ __('is subscription active?') }}</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group-append  m-2">
+                                                <button type="submit" id="update" class="cmn_btn btn_bg_profile">
+                                                    <i class="fas fa-save"></i> {{ __('Update') }}
+                                                </button>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </form>
