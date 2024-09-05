@@ -153,7 +153,7 @@ class VendorLoginController extends Controller
         ];
     }
     public function isSubscriptionActive(){
-        $subscription = DB::table('subscriptions')->first();
+        $subscription = \DB::table('subscriptions')->first();
         return (!empty($subscription) && $subscription->is_subscription_active == 'active') ? true : false;
     }
 }
