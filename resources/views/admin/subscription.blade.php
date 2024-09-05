@@ -23,7 +23,7 @@
                                                 <input type="number" name="amount" id="amount" class="form-control  m-2" value="{{ $subscription->amount ?? 0 }}" min="0" step="0.01">
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" style="display: inline-flex;">
                                             <input type="checkbox" id="subsc" name="is_subscription_active" {{(!empty($subscription) && $subscription->is_subscription_active == 'active') ? 'checked' : ''}}>
                                             <label for="subsc" class="m-2">{{ __('is subscription active?') }}</label>
                                         </div>
