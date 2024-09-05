@@ -89,6 +89,7 @@
                     <div class="row cats">
                         @foreach ($product_categories as $product_category)
                             @php 
+                            dd($product_category);
                                 $image_path = optional($product_category->category)->image ? optional($product_category->category->image)->path : 'no-image.png';
                             @endphp
                             <div class="col-md-1 text-center cat-click cursor-pointer" data-id="{{$product_category->category_id}}"
