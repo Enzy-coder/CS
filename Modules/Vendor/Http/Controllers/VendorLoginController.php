@@ -63,21 +63,29 @@ class VendorLoginController extends Controller
         $user = Auth::guard('vendor')->user();
 
         // Check subscription status
-        if ($user->subscribed === 'yes') {
+        if($this->isSubscriptionActive()){
+            if ($user->subscribed === 'yes') {
+                return response()->json([
+                    'msg' => __('Login Success Redirecting'),
+                    'type' => 'success',
+                    'status' => 'ok',
+                ]);
+            } else {
+                // Redirect to subscription page with vendor ID
+                Auth::guard('vendor')->logout();
+                return response()->json([
+                    'msg' => __('Your subscription has expired. Please renew your subscription.'),
+                    'type' => 'danger',
+                    'status' => 'not_subscribed',
+                    'redirect_url' => route('vendor.subscription', ['id' => $user->id])
+                ]);
+            }
+        }else{
             return response()->json([
-                'msg' => __('Login Success Redirecting'),
-                'type' => 'success',
-                'status' => 'ok',
-            ]);
-        } else {
-            // Redirect to subscription page with vendor ID
-            Auth::guard('vendor')->logout();
-            return response()->json([
-                'msg' => __('Your subscription has expired. Please renew your subscription.'),
-                'type' => 'danger',
-                'status' => 'not_subscribed',
-                'redirect_url' => route('vendor.subscription', ['id' => $user->id])
-            ]);
+                    'msg' => __('Login Success Redirecting'),
+                    'type' => 'success',
+                    'status' => 'ok',
+                ]);
         }
     }
 
@@ -125,13 +133,15 @@ class VendorLoginController extends Controller
 
         // now make login vendor here
         if (Auth::guard('vendor')->attempt(['username' => $vendor['username'], 'password' => $rawPassword], true)) {
-            Auth::guard('vendor')->logout();
-            return redirect()->route('vendor.subscription', ['id' => $vendor->id]);
-            //  redirect()->route('vendor.login')->with([
-            //     'msg' => $vendor ? __('Registration success') : __('Registration failed'),
-            //     'redirect_url' => route('vendor.subscription', ['id' => $vendor->id]),
-            //     'status' => (bool) $vendor,
-            // ]);
+            if($this->isSubscriptionActive()){
+                Auth::guard('vendor')->logout();
+                return redirect()->route('vendor.subscription', ['id' => $vendor->id]);
+            }
+             redirect()->route('vendor.login')->with([
+                'msg' => $vendor ? __('Registration success') : __('Registration failed'),
+                'redirect_url' => route('vendor.subscription', ['id' => $vendor->id]),
+                'status' => (bool) $vendor,
+            ]);
         }
 
         return $vendor ? [
@@ -141,5 +151,9 @@ class VendorLoginController extends Controller
             'msg' => __('Failed to register'),
             'type' => 'error',
         ];
+    }
+    public function isSubscriptionActive(){
+        $subscription = DB::table('subscriptions')->first();
+        return (!empty($subscription) && $subscription->is_subscription_active == 'active') ? true : false;
     }
 }

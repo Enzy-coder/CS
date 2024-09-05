@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
             $table->decimal('amount');
+            $table->enum('is_subscription_active',['active','inactive'])->nullable();
             $table->timestamps();
         });
     }

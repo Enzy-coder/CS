@@ -28,6 +28,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <input type="checkbox" name="is_subscription_active" {{(!empty($subscription) && $subscription->is_subscription_active == 'active') ? 'checked' : ''}}>
                                     </div>
                                 </div>
                             </form>

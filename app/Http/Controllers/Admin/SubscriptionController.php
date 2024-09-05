@@ -28,8 +28,9 @@ class SubscriptionController extends Controller
         if (!$subscription) {
             $subscription = new Subscription();
         }
-
+        
         $subscription->amount = $request->input('amount');
+        $subscription->is_subscription_active = $request->input('is_subscription_active') == 'on' ? 'active' : 'inactive';
         $subscription->save();
 
         return redirect()->route('admin.general.subscription')->with('success', 'Subscription updated successfully.');
