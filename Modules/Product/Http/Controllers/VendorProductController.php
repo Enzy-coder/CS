@@ -26,7 +26,7 @@ use Modules\Product\Entities\ProductGallery;
 use Modules\Attributes\Entities\Size as ProductSize;
 use Modules\Product\Http\Requests\ProductStoreRequest;
 use Modules\Product\Http\Services\Admin\AdminProductServices;
-
+use DB;
 class VendorProductController extends Controller
 {
     /**
