@@ -137,7 +137,7 @@ class VendorLoginController extends Controller
                 Auth::guard('vendor')->logout();
                 return redirect()->route('vendor.subscription', ['id' => $vendor->id]);
             }
-             redirect()->route('vendor.login')->with([
+             return redirect()->route('vendor.login')->with([
                 'msg' => $vendor ? __('Registration success') : __('Registration failed'),
                 'redirect_url' => route('vendor.subscription', ['id' => $vendor->id]),
                 'status' => (bool) $vendor,
