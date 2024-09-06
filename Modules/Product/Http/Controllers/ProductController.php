@@ -56,8 +56,7 @@ class ProductController extends Controller
     public function create(): Renderable
     {
         $data = $this->productData();
-        $countries = DB::table('countries')->get();
-        return view('product::create', compact('data','countries'));
+        return view('product::create', compact('data'));
     }
 
     /**

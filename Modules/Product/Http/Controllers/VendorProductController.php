@@ -50,8 +50,8 @@ class VendorProductController extends Controller
     public function create(): Renderable
     {
         $data = $this->productData();
-
-        return view('product::vendor/create', compact('data'));
+        $countries = DB::table('countries')->get();
+        return view('product::vendor/create', compact('data','countries'));
     }
 
     /**
