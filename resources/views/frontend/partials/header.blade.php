@@ -106,7 +106,7 @@
                         if (file_exists(public_path($path . 'home_banner.' . $extension))) {
                             $bannerFile = 'home_banner.' . $extension;
                             break;
-                        }
+                        } 
                     }
                 @endphp
                 @if($bannerFile)
