@@ -103,8 +103,8 @@
                     $extensions = ['png', 'jpg', 'jpeg', 'gif'];
                     $bannerFile = null;
                     foreach ($extensions as $extension) {
-                        if (file_exists(public_path($path . 'banner.' . $extension))) {
-                            $bannerFile = 'banner.' . $extension;
+                        if (file_exists(public_path($path . 'home_banner.' . $extension))) {
+                            $bannerFile = 'home_banner.' . $extension;
                             break;
                         }
                     }

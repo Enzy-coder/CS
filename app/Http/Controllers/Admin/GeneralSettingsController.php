@@ -345,7 +345,7 @@ class GeneralSettingsController extends Controller
     public function update_basic_settings(Request $request): RedirectResponse
     {
         if ($request->hasFile('banner')) {
-            $fileName = 'banner.' . $request->file('banner')->getClientOriginalExtension();
+            $fileName = 'home_banner.' . $request->file('banner')->getClientOriginalExtension();
 
             // Resize the image to 1364x392
             $image = Image::make($request->file('banner'))->resize(1364, 392, function ($constraint) {
