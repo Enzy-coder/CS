@@ -100,8 +100,7 @@
             @if ($is_home)
                 @php
                     $path = DB::table("module_page_settings")->where(['option_name' => 'home_banner'])->first();
-                    dd($path);
-                    $bannerFile = $path->home_banner ?? null;
+                    $bannerFile = $path->option_value ?? null;
                 @endphp
                 @if($bannerFile)
                     <img src="{{ asset($bannerFile) }}" class="home-banner">

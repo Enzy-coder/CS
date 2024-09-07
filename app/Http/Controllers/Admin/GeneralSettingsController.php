@@ -341,7 +341,7 @@ class GeneralSettingsController extends Controller
     public function basic_settings(): Factory|View|Application
     {
         $path = DB::table("module_page_settings")->where(['option_name' => 'home_banner'])->first();
-        $bannerFile = $path->home_banner ?? null;
+        $bannerFile = $path->option_value ?? null;
         return view($this->base_path.'basic',compact('bannerFile'));
     }
 
