@@ -355,6 +355,12 @@ class GeneralSettingsController extends Controller
     
             // Save the resized image to the specified directory
             Storage::put('public/uploads/home/' . $fileName, (string) $image->encode());
+            try{
+                DB::table("module_page_settings")->where(['option_name' => 'home_banner'])->delete();
+                DB::table("module_page_settings")->insert(['option_name' => 'home_banner','option_value' => 'storage/uploads/home/' . $fileName]);
+            }catch(\Exception $e){
+                dd($e->getMessage());
+            }
         }
         $request->validate([
             'site_secondary_color' => 'nullable|string',

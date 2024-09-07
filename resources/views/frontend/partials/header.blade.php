@@ -99,15 +99,8 @@
             @include('frontend.partials.header.header-variant-04', ['containerClass' => $navbar_type == 2 ? "container_1608" : ""])
             @if ($is_home)
                 @php
-                    $path = 'storage/uploads/home/';
-                    $extensions = ['png', 'jpg', 'jpeg', 'gif'];
-                    $bannerFile = null;
-                    foreach ($extensions as $extension) {
-                        if (file_exists(public_path($path . 'home_banner.' . $extension))) {
-                            $bannerFile = 'home_banner.' . $extension;
-                            break;
-                        } 
-                    }
+                    $path = DB::table("module_page_settings")->where(['option_name' => 'home_banner'])->first();
+                    $bannerFile = $path->home_banner ?? null;
                 @endphp
                 @if($bannerFile)
                     <img src="{{ asset($path . $bannerFile) }}" class="home-banner">
