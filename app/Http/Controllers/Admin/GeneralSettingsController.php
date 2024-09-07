@@ -25,6 +25,7 @@ use Xgenious\XgApiClient\Facades\XgApiClient;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
+use DB;
 class GeneralSettingsController extends Controller
 {
     private $base_path = 'backend.general-settings.';
@@ -339,7 +340,9 @@ class GeneralSettingsController extends Controller
 
     public function basic_settings(): Factory|View|Application
     {
-        return view($this->base_path.'basic');
+        $path = DB::table("module_page_settings")->where(['option_name' => 'home_banner'])->first();
+        $bannerFile = $path->home_banner ?? null;
+        return view($this->base_path.'basic',compact('bannerFile'));
     }
 
     public function update_basic_settings(Request $request): RedirectResponse

@@ -160,6 +160,9 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
+                                    @if($bannerFile)
+                                        <img src="{{ asset($path . $bannerFile) }}" class="home-banner" height="77px">
+                                    @endif
                                     <div class="form-group">
                                         <label for="banner"><strong>{{__('Home Banner')}}</strong></label>
                                         <input type="file" name="banner" id="banner" class="form-control" >
