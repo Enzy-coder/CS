@@ -100,10 +100,11 @@
             @if ($is_home)
                 @php
                     $path = DB::table("module_page_settings")->where(['option_name' => 'home_banner'])->first();
+                    dd($path);
                     $bannerFile = $path->home_banner ?? null;
                 @endphp
                 @if($bannerFile)
-                    <img src="{{ asset($path . $bannerFile) }}" class="home-banner">
+                    <img src="{{ asset($bannerFile) }}" class="home-banner">
                 @endif
                 @include('landing.services')
                 @include('frontend.partials.continents')
