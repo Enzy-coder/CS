@@ -176,30 +176,34 @@ $(document).ready(function() {
                 });
 
                 // Insert slider content
-$('#country-slider').html(sliderContent);
+                $('#country-slider').html(sliderContent);
 
-// Ensure there are enough slides to initialize properly
-if ($('#country-slider').children().length > 0) {
-    $('#country-slider').slick({
-        infinite: true,
-        slidesToShow: 8,
-        slidesToScroll: 7,
-        arrows: true,
-        autoplay: true,
-        autoplaySpeed: 6000,
-        responsive: [
-            { breakpoint: 1024, settings: { slidesToShow: 4 } },
-            { breakpoint: 768, settings: { slidesToShow: 3 } },
-            { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
-        ]
-    }).on('init', function(event, slick) {
-        $('#country-slider .slick-prev').html('<i class="las la-angle-left"></i>');
-        $('#country-slider .slick-next').html('<i class="las la-angle-right"></i>');
-    }).slick('refresh');
-} else {
-    console.error("Slider content is empty or not properly loaded.");
-}
+                // Get the number of slides
+                var slideCount = $('#country-slider').children().length;
 
+                // Dynamically adjust slidesToShow based on the number of slides
+                var slidesToShow = Math.min(slideCount, 8); // Use 8 or the number of available slides, whichever is smaller
+
+                if (slideCount > 0) {
+                    $('#country-slider').slick({
+                        infinite: slideCount > slidesToShow, // Only infinite scroll if there are enough slides
+                        slidesToShow: slidesToShow,
+                        slidesToScroll: Math.min(slideCount, 7), // Adjust slidesToScroll similarly
+                        arrows: true,
+                        autoplay: slideCount > 1, // Only autoplay if there's more than one slide
+                        autoplaySpeed: 6000,
+                        responsive: [
+                            { breakpoint: 1024, settings: { slidesToShow: Math.min(slideCount, 4) } },
+                            { breakpoint: 768, settings: { slidesToShow: Math.min(slideCount, 3) } },
+                            { breakpoint: 480, settings: { slidesToShow: Math.min(slideCount, 1), slidesToScroll: 1 } }
+                        ]
+                    }).on('init', function(event, slick) {
+                        $('#country-slider .slick-prev').html('<i class="las la-angle-left"></i>');
+                        $('#country-slider .slick-next').html('<i class="las la-angle-right"></i>');
+                    }).slick('refresh');
+                } else {
+                    console.error("Slider content is empty or not properly loaded.");
+                }
 
                 setTimeout(function() {
                     $('#country-slider .slick-prev').html('<i class="las la-angle-left"></i>');
