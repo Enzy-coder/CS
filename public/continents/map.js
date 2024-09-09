@@ -175,27 +175,34 @@ $(document).ready(function() {
                     sliderContent += `<div class="cursor-pointer country-item" data-id="${country.id}"><img src="/continents/flags/${country.slug}.svg" alt="${country.name}"><div>${country.name}</div></div>`;
                 });
 
-                var itemCount = $('#country-slider .slick-slide').length;
-                $('#country-slider').html(sliderContent).slick({
-                    infinite: true,
-                    slidesToShow: Math.min(itemCount, 8), // Adjust to the lesser of the itemCount or 8
-                    slidesToScroll: Math.min(itemCount, 7), // Adjust to the lesser of the itemCount or 7
-                    arrows: true,
-                    autoplay: true,
-                    autoplaySpeed: 6000,
-                    responsive: [
-                        { 
-                            breakpoint: 480, 
-                            settings: { 
-                                slidesToShow: Math.min(itemCount, 1), // Adjust based on the item count
-                                slidesToScroll: Math.min(itemCount, 1) // Adjust based on the item count
-                            } 
-                        }
-                    ]
-                }).on('init', function(event, slick) {
-                    $('#country-slider .slick-prev').html('<i class="las la-angle-left"></i>');
-                    $('#country-slider .slick-next').html('<i class="las la-angle-right"></i>');
-                }).slick('refresh');
+               var $slider = $('#country-slider');
+                $slider.html(sliderContent);
+                var itemCount = $slider.find('.slick-slide').length;
+                if (itemCount > 0) {
+                    $slider.slick({
+                        infinite: true,
+                        slidesToShow: Math.min(itemCount, 8), // Adjust to the lesser of the itemCount or 8
+                        slidesToScroll: Math.min(itemCount, 7), // Adjust to the lesser of the itemCount or 7
+                        arrows: true,
+                        autoplay: true,
+                        autoplaySpeed: 6000,
+                        responsive: [
+                            { 
+                                breakpoint: 480, 
+                                settings: { 
+                                    slidesToShow: Math.min(itemCount, 1), // Adjust based on the item count
+                                    slidesToScroll: Math.min(itemCount, 1) // Adjust based on the item count
+                                } 
+                            }
+                        ]
+                    }).on('init', function(event, slick) {
+                        $slider.find('.slick-prev').html('<i class="las la-angle-left"></i>');
+                        $slider.find('.slick-next').html('<i class="las la-angle-right"></i>');
+                    }).slick('refresh');
+                } else {
+                    console.log("No items to display in the slider.");
+                }
+
 
                 setTimeout(function() {
                     $('#country-slider .slick-prev').html('<i class="las la-angle-left"></i>');
