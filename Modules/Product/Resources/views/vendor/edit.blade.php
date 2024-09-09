@@ -106,7 +106,7 @@
                             <div class="tab-content margin-top-10" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active" id="v-general-info-tab" role="tabpanel"
                                     aria-labelledby="v-general-info-tab">
-                                    <x-product::general-info :brands="$data['brands']" :product="$product" />
+                                    <x-product::general-info :coutnries="$coutnries" :brands="$data['brands']" :product="$product" />
                                 </div>
                                 <div class="tab-pane fade" id="v-price-tab" role="tabpanel"
                                     aria-labelledby="v-price-tab">

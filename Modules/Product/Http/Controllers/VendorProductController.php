@@ -93,8 +93,9 @@ class VendorProductController extends Controller
 
         $sub_categories = SubCategory::select("id", "name")->where("category_id", $cat)->where("status_id", 1)->get();
         $child_categories = ChildCategory::select("id", "name")->where("sub_category_id", $subCat)->where("status_id", 1)->get();
+        $countries = DB::table('countries')->get();
 
-        return view('product::vendor/edit', compact("data", "product", "sub_categories", "child_categories"));
+        return view('product::vendor/edit', compact("data", "product", "sub_categories", "child_categories","countries"));
     }
 
     /**
