@@ -175,33 +175,30 @@ $(document).ready(function() {
                     sliderContent += `<div class="cursor-pointer country-item" data-id="${country.id}"><img src="/continents/flags/${country.slug}.svg" alt="${country.name}"><div>${country.name}</div></div>`;
                 });
 
-               var $slider = $('#country-slider');
-                $slider.html(sliderContent);
-                var itemCount = $slider.find('.slick-slide').length;
-                if (itemCount > 0) {
-                    $slider.slick({
-                        infinite: true,
-                        slidesToShow: Math.min(itemCount, 8), // Adjust to the lesser of the itemCount or 8
-                        slidesToScroll: Math.min(itemCount, 7), // Adjust to the lesser of the itemCount or 7
-                        arrows: true,
-                        autoplay: true,
-                        autoplaySpeed: 6000,
-                        responsive: [
-                            { 
-                                breakpoint: 480, 
-                                settings: { 
-                                    slidesToShow: Math.min(itemCount, 1), // Adjust based on the item count
-                                    slidesToScroll: Math.min(itemCount, 1) // Adjust based on the item count
-                                } 
-                            }
-                        ]
-                    }).on('init', function(event, slick) {
-                        $slider.find('.slick-prev').html('<i class="las la-angle-left"></i>');
-                        $slider.find('.slick-next').html('<i class="las la-angle-right"></i>');
-                    }).slick('refresh');
-                } else {
-                    console.log("No items to display in the slider.");
-                }
+                // Insert slider content
+$('#country-slider').html(sliderContent);
+
+// Ensure there are enough slides to initialize properly
+if ($('#country-slider').children().length > 0) {
+    $('#country-slider').slick({
+        infinite: true,
+        slidesToShow: 8,
+        slidesToScroll: 7,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        responsive: [
+            { breakpoint: 1024, settings: { slidesToShow: 4 } },
+            { breakpoint: 768, settings: { slidesToShow: 3 } },
+            { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+        ]
+    }).on('init', function(event, slick) {
+        $('#country-slider .slick-prev').html('<i class="las la-angle-left"></i>');
+        $('#country-slider .slick-next').html('<i class="las la-angle-right"></i>');
+    }).slick('refresh');
+} else {
+    console.error("Slider content is empty or not properly loaded.");
+}
 
 
                 setTimeout(function() {
