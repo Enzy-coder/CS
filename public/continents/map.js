@@ -175,15 +175,22 @@ $(document).ready(function() {
                     sliderContent += `<div class="cursor-pointer country-item" data-id="${country.id}"><img src="/continents/flags/${country.slug}.svg" alt="${country.name}"><div>${country.name}</div></div>`;
                 });
 
+                var itemCount = $('#country-slider .slick-slide').length;
                 $('#country-slider').html(sliderContent).slick({
                     infinite: true,
-                    slidesToShow: 8,
-                    slidesToScroll: 7,
+                    slidesToShow: Math.min(itemCount, 8), // Adjust to the lesser of the itemCount or 8
+                    slidesToScroll: Math.min(itemCount, 7), // Adjust to the lesser of the itemCount or 7
                     arrows: true,
                     autoplay: true,
                     autoplaySpeed: 6000,
                     responsive: [
-                        { breakpoint: 480, settings: { slidesToShow: 1 ,slidesToScroll: 1} }
+                        { 
+                            breakpoint: 480, 
+                            settings: { 
+                                slidesToShow: Math.min(itemCount, 1), // Adjust based on the item count
+                                slidesToScroll: Math.min(itemCount, 1) // Adjust based on the item count
+                            } 
+                        }
                     ]
                 }).on('init', function(event, slick) {
                     $('#country-slider .slick-prev').html('<i class="las la-angle-left"></i>');
