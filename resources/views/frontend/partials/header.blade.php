@@ -103,7 +103,7 @@
                     $bannerFile = $path->option_value ?? null;
                 @endphp
                 @if($bannerFile)
-                    <div class="text-center">
+                    <div class="text-center container">
                         <img src="{{ asset($bannerFile) }}" class="home-banner">
                     </div>
                 @endif
