@@ -39,9 +39,9 @@
             <a class="accounts" href="#1"><i class="las la-user"></i> <span
                         class="icon-title"></span></a>
             <ul class="account-list-item">
-                <li class="list"> <a href="{{ route('user.login') }}">
+                <li class="list text-right"> <a href="{{ route('user.login') }}">
                         {{ __('Sign In') }} </a> </li>
-                <li class="list"> <a href="{{ route('user.register') }}">
+                <li class="list text-right"> <a href="{{ route('user.register') }}">
                         {{ __('Sign Up') }} </a> </li>
             </ul>
         @endif

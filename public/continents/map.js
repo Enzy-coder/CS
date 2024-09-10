@@ -25,11 +25,11 @@ $(document).ready(function() {
     // Function to update map settings based on screen width
     function updateMapSettings() {
         if (window.innerWidth <= 768) { // Mobile screen width
-            map.scrollWheelZoom.enable();
-            map.dragging.enable();
-            map.doubleClickZoom.enable();
-            map.touchZoom.enable();
-            map.boxZoom.enable(); // Enable box zoom on mobile
+            map.scrollWheelZoom.disable();
+            map.dragging.disable();
+            map.doubleClickZoom.disable();
+            map.touchZoom.disable();
+            map.boxZoom.disable(); // Enable box zoom on mobile
         } else { // Desktop screen width
             map.scrollWheelZoom.disable();
             map.dragging.disable();
