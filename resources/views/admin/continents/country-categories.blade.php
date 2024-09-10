@@ -61,7 +61,12 @@
         }
         .cats{
             margin-top: 12px;
-            justify-content: space-between;
+            justify-content: center;
+        }
+        .cat-image{
+            border-radius: 50%;
+            border: 1px solid #ebebeb;
+            padding: 9px;
         }
     </style>
 @endsection
