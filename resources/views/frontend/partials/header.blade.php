@@ -107,7 +107,7 @@
                         <img src="{{ asset($bannerFile) }}" class="home-banner">
                     </div>
                 @endif
-                @include('landing.services')
+                <!-- @ include('landing.services') -->
                 @include('frontend.partials.continents')
             @endif
         @else
