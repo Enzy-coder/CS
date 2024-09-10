@@ -986,9 +986,9 @@ class FrontendProductController extends Controller
             if($category_data[$category->id ?? null] ?? false)
                 continue ;
 
-            $category_data[$category->id] = [
-                'title' => $category->name,
-                'url' => route('frontend.products.category', $category->slug)
+            $category_data[$category->id ?? null] = [
+                'title' => $category->name ?? null,
+                'url' => route('frontend.products.category', $category->slug ?? null)
             ];
         }
 
