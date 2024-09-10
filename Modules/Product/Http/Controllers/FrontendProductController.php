@@ -983,7 +983,7 @@ class FrontendProductController extends Controller
 
             // check category already exists or not
             // this condition is responsible for making unique category
-            if($category_data[$category->id] ?? false)
+            if($category_data[$category->id ?? null] ?? false)
                 continue ;
 
             $category_data[$category->id] = [
