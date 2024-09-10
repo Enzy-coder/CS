@@ -50,7 +50,7 @@
             }
             .home-banner{
                 max-height: 392px;
-                max-width: 100%;
+                max-width: fit-content;
             }
         </style>
         <!-- <link href="{{asset('continents/map.css')}}" rel="stylesheet"> -->
@@ -103,7 +103,9 @@
                     $bannerFile = $path->option_value ?? null;
                 @endphp
                 @if($bannerFile)
-                    <img src="{{ asset($bannerFile) }}" class="home-banner">
+                    <div class="text-center">
+                        <img src="{{ asset($bannerFile) }}" class="home-banner">
+                    </div>
                 @endif
                 @include('landing.services')
                 @include('frontend.partials.continents')
