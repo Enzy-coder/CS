@@ -26,7 +26,7 @@ $(document).ready(function() {
     function updateMapSettings() {
         if (window.innerWidth <= 768) { // Mobile screen width
             map.scrollWheelZoom.disable();
-            map.dragging.enable();
+            map.dragging.disable();
             map.doubleClickZoom.disable();
             map.touchZoom.disable();
             map.boxZoom.disable(); // Enable box zoom on mobile
