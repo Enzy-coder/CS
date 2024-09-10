@@ -87,6 +87,7 @@
                         <div class="line"></div>
                     </h2>
                     <div class="row cats">
+                        {{dd($product_categories)}}
                         @foreach ($product_categories as $product_category)
                             @php 
                                 $image_path = optional($product_category->category)->image ? 'assets/uploads/media-uploader/'.optional($product_category->category->image)->path : 'no-image.png';
