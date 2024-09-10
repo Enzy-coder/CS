@@ -24,8 +24,17 @@
         <h3 id="continent-name" class="text-center  m-4 text-uppercase" style="margin-bottom: 2px !important;"></h3>
         <div id="country-slider"></div> 
     </div>
+    <!-- <div class=".threeD-globe"  style="display:none">
+        <div id="globe-container">
+        <svg viewBox="0 0 100 100">
+                
+                <circle cx="50" cy="50" r="40" stroke="black" stroke-width="1" fill="lightblue" />
+                
+            </svg>
+        </div>
+    </div> -->
 </div>
 @section('scripts')
 <script src="{{asset('continents/map.js')}}"></script>
-<script src="{{ asset('continents/globe.js') }}"></script>
+<!-- <script src="{{ asset('continents/globe.js') }}"></script> -->
 @endsection
