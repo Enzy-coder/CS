@@ -87,20 +87,21 @@
                         <div class="line"></div>
                     </h2>
                     <div class="row cats">
-                        {{dd($product_categories)}}
                         @foreach ($product_categories as $product_category)
-                            @php 
-                                $image_path = optional($product_category->category)->image ? 'assets/uploads/media-uploader/'.optional($product_category->category->image)->path : 'no-image.png';
-                            @endphp
-                            <div class="col-md-1 text-center cat-click cursor-pointer" data-id="{{$product_category->category_id}}"
-                                data-slug="{{optional($product_category->category)->slug}}">
-                                <div class="cat-block">
-                                    <img src="{{asset($image_path)}}" class="cat-image">
+                            @if(!empty($product_category->category))
+                                @php 
+                                    $image_path = optional($product_category->category)->image ? 'assets/uploads/media-uploader/'.optional($product_category->category->image)->path : 'no-image.png';
+                                @endphp
+                                <div class="col-md-1 text-center cat-click cursor-pointer" data-id="{{$product_category->category_id}}"
+                                    data-slug="{{optional($product_category->category)->slug}}">
+                                    <div class="cat-block">
+                                        <img src="{{asset($image_path)}}" class="cat-image">
+                                    </div>
+                                    <b class="category-name">
+                                        {{optional($product_category->category)->name}}
+                                    </b>
                                 </div>
-                                <b class="category-name">
-                                    {{optional($product_category->category)->name}}
-                                </b>
-                            </div>
+                            @endif
                         @endforeach
                     </div>
                     @if($product_categories->count() == 0)
