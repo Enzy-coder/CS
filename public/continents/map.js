@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var isFetchingCountries = false;
     fetchCountries('asia');
+    $("#continent-name").html('<a style="color:orange" href="/continents/asia/culture">Asia</a>');
     var timer = 800;
     var map = L.map('map', {
         center: [70, -3],
