@@ -76,10 +76,16 @@
                     </div>
                 </div>
                 <div class="col-md-1 d-none d-lg-block">
-                    <select class="selectbox">
-                        <option value="english">English</option>
-                        <option value="arabic">Arabic</option>
-                    </select>
+                    <div class="dropdown">
+                        <span class="dropdown-toggle"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="{{asset('continents/flags/us.svg')}}" height="20px"> EN
+                        </span>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#" data-lang="en"> <img src="{{asset('continents/flags/us.svg')}}" height="20px"> EN</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="ar"> <img src="{{asset('continents/flags/ua.svg')}}" height="20px"> AR</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="gm"> <img src="{{asset('continents/flags/gm.svg')}}" height="20px"> GM</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class=" change-search-bar col-md-{{$logged ? '5' : '5'}}">
                     <div class="category-searchbar">
