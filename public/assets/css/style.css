@@ -38041,10 +38041,6 @@ h5.common-title-two svg {
 .change-header .search-btn {
   background: #DD3335;
 }
-.change-header .header-search{
-  height:30px;
-}
-
 .change-header .topbar-logo img{
   height: 46px;
 }
@@ -38053,7 +38049,7 @@ h5.common-title-two svg {
 }
 .change-header .header-search{
     padding: 0 31px 0 17px;
-    height: 31px;
+    height: 40px;
 }
 .change-header .search-btn {
   background: #DD3335;
@@ -38229,4 +38225,11 @@ h5.common-title-two svg {
     .single-right-content .topbar-bottom-four .track-icon-list {
           gap: 20px 12px !important;
     }
+}
+#media_upload_modal{
+  top: 0%;
+}
+#media_upload_modal .modal-content{
+  max-height: 570px;
+  overflow: auto;
 }

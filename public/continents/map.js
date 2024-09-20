@@ -173,7 +173,7 @@ $(document).ready(function() {
                 $('#continent-info').html(`<strong>${data.length}</strong> countries`);
                 let sliderContent = '';
                 data.forEach(function(country) {
-                    sliderContent += `<div class="cursor-pointer country-item" data-id="${country.id}"><img src="/continents/flags/${country.slug}.svg" alt="${country.name}"><div>${country.name}</div></div>`;
+                    sliderContent += `<div class="cursor-pointer country-item" data-id="${country.id}"><img src="/continents/flags/${country.slug}.svg" alt="${country.name}"><div style="overflow-wrap: break-word; max-width: 150px; white-space: normal;">${country.name}</div></div>`;
                 });
 
                 // Insert slider content
@@ -191,7 +191,8 @@ $(document).ready(function() {
                         slidesToShow: slidesToShow,
                         slidesToScroll: Math.min(slideCount, 7), // Adjust slidesToScroll similarly
                         arrows: true,
-                        autoplay: slideCount > 1, // Only autoplay if there's more than one slide
+                        //autoplay: slideCount > 1, // Only autoplay if there's more than one slide
+                        autoplay: false, // Only autoplay if there's more than one slide
                         autoplaySpeed: 6000,
                         responsive: [
                             { breakpoint: 1024, settings: { slidesToShow: Math.min(slideCount, 4) } },

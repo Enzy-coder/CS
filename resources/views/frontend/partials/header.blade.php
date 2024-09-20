@@ -52,6 +52,12 @@
                 max-height: 392px;
                 max-width: fit-content;
             }
+        @media (max-width: 425px) {
+            .home-banner{
+                width: 100%;
+                height: 280px;
+            }
+        }
         </style>
         <!-- <link href="{{asset('continents/map.css')}}" rel="stylesheet"> -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />

@@ -11,7 +11,7 @@
     $filter = $filter ?? false;
 @endphp
 
-<div class="col-xxl-2 col-xl-3 col-md-4 col-sm-6">
+<div class="col-xxl-2 col-xl-3 col-md-4 col-sm-6 my-lg-4">
     <div class="product__card">
         @if ($campaign_percentage)
             <div class="product__offer">
