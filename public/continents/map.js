@@ -66,8 +66,8 @@ $(document).ready(function() {
         {name: 'Europe', continent: 'europe', continentName: 'Europe', latlng: [74.5260, 55.2551], iconUrl: '/continents/landmarks/efel.png', width: 111},
         {name: 'Africa', continent: 'africa', continentName: 'Africa', latlng: [0.0, 20.0], iconUrl: '/continents/landmarks/africa.png', width: 111},
         {name: 'Asia', continent: 'asia', continentName: 'Asia', latlng: [40.0479, 70.6197], iconUrl: '/continents/landmarks/asia.png', width: 111},
-        {name: 'North America', continent: 'north-america', continentName: 'North America', latlng: [80.5260, -105.2551], iconUrl: '/continents/landmarks/north-america.png', width: 111},
-        {name: 'South America', continent: 'south-america', continentName: 'South America', latlng: [-14.2350, -51.9253], iconUrl: '/continents/landmarks/south-america.png', width: null},
+        {name: 'North America', continent: 'north-america', continentName: 'North America', latlng: [80.5260, -105.2551], iconUrl: '/continents/landmarks/north-america.png', width: 150},
+        {name: 'South America', continent: 'south-america', continentName: 'South America', latlng: [-14.2350, -70.9253], iconUrl: '/continents/landmarks/south-america.png', width: 150},
         {name: 'Australia', continent: 'australia', continentName: 'Australia', latlng: [-25.2744, 133.7751], iconUrl: '/continents/landmarks/australia.png', width: 111},
         // {name: 'Antarctica', continent: 'antarctica', continentName: 'Antarctica', latlng: [-82.8628, 135.0000], iconUrl: '/continents/landmarks/antarctica.png', width: null},
         // New landmarks
