@@ -1,4 +1,16 @@
 (function ($) {
+    $(document).on("click", ".dropdown-item", function (e) {
+        e.preventDefault();
+        const selectedImg = $(this).find("img").attr("src");
+        const selectedText = $(this).text().trim();
+
+        // Update the dropdown toggle
+        $("#dropdownMenuButton").html(`<img src="${selectedImg}" height="20px"> ${selectedText}`);
+        
+        // Update active class
+        $(".dropdown-item").removeClass("active");
+        $(this).addClass("active");
+    });
     "use strict";
     String.prototype.capitalize = String.prototype.capitalize || function () {
         return this.charAt(0).toUpperCase() + this.slice(1);
