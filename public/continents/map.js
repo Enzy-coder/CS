@@ -63,18 +63,18 @@ $(document).ready(function() {
     };
 
     var landmarks = [
-        {name: 'Europe', continent: 'europe', continentName: 'Europe', latlng: [74.5260, 55.2551], iconUrl: '/continents/landmarks/efel.png', width: 111},
+        {name: 'Europe', continent: 'europe', continentName: 'Europe', latlng: [80.5260, 60.2551], iconUrl: '/continents/landmarks/efel.png', width: 111},
         {name: 'Africa', continent: 'africa', continentName: 'Africa', latlng: [0.0, 20.0], iconUrl: '/continents/landmarks/africa.png', width: 111},
         {name: 'Asia', continent: 'asia', continentName: 'Asia', latlng: [40.0479, 70.6197], iconUrl: '/continents/landmarks/asia.png', width: 111},
         {name: 'North America', continent: 'north-america', continentName: 'North America', latlng: [80.5260, -105.2551], iconUrl: '/continents/landmarks/north-america.png', width: 150},
         {name: 'South America', continent: 'south-america', continentName: 'South America', latlng: [-14.2350, -70.9253], iconUrl: '/continents/landmarks/south-america.png', width: 150},
-        {name: 'Australia', continent: 'australia', continentName: 'Australia', latlng: [-25.2744, 133.7751], iconUrl: '/continents/landmarks/australia.png', width: 111},
+        {name: 'Australia', continent: 'australia', continentName: 'Australia', latlng: [-15.2744, 133.7751], iconUrl: '/continents/landmarks/australia.png', width: 80},
         // {name: 'Antarctica', continent: 'antarctica', continentName: 'Antarctica', latlng: [-82.8628, 135.0000], iconUrl: '/continents/landmarks/antarctica.png', width: null},
         // New landmarks
         {name: 'Japan', continent: 'asia', continentName: 'Asia', latlng: [36.2048, 138.2529], iconUrl: '/continents/landmarks/japan.png', width: null},
         {name: 'China', continent: 'asia', continentName: 'Asia', latlng: [60.8617, 104.1954], iconUrl: '/continents/landmarks/china.png', width: 111},
         {name: 'United Kingdom', continent: 'europe', continentName: 'Europe', latlng: [55.3781, -3.4360], iconUrl: '/continents/landmarks/uk.png', width: 111},
-        {name: 'Italy', continent: 'europe', continentName: 'Europe', latlng: [61.8719, 22.5674], iconUrl: '/continents/landmarks/italy.png', width: 111}
+        // {name: 'Italy', continent: 'europe', continentName: 'Europe', latlng: [61.8719, 22.5674], iconUrl: '/continents/landmarks/italy.png', width: 111}
     ];
 
     landmarks.forEach(function(landmark) {

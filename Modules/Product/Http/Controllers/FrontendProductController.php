@@ -172,7 +172,8 @@ class FrontendProductController extends Controller
                 'vendor.product.badge',
                 'vendor.product.uom',
                 'taxOptions:tax_class_options.id,country_id,state_id,city_id,rate',
-                'vendorAddress:vendor_addresses.id,country_id,state_id,city_id'
+                'vendorAddress:vendor_addresses.id,country_id,state_id,city_id',
+                'country'
             ])
             ->withAvg("reviews", 'rating')
             ->withCount("reviews")

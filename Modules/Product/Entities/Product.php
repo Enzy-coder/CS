@@ -28,6 +28,7 @@ use Modules\TaxModule\Entities\TaxClass;
 use Modules\TaxModule\Entities\TaxClassOption;
 use Modules\Vendor\Entities\Vendor;
 use Modules\Vendor\Entities\VendorAddress;
+use Modules\CountryManage\Entities\Country;
 class Product extends Model
 {
     use SoftDeletes, NotificationRelation;
@@ -38,6 +39,10 @@ class Product extends Model
     public function category() : HasOneThrough
     {
         return $this->hasOneThrough(Category::class,ProductCategory::class,'product_id','id','id','category_id');
+    }
+    public function country()
+    {
+        return $this->hasOne(Country::class,'id','country_id');
     }
 
     public function taxOptions() : HasManyThrough

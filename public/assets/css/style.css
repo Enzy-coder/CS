@@ -34959,7 +34959,7 @@ div[class*=col]:nth-child(3n+3) .counter__item__icon svg path {
 /* Topbar Bottom Css */
 .topbar-bottom-four {
   padding: 20px 0;
-  border-bottom: 1px solid var(--border-color);
+  /*border-bottom: 1px solid var(--border-color);*/
 }
 
 .topbar-bottom-four .category-searchbar .form--control {
@@ -38042,7 +38042,7 @@ h5.common-title-two svg {
   background: #DD3335;
 }
 .change-header .topbar-logo img{
-  height: 46px;
+  height: 54px;
 }
 .change-header .top-logo-block{
   width: max-content;
@@ -38052,7 +38052,7 @@ h5.common-title-two svg {
     height: 40px;
 }
 .change-header .search-btn {
-  background: #DD3335;
+  background: #D00D38;
   height: -webkit-fill-available;
   margin: 0;
   width: 0px;
@@ -38158,7 +38158,7 @@ h5.common-title-two svg {
     text-align: center;
 }
 .change-nav {
-  background:#FCFBF4;
+  background:yellow;
   padding:0;
 }
 .change-nav .nav-container {
@@ -38232,4 +38232,11 @@ h5.common-title-two svg {
 #media_upload_modal .modal-content{
   max-height: 570px;
   overflow: auto;
+}
+.btn-yellow{
+      background: yellow;
+      border-color: yellow;
+}
+.change-header .top-header{
+  justify-content: center;
 }

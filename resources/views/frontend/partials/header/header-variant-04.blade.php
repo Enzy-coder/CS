@@ -1,6 +1,7 @@
 
 @php
     $logged = auth('web')->check() ? true : false;
+    $languages = ['AR','CN','DE','EN','ES','FR','IT','RU'];
 @endphp
 <!-- Header area Starts -->
 <header class="header-style-01">
@@ -33,7 +34,7 @@
                                 <ul class="list">
                                     @if(get_static_option("enable_vendor_registration") === 'on')
                                         <li class="ml-2">
-                                            <a class="btn btn-sm btn-warning text-dark become-a-seller-button" href="{{ route('vendor.register') }}">
+                                            <a class="btn btn-sm btn-warning  text-dark become-a-seller-button btn-yellow" href="{{ route('vendor.register') }}">
                                                 {{ __('Become a seller') }}
                                             </a>
                                         </li>
@@ -61,7 +62,7 @@
     <!-- Topbar bottom area Starts -->
     <div class="topbar-bottom-area topbar-bottom-four change-header">
         <div class="container top-nav {{ $containerClass ?? "" }}"> 
-            <div class="row align-items-center header-on-992">
+            <div class="row align-items-center header-on-992 top-header">
                 <div class="col-md-2 d-none d-lg-block top-logo-block">
                     <div class="topbar-logo">
                         <a href="{{ route('homepage') }}">
@@ -78,24 +79,16 @@
                 <div class="col-md-1 d-none d-lg-block">
                     <div class="dropdown">
                         <span class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="{{asset('continents/flags/us.svg')}}" height="20px"> EN
+                            <img src="{{asset('continents/langs/EN.png')}}" width="24px" height="24px"> EN
                         </span>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li>
-                                <a class="dropdown-item active" href="#" data-lang="en">
-                                    <img src="{{asset('continents/flags/us.svg')}}" height="20px"> EN
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#" data-lang="ar">
-                                    <img src="{{asset('continents/flags/ua.svg')}}" height="20px"> AR
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#" data-lang="gm">
-                                    <img src="{{asset('continents/flags/gm.svg')}}" height="20px"> GM
-                                </a>
-                            </li>
+                            @foreach ($languages as $language)
+                                <li>
+                                    <a class="dropdown-item" href="#" data-lang="{{$language}}">
+                                        <img src="{{asset('continents/langs/'. $language .'.png')}}" width="24px" height="24px"> {{$language}}
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -136,7 +129,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-md-{{$logged ? '2' : '1'}}">
+                <div class="col-md-{{$logged ? '2' : '3'}}">
                     <div class="navbar-right-content show">
                         <div class="single-right-content  right-content">
                             <div class="track-icon-list header-card-area-content-wrapper">

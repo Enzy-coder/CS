@@ -103,6 +103,9 @@
                         <div class="col-lg-4 col-xl-5">
                             <div class="single-shop-details-wrapper padding-left-50">
                                 <h2 class="details-title">{{ $product->name }}</h2>
+                                @if($product->country)
+                                    <span class="btn btn-success btn-sm">{{ optional($product->country)->name ?? '' }}</span>
+                                @endif
                                 <div class="rating-wrap">
                                     {!! view('product::components.frontend.common.rating-markup', compact('product')) !!}
                                 </div>
