@@ -68,6 +68,15 @@
             border: 1px solid #ebebeb;
             padding: 9px;
         }
+        @media (max-width: 425px) {
+            .cat-block{
+                height: 128px;
+                width: 128px;
+            }
+            .cats{
+                display: grid;
+            }
+        }
     </style>
 @endsection
 
