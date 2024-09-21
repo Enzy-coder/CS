@@ -63,7 +63,7 @@ $(document).ready(function() {
     };
 
     var landmarks = [
-        {name: 'Europe', continent: 'europe', continentName: 'Europe', latlng: [80.5260, 60.2551], iconUrl: '/continents/landmarks/efel.png', width: 111},
+        {name: 'Europe', continent: 'europe', continentName: 'Europe', latlng: [90.5260, 40.2551], iconUrl: '/continents/landmarks/efel.png', width: 111},
         {name: 'Africa', continent: 'africa', continentName: 'Africa', latlng: [0.0, 20.0], iconUrl: '/continents/landmarks/africa.png', width: 111},
         {name: 'Asia', continent: 'asia', continentName: 'Asia', latlng: [40.0479, 70.6197], iconUrl: '/continents/landmarks/asia.png', width: 111},
         {name: 'North America', continent: 'north-america', continentName: 'North America', latlng: [80.5260, -105.2551], iconUrl: '/continents/landmarks/north-america.png', width: 150},
