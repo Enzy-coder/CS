@@ -169,7 +169,7 @@
         $(document).on('click','.cat-click',function(){
             let id = $(this).attr('data-id');
             let slug = $(this).attr('data-slug');
-            let country_id = $(this).attr('data-slug');
+            let country_id = $(this).attr('data-country_id');
             window.location = '/shop-page/category/' + slug + '?id=' + id + '&token=' + country_id;
         })
     </script>
