@@ -104,11 +104,10 @@
                         @foreach ($product_categories as $product_category)
                             @if(!empty($product_category->category))
                                 @php 
-                                dd($product_category);
                                     $image_path = optional($product_category->category)->image ? 'assets/uploads/media-uploader/'.optional($product_category->category->image)->path : 'no-image.png';
                                 @endphp
                                 <div class="col-md-1 text-center cat-click cursor-pointer" data-id="{{$product_category->category_id}}"
-                                    data-country_id="{{$product_category->category_id}}"
+                                    data-country_id="{{$product_category->country_id}}"
                                     data-slug="{{optional($product_category->category)->slug}}">
                                     <div class="cat-block">
                                         <img src="{{asset($image_path)}}" class="cat-image">
@@ -170,7 +169,8 @@
         $(document).on('click','.cat-click',function(){
             let id = $(this).attr('data-id');
             let slug = $(this).attr('data-slug');
-            window.location = '/shop-page/category/' + slug + '?id=' + id;
+            let country_id = $(this).attr('data-slug');
+            window.location = '/shop-page/category/' + slug + '?id=' + id + '&token=' + country_id;
         })
     </script>
 @endsection

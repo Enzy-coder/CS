@@ -684,7 +684,12 @@ class FrontendProductController extends Controller
                     $cat_query->where("slug", $slug);
                 });
             })->with('campaign_product', 'category', 'ratings','inventory','campaign_sold_product')
-            ->orderBy('id', 'desc')
+            ->orderBy('id', 'desc');
+            ->where(function($query){
+                if(request('token')){
+                    $query->where('country_id',request('token'));
+                }
+            })
             ->paginate($default_item_count);
 
         $category_name = Category::where("slug", $slug)->first()?->name;
